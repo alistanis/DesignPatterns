@@ -3,10 +3,10 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 app_models = File.expand_path('..app/models', __FILE__)
 $LOAD_PATH.unshift(app_models) unless $LOAD_PATH.include?(app_models)
-require 'DesignPatterns/version'
+require 'Patterns/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "DesignPatterns"
+  spec.name          = "Patterns"
   spec.version       = DesignPatterns::VERSION
   spec.authors       = ["Chris Cooper"]
   spec.email         = ["christopher.michael.cooper@gmail.com"]

@@ -1,6 +1,6 @@
-module DesignPatterns
+module Patterns
 
-  class CopyFile < DesignPatterns::Command
+  class CopyFile < Patterns::Command
 
     def initialize(source, target)
       super("Copy File: #{source} to file: #{target}")

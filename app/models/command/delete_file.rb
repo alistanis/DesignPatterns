@@ -1,6 +1,6 @@
-module DesignPatterns
+module Patterns
 
-  class DeleteFile < DesignPatterns::Command
+  class DeleteFile < Patterns::Command
 
     def initialize(path)
       super("Delete File: #{path}")

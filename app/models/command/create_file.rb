@@ -1,6 +1,6 @@
-require 'DesignPatterns/version'
-module DesignPatterns
-  class CreateFile < DesignPatterns::Command
+require 'Patterns/version'
+module Patterns
+  class CreateFile < Patterns::Command
 
     def initialize(path, data)
       super("Create File: #{path}")

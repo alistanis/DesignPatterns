@@ -1,4 +1,4 @@
-# DesignPatterns
+# Patterns
 
 This project began because I wanted to help some of the people at work learn Ruby, and I decided I could turn those lessons into a class on design patterns, implementation, and testing.
 
@@ -8,7 +8,7 @@ This project began because I wanted to help some of the people at work learn Rub
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'DesignPatterns'
+gem 'Patterns'
 ```
 
 And then execute:

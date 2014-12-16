@@ -1,6 +1,6 @@
-require 'DesignPatterns/version'
+require 'Patterns/version'
 
-module DesignPatterns
+module Patterns
 
   class Command
     attr_accessor :description, :status
