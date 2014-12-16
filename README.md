@@ -1,6 +1,7 @@
 # DesignPatterns
 
-TODO: Write a gem description
+This project began because I wanted to help some of the people at work learn Ruby, and I decided I could turn those lessons into a class on design patterns, implementation, and testing.
+
 
 ## Installation
 
