@@ -7,7 +7,7 @@ require 'Patterns/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "Patterns"
-  spec.version       = DesignPatterns::VERSION
+  spec.version       = Patterns::VERSION
   spec.authors       = ["Chris Cooper"]
   spec.email         = ["christopher.michael.cooper@gmail.com"]
   spec.summary       = %q{Design Pattern definitions and implementations in Ruby.}

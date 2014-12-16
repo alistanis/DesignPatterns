@@ -14,14 +14,14 @@ module Patterns
         f.write @data
         f.close
       end
-      execute_command(function)
+      super(function)
     end
 
     def undo
       function = Proc.new do
         File.delete(@path)
       end
-      undo_command(function)
+      super(function)
     end
 
   end

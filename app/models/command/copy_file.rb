@@ -15,7 +15,7 @@ module Patterns
         end
         FileUtils.copy(@source, @target)
       end
-      execute_command(function)
+      super(function)
     end
 
     def undo
@@ -28,7 +28,7 @@ module Patterns
           File.delete(@data)
         end
       end
-      undo_command(function)
+      super(function)
     end
 
   end

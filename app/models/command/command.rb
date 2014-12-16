@@ -10,13 +10,13 @@ module Patterns
       @status = 'initialized'
     end
 
-    def execute_command(function)
+    def execute(function)
       @status = "Command began: #{@description}"
       function.call
       @status = "Execution completed: #{@description}"
     end
 
-    def undo_command(function)
+    def undo(function)
       @status = "Undo began: #{@description}"
       function.call
       @status = "Undo completed: #{@description}"

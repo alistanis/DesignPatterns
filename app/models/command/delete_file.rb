@@ -14,7 +14,7 @@ module Patterns
         end
         File.delete(@path)
       end
-      execute_command(function)
+      super(function)
     end
 
     def undo
@@ -23,7 +23,7 @@ module Patterns
         f.write @data
         f.close
       end
-      undo_command(function)
+      super(function)
     end
 
   end
