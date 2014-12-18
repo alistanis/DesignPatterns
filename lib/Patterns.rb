@@ -1,4 +1,4 @@
-require "Patterns/version"
+require 'Patterns/version'
 
 module Patterns
 
