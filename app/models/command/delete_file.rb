@@ -1,5 +1,8 @@
 module Patterns
 
+  # DeleteFile -> Command
+  #
+  # Deletes a file, and provides the ability to undo that operation
   class DeleteFile < Patterns::Command
 
     # Initializes the DeleteFile Class

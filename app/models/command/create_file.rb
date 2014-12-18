@@ -1,5 +1,9 @@
 require 'Patterns/version'
 module Patterns
+
+  # CreateFile -> Command
+  #
+  # Creates a file and writes data to it, and provides a command for undoing that operation
   class CreateFile < Patterns::Command
 
     # Initializes the CreateFile Class

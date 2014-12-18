@@ -56,7 +56,7 @@ module Patterns
           @commands[@next].execute
           @next = @next + 1
         else
-          raise CommandList, 'No next command in list'
+          raise CommandList, 'No next command in list; index out of bounds'
         end
       end
     end
@@ -71,7 +71,7 @@ module Patterns
     def undo_last
       if @next > 0
         @commands[@next - 1].undo
-        @next = @next -1
+        @next = @next - 1
       end
     end
 
