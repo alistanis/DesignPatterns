@@ -2,14 +2,8 @@ module Patterns
 
   # User -> Subject
   #
-  # * +@user_name+ - The user's user name
-  # * +@email+ - The user's email
-  # * +password+ - The user's password
-  #
   # An example class to show how the Subject functions in the Observer pattern
   class User < Patterns::Subject
-    # stores information about the User class
-    attr_accessor :user_name, :email, :password
 
     # Initializes the User class and the Subject superclass
     #
@@ -19,7 +13,7 @@ module Patterns
     #
     # Examples
     #
-    # => user = User.new('test_user', 'test@sessionm.com', 'test_password')
+    #   => user = User.new('test_user', 'test@sessionm.com', 'test_password')
     def initialize(user_name, email, password)
       super()
       @user_name = user_name
@@ -33,7 +27,7 @@ module Patterns
     #
     # Examples
     #
-    # => user.change_password('new_password')
+    #   => user.change_password('new_password')
     def change_password(new_password)
       @password = new_password
       notify("Password changed for user: #{user_name}.", 'PasswordChange')
@@ -46,7 +40,7 @@ module Patterns
     #
     # Examples
     #
-    # => notify('User password changed', 'PasswordChange')
+    #   => notify('User password changed', 'PasswordChange')
     def notify(notification, event)
       super(notification, event)
     end

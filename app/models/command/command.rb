@@ -8,14 +8,9 @@ module Patterns
   #
   # From Design Patterns (Gang of Four)
   #   - • Command – declares an interface for executing an operation.
-  #
-  # Public
-  #
-  # * - +@description+ - stores the description that is passed to the initializer upon object instantiation
-  # * - +@status+ - the most recent status of the command
   class Command
 
-    #Descrition and status store information about the command
+    # * - +@description+ - stores the description that is passed to the initializer upon object instantiation \n * - +@status+ - the most recent status of the command
     attr_accessor :description, :status
 
     # Initializes the Command Class

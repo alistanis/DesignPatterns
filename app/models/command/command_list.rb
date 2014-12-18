@@ -3,18 +3,13 @@ module Patterns
   # CommandList -> Patterns::Command
   #
   # Class that stores a list of commands and provides a way to add and remove them, get status and description, and execute and undo them.
-  #
-  # Private
-  #
-  # - +@next+ - stores the next node in the list. The only necessary
-  # - +@commands+ - the list of commands
   class CommandList < Patterns::Command
 
     # public: Initializes the command list
     #
     # Examples
     #
-    # => command_list = CommandList.new
+    #   => command_list = CommandList.new
     def initialize
       @commands = []
       @next = 0
