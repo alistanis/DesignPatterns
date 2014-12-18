@@ -1,13 +1,26 @@
 module Patterns
 
+  # CopyFile -> Command
+  #
+  # Class that implements a command to Copy a file from one location to another, and to undo that copy
   class CopyFile < Patterns::Command
 
+    # Initializes the CopyFile Class
+    #
+    # Examples
+    #
+    #   => copy_file_cmd = CopyFile.new(file_to_copy, destination)
     def initialize(source, target)
       super("Copy File: #{source} to file: #{target}")
       @source = source
       @target = target
     end
 
+    # Copies a file from a source location to a target destination
+    #
+    # Examples
+    #
+    #   => copy_file_cmd.execute
     def execute
       function = Proc.new do
         if File.exists?(@target)
@@ -18,6 +31,11 @@ module Patterns
       super(function)
     end
 
+    # Undoes a copy operation
+    #
+    # Examples
+    #
+    #   => copy_file_cmd.undo
     def undo
       function = Proc.new do
         if @data

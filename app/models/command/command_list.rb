@@ -11,6 +11,10 @@ module Patterns
   class CommandList < Patterns::Command
 
     # public: Initializes the command list
+    #
+    # Examples
+    #
+    # => command_list = CommandList.new
     def initialize
       @commands = []
       @next = 0

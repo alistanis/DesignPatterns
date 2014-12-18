@@ -2,11 +2,22 @@ module Patterns
 
   class DeleteFile < Patterns::Command
 
+    # Initializes the DeleteFile Class
+    #
+    # Examples
+    #
+    #   => delete_file_cmd = DeleteFile.new(file_path)
     def initialize(path)
       super("Delete File: #{path}")
       @path = path
+      @data = nil
     end
 
+    # Deletes a file if it exists
+    #
+    # Examples
+    #
+    #   => delete_file_cmd.execute
     def execute
       function = Proc.new do
         if File.exist?(@path)
@@ -17,11 +28,18 @@ module Patterns
       super(function)
     end
 
+    # Replaces a file that was deleted
+    #
+    # Examples
+    #
+    #   => delete_file_cmd.undo
     def undo
       function = Proc.new do
-        f = File.open(@path, 'w')
-        f.write @data
-        f.close
+        if @data != nil
+          f = File.open(@path, 'w')
+          f.write @data
+          f.close
+        end
       end
       super(function)
     end
