@@ -1,6 +1,5 @@
 require 'rspec'
 require 'Patterns/version'
-require 'pp'
 
 Dir["#{File.expand_path('../../app/', __FILE__)}/**/*.rb"].each { |f| load(f) }
 

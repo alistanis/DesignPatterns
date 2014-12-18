@@ -1,4 +1,3 @@
-require 'Patterns/version'
 module Patterns
 
   # CreateFile -> Command
