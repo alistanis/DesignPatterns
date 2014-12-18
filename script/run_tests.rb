@@ -1,31 +1,45 @@
 #!/usr/bin/env ruby
 
-require 'rspec'
-require 'rspec/core/formatters/json_formatter'
-require 'Patterns/version'
-
 test_files = []
 
 Dir["#{File.expand_path('../../test', __FILE__)}/**/*.rb"].each { |f| test_files << f }
 
-config = RSpec.configuration
+class String
+  def colorize(color_code)
+    "\e[#{color_code}m#{self}\e[0m"
+  end
 
-#formatter = RSpec::Core::Formatters::JsonFormatter.new(config.output_stream)
+  def light_colorize(color_code)
+    "\e[1;#{color_code}m#{self}\e[0m"
+  end
 
+  def red
+    colorize(31)
+  end
 
-formatter = RSpec::Core::Formatters::DocumentationFormatter.new(config.output_stream)
+  def green
+    colorize(32)
+  end
+end
 
-reporter =  RSpec::Core::Reporter.new(config)
-config.instance_variable_set(:@reporter, reporter)
+test_files.each do |file|
+  output = `rspec #{file} --format documentation --color`
 
-# internal hack
-# api may not be stable, make sure lock down Rspec version
-loader = config.send(:formatter_loader)
-notifications = loader.send(:notifications_for, RSpec::Core::Formatters::DocumentationFormatter)
+  color = 'green'
+  output.lines.each do |line|
+    #rspec adds an additional output formatter
+    line = line.gsub("\n", '')
+    if line.include?('Failures:')
+      color = 'red'
+    end
+    if line.include?('Finished')
+      color = 'green'
+    end
+    if color == 'green'
+      puts line.green
+    else
+      puts line.red
+    end
+  end
+end
 
-reporter.register_listener(formatter, *notifications)
-
-RSpec::Core::Runner.run(test_files)
-
-# here's your json hash
-p formatter.output

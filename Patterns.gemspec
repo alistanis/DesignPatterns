@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.name          = "Patterns"
   spec.version       = Patterns::VERSION
   spec.authors       = ["Chris Cooper"]
-  spec.email         = ["christopher.michael.cooper@gmail.com"]
+  spec.email         = ["ccooper@sessionm.com"]
   spec.summary       = %q{Design Pattern definitions and implementations in Ruby.}
   spec.description   = %q{This project began because I wanted to help some of the people at work learn Ruby, and I decided I could turn those lessons into a class on design patterns, implementation, and testing.}
   spec.homepage      = ""
