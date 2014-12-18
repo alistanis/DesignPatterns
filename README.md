@@ -1,7 +1,7 @@
 # Patterns
 
 This project began because I wanted to help some of the people at work learn Ruby, and I decided I could turn those lessons into a class on design patterns, implementation, and testing.
-
+All of the patterns implemented here will be fully rdoc'd and will contain a complete set of tests using Rspec.
 
 ## Installation
 
