@@ -30,7 +30,7 @@ module Patterns
     #   => user.change_password('new_password')
     def change_password(new_password)
       @password = new_password
-      notify("Password changed for user: #{user_name}.", 'PasswordChange')
+      notify("Password changed for user: #{@user_name}", 'PasswordChange')
     end
 
     # Notifies the superclass of an event, which in turn notifies all of its observers

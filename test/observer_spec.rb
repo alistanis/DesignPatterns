@@ -11,10 +11,16 @@ describe 'ObserverTests' do
 
     admin = Patterns::Admin.new('Chris', 'ccooper@sessionm.com')
 
+    expect admin.last_notification == 'No notifications received'
+    expect admin.last_event == 'No events received'
+
     user = Patterns::User.new('TestUser', 'test@sessionm.com', 'test_password')
 
     user.add_observer(admin)
     user.change_password('new_test_password')
+
+    expect admin.last_notification != 'No notifications received'
+    expect admin.last_event != 'No events received'
 
   end
 
