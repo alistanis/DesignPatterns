@@ -4,7 +4,10 @@ module Patterns
 
   # Command -> Object
   #
-  # Base Class that acts as a receiver and allows execution for a command, and stores status and description
+  # Base Class that acts as a receiver and allows execution for a command while also storing status and description
+  #
+  # From Design Patterns (Gang of Four)
+  #   - • Command – declares an interface for executing an operation.
   #
   # Public
   #
