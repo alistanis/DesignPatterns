@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <title>Patterns::CommandList - RDoc Documentation</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
+    <link href='../../css/bootstrap.min.css' media='screen' rel='stylesheet' type='text/css'>
+    <link href='../../css/application.css' media='screen' rel='stylesheet' type='text/css'>
+    <link href='../../css/coderay.css' media='screen' rel='stylesheet' type='text/css'>
+    <script src='../../js/jquery.js' type='text/javascript'></script>
+    <script src='../../js/bootstrap.min.js' type='text/javascript'></script>
+    <script src='../../js/index.js' type='text/javascript'></script>
+    <script src='../../js/application.js' type='text/javascript'></script>
+  </head>
+  <body class='class'>
+    <div class='navbar navbar-fixed-top'>
+      <div class='navbar-inner'>
+        <div class='container'>
+          <a class='btn btn-navbar' data-target='.nav-collapse' data-toggle='collapse'>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </a>
+          <a href="../.." class="brand">RDoc Documentation</a>
+          <div class='nav-collapse'>
+            <ul class='nav'>
+              <li class='dropdown'>
+                <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+                  Classes
+                  <b class='caret'></b>
+                </a>
+                <ul class='dropdown-menu' role='menu'>
+                  <li><a href="../Object.html">Object</a></li><li><a href="../Patterns.html">Patterns</a></li><li><a href="Admin.html"><span class="parent">Patterns::</span>Admin</a></li><li><a href="Command.html"><span class="parent">Patterns::</span>Command</a></li><li><a href="CommandList.html"><span class="parent">Patterns::</span>CommandList</a></li><li><a href="CopyFile.html"><span class="parent">Patterns::</span>CopyFile</a></li><li><a href="CreateFile.html"><span class="parent">Patterns::</span>CreateFile</a></li><li><a href="DeleteFile.html"><span class="parent">Patterns::</span>DeleteFile</a></li><li><a href="Observer.html"><span class="parent">Patterns::</span>Observer</a></li><li><a href="Subject.html"><span class="parent">Patterns::</span>Subject</a></li><li><a href="User.html"><span class="parent">Patterns::</span>User</a></li>
+                </ul>
+              </li>
+              <li class='dropdown'>
+                <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+                  Files
+                  <b class='caret'></b>
+                </a>
+                <ul class='dropdown-menu' role='menu'>
+                  <li><a href="../../files/Gemfile.html">Gemfile</a></li>
+                  <li><a href="../../files/Gemfile_lock.html">Gemfile.lock</a></li>
+                  <li><a href="../../files/LICENSE_txt.html">LICENSE.txt</a></li>
+                  <li><a href="../../files/Patterns_gemspec.html">Patterns.gemspec</a></li>
+                  <li><a href="../../files/README_md.html">README.md</a></li>
+                  <li><a href="../../files/Rakefile.html">Rakefile</a></li>
+                  <li><a href="../../files/_site/Gemfile.html">Gemfile</a></li>
+                  <li><a href="../../files/_site/Gemfile_lock.html">Gemfile.lock</a></li>
+                  <li><a href="../../files/_site/doc/Gemfile_html.html">Gemfile.html</a></li>
+                  <li><a href="../../files/_site/doc/Gemfile_lock_html.html">Gemfile_lock.html</a></li>
+                  <li><a href="../../files/_site/doc/LICENSE_txt_html.html">LICENSE_txt.html</a></li>
+                  <li><a href="../../files/_site/doc/Object_html.html">Object.html</a></li>
+                  <li><a href="../../files/_site/doc/Patterns_html.html">Patterns.html</a></li>
+                  <li><a href="../../files/_site/doc/Patterns/Admin_html.html">Admin.html</a></li>
+                  <li><a href="../../files/_site/doc/Patterns/Command_html.html">Command.html</a></li>
+                  <li><a href="../../files/_site/doc/Patterns/CommandList_html.html">CommandList.html</a></li>
+                  <li><a href="../../files/_site/doc/Patterns/CopyFile_html.html">CopyFile.html</a></li>
+                  <li><a href="../../files/_site/doc/Patterns/CreateFile_html.html">CreateFile.html</a></li>
+                  <li><a href="../../files/_site/doc/Patterns/DeleteFile_html.html">DeleteFile.html</a></li>
+                  <li><a href="../../files/_site/doc/Patterns/Observer_html.html">Observer.html</a></li>
+                  <li><a href="../../files/_site/doc/Patterns/Subject_html.html">Subject.html</a></li>
+                  <li><a href="../../files/_site/doc/Patterns/User_html.html">User.html</a></li>
+                  <li><a href="../../files/_site/doc/Patterns_gemspec_html.html">Patterns_gemspec.html</a></li>
+                  <li><a href="../../files/_site/doc/README_md_html.html">README_md.html</a></li>
+                  <li><a href="../../files/_site/doc/Rakefile_html.html">Rakefile.html</a></li>
+                  <li><a href="../../files/_site/doc/fonts_css.html">fonts.css</a></li>
+                  <li><a href="../../files/_site/doc/index_html.html">index.html</a></li>
+                  <li><a href="../../files/_site/doc/js/darkfish_js.html">darkfish.js</a></li>
+                  <li><a href="../../files/_site/doc/js/jquery_js.html">jquery.js</a></li>
+                  <li><a href="../../files/_site/doc/js/navigation_js.html">navigation.js</a></li>
+                  <li><a href="../../files/_site/doc/js/search_js.html">search.js</a></li>
+                  <li><a href="../../files/_site/doc/js/search_index_js.html">search_index.js</a></li>
+                  <li><a href="../../files/_site/doc/js/searcher_js.html">searcher.js</a></li>
+                  <li><a href="../../files/_site/doc/rdoc_css.html">rdoc.css</a></li>
+                  <li><a href="../../files/_site/doc/table_of_contents_html.html">table_of_contents.html</a></li>
+                  <li><a href="../../files/_site/index_html.html">index.html</a></li>
+                  <li><a href="../../files/_site/javascripts/main_js.html">main.js</a></li>
+                  <li><a href="../../files/_site/params_json.html">params.json</a></li>
+                  <li><a href="../../files/_site/stylesheets/pygment_trac_css.html">pygment_trac.css</a></li>
+                  <li><a href="../../files/_site/stylesheets/stylesheet_css.html">stylesheet.css</a></li>
+                  <li><a href="../../files/app/models/command/command_rb.html">command.rb</a></li>
+                  <li><a href="../../files/app/models/command/command_list_rb.html">command_list.rb</a></li>
+                  <li><a href="../../files/app/models/command/copy_file_rb.html">copy_file.rb</a></li>
+                  <li><a href="../../files/app/models/command/create_file_rb.html">create_file.rb</a></li>
+                  <li><a href="../../files/app/models/command/delete_file_rb.html">delete_file.rb</a></li>
+                  <li><a href="../../files/app/models/observer/admin_rb.html">admin.rb</a></li>
+                  <li><a href="../../files/app/models/observer/observer_rb.html">observer.rb</a></li>
+                  <li><a href="../../files/app/models/observer/subject_rb.html">subject.rb</a></li>
+                  <li><a href="../../files/app/models/observer/user_rb.html">user.rb</a></li>
+                  <li><a href="../../files/lib/Patterns_rb.html">Patterns.rb</a></li>
+                  <li><a href="../../files/lib/Patterns/version_rb.html">version.rb</a></li>
+                  <li><a href="../../files/test/command_spec_rb.html">command_spec.rb</a></li>
+                  <li><a href="../../files/test/observer_spec_rb.html">observer_spec.rb</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class='navbar-search pull-right'>
+              <input class='search-query span2' id='search-query' placeholder='Search methods' type='text'>
+              <ul aria-labelledby='search-query' class='dropdown-menu' id='search-results' role='menu'></ul>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id='main'>
+      <div class='container' id='documentation'>
+        <div class='row'>
+          <div class='span9'>
+            <div class='page-header'>
+              <h1 class='name'>
+                <span class='type'>class</span>
+                Patterns::CommandList
+              </h1>
+            </div>
+            <section id='content'>
+              <div id='text'>
+                <div id='description'>
+                  
+                  <p><a href="CommandList.html">CommandList</a> -&gt; <a
+                  href="Command.html">Patterns::Command</a></p>
+                  
+                  <p>Class that stores a list of commands and provides a way to add and remove
+                  them, get status and description, and execute and undo them.</p>
+                </div>
+                <div id='context'>
+                </div>
+                <div id='section'>
+                  <div id='methods'>
+                    <article id='public class-methods'>
+                      <h2>Public Class methods</h2>
+                      <a name='method-c-new'></a>
+                      <section class='method public-class' id='method-method-c-new'>
+                        <h3 class='synopsis'>
+                          <span class='name'>new</span>
+                          <span class='arguments'>()</span>
+                        </h3>
+                        <div class='description'>
+                          
+                          <p>public: Initializes the command list</p>
+                          
+                          <p>Examples</p>
+                          
+                          <pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span> = <span class="ruby-constant">CommandList</span>.<span class="ruby-identifier">new</span></pre>
+                        </div>
+                        <div class='source'>
+                          <a class='btn btn-mini source-toggle collapsed' data-toggle='collapse' href='#method-c-new-source'>
+                            <span class='show'>
+                              <span class='icon-resize-full'></span>
+                              Show
+                            </span>
+                            <span class='hide'>
+                              <span class='icon-resize-small'></span>
+                              Hide
+                            </span>
+                            Source
+                          </a>
+                          <div class='collapse' id='method-c-new-source'>
+                            <div class="CodeRay">
+                              <div class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>
+                              <span style="color:#33B">@commands</span> = []
+                              <span style="color:#33B">@next</span> = <span style="color:#00D">0</span>
+                            <span style="color:#080;font-weight:bold">end</span></pre></div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                    </article>
+                    <article id='public instance-methods'>
+                      <h2>Public Instance methods</h2>
+                      <a name='method-i-add_command'></a>
+                      <section class='method public-instance' id='method-method-i-add_command'>
+                        <h3 class='synopsis'>
+                          <span class='name'>add_command</span>
+                          <span class='arguments'>(cmd)</span>
+                        </h3>
+                        <div class='description'>
+                          
+                          <p>public: Adds a command to the list</p>
+                          <ul><li>
+                          <p><code>cmd</code> - The command to be added to the list</p>
+                          </li></ul>
+                          
+                          <p>Examples</p>
+                          
+                          <pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command</span> = <span class="ruby-constant">Command</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;A new base command&#39;</span>)&#x000A;=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">add_command</span>(<span class="ruby-identifier">command</span>)</pre>
+                        </div>
+                        <div class='source'>
+                          <a class='btn btn-mini source-toggle collapsed' data-toggle='collapse' href='#method-i-add_command-source'>
+                            <span class='show'>
+                              <span class='icon-resize-full'></span>
+                              Show
+                            </span>
+                            <span class='hide'>
+                              <span class='icon-resize-small'></span>
+                              Hide
+                            </span>
+                            Source
+                          </a>
+                          <div class='collapse' id='method-i-add_command-source'>
+                            <div class="CodeRay">
+                              <div class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">add_command</span>(cmd)
+                              <span style="color:#33B">@commands</span> &lt;&lt; cmd
+                              <span style="color:#080;font-weight:bold">if</span> <span style="color:#33B">@current</span> == <span style="color:#069">nil</span>
+                                <span style="color:#33B">@current</span> = cmd
+                              <span style="color:#080;font-weight:bold">end</span>
+                            <span style="color:#080;font-weight:bold">end</span></pre></div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                      <a name='method-i-add_commands'></a>
+                      <section class='method public-instance' id='method-method-i-add_commands'>
+                        <h3 class='synopsis'>
+                          <span class='name'>add_commands</span>
+                          <span class='arguments'>(cmds)</span>
+                        </h3>
+                        <div class='description'>
+                          
+                          <p>public: Adds a list of commands to the list</p>
+                          <ul><li>
+                          <p><code>cmds</code> - The list of commands to add to the command list</p>
+                          </li></ul>
+                          
+                          <p>Examples</p>
+                          
+                          <pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">list_of_commands</span> = [<span class="ruby-constant">Command</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;A new base command&#39;</span>), <span class="ruby-constant">Command</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Another new base command&#39;</span>)]&#x000A;=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">add_command</span>(<span class="ruby-identifier">list_of_commands</span>)</pre>
+                        </div>
+                        <div class='source'>
+                          <a class='btn btn-mini source-toggle collapsed' data-toggle='collapse' href='#method-i-add_commands-source'>
+                            <span class='show'>
+                              <span class='icon-resize-full'></span>
+                              Show
+                            </span>
+                            <span class='hide'>
+                              <span class='icon-resize-small'></span>
+                              Hide
+                            </span>
+                            Source
+                          </a>
+                          <div class='collapse' id='method-i-add_commands-source'>
+                            <div class="CodeRay">
+                              <div class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">add_commands</span>(cmds)
+                              <span style="color:#33B">@commands</span> = <span style="color:#33B">@commands</span> + cmds
+                            <span style="color:#080;font-weight:bold">end</span></pre></div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                      <a name='method-i-description'></a>
+                      <section class='method public-instance' id='method-method-i-description'>
+                        <h3 class='synopsis'>
+                          <span class='name'>description</span>
+                          <span class='arguments'>()</span>
+                        </h3>
+                        <div class='description'>
+                          
+                          <p>public: Returns the string of the descriptions of all commands in the list</p>
+                          
+                          <p>Examples</p>
+                          
+                          <pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">description</span></pre>
+                        </div>
+                        <div class='source'>
+                          <a class='btn btn-mini source-toggle collapsed' data-toggle='collapse' href='#method-i-description-source'>
+                            <span class='show'>
+                              <span class='icon-resize-full'></span>
+                              Show
+                            </span>
+                            <span class='hide'>
+                              <span class='icon-resize-small'></span>
+                              Hide
+                            </span>
+                            Source
+                          </a>
+                          <div class='collapse' id='method-i-description-source'>
+                            <div class="CodeRay">
+                              <div class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">description</span>
+                              description = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#710">'</span></span>
+                              <span style="color:#33B">@commands</span>.each { |cmd| description += cmd.description + <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> }
+                              description
+                            <span style="color:#080;font-weight:bold">end</span></pre></div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                      <a name='method-i-execute'></a>
+                      <section class='method public-instance' id='method-method-i-execute'>
+                        <h3 class='synopsis'>
+                          <span class='name'>execute</span>
+                          <span class='arguments'>()</span>
+                        </h3>
+                        <div class='description'>
+                          
+                          <p>not practical unless you want to run every command in the list; for
+                          demonstration only</p>
+                        </div>
+                        <div class='source'>
+                          <a class='btn btn-mini source-toggle collapsed' data-toggle='collapse' href='#method-i-execute-source'>
+                            <span class='show'>
+                              <span class='icon-resize-full'></span>
+                              Show
+                            </span>
+                            <span class='hide'>
+                              <span class='icon-resize-small'></span>
+                              Hide
+                            </span>
+                            Source
+                          </a>
+                          <div class='collapse' id='method-i-execute-source'>
+                            <div class="CodeRay">
+                              <div class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">execute</span>
+                              <span style="color:#33B">@commands</span>.each { |cmd| cmd.execute }
+                            <span style="color:#080;font-weight:bold">end</span></pre></div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                      <a name='method-i-execute_next'></a>
+                      <section class='method public-instance' id='method-method-i-execute_next'>
+                        <h3 class='synopsis'>
+                          <span class='name'>execute_next</span>
+                          <span class='arguments'>()</span>
+                        </h3>
+                        <div class='description'>
+                          
+                          <p>public: Executes the next command in the list</p>
+                          
+                          <p>Examples</p>
+                          
+                          <pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command</span> = <span class="ruby-constant">Command</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;A new base command&#39;</span>)&#x000A;=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">add_command</span>(<span class="ruby-identifier">command</span>)&#x000A;=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">execute_next</span></pre>
+                        </div>
+                        <div class='source'>
+                          <a class='btn btn-mini source-toggle collapsed' data-toggle='collapse' href='#method-i-execute_next-source'>
+                            <span class='show'>
+                              <span class='icon-resize-full'></span>
+                              Show
+                            </span>
+                            <span class='hide'>
+                              <span class='icon-resize-small'></span>
+                              Hide
+                            </span>
+                            Source
+                          </a>
+                          <div class='collapse' id='method-i-execute_next-source'>
+                            <div class="CodeRay">
+                              <div class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">execute_next</span>
+                              <span style="color:#080;font-weight:bold">if</span> <span style="color:#33B">@next</span> == <span style="color:#00D">0</span>
+                                <span style="color:#33B">@commands</span>[<span style="color:#33B">@next</span>].execute
+                                <span style="color:#33B">@next</span> = <span style="color:#33B">@next</span> + <span style="color:#00D">1</span>
+                              <span style="color:#080;font-weight:bold">else</span>
+                                <span style="color:#080;font-weight:bold">if</span> <span style="color:#33B">@commands</span>[<span style="color:#33B">@next</span>] != <span style="color:#069">nil</span>
+                                  <span style="color:#33B">@commands</span>[<span style="color:#33B">@next</span>].execute
+                                  <span style="color:#33B">@next</span> = <span style="color:#33B">@next</span> + <span style="color:#00D">1</span>
+                                <span style="color:#080;font-weight:bold">else</span>
+                                  raise <span style="color:#036;font-weight:bold">CommandList</span>, <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">No next command in list; index out of bounds</span><span style="color:#710">'</span></span>
+                                <span style="color:#080;font-weight:bold">end</span>
+                              <span style="color:#080;font-weight:bold">end</span>
+                            <span style="color:#080;font-weight:bold">end</span></pre></div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                      <a name='method-i-last_description'></a>
+                      <section class='method public-instance' id='method-method-i-last_description'>
+                        <h3 class='synopsis'>
+                          <span class='name'>last_description</span>
+                          <span class='arguments'>()</span>
+                        </h3>
+                        <div class='description'>
+                          
+                          <p>public: Returns the description of the last command executed</p>
+                          
+                          <p>Examples</p>
+                          
+                          <pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command</span> = <span class="ruby-constant">Command</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;A new base command&#39;</span>)&#x000A;=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">add_command</span>(<span class="ruby-identifier">command</span>)&#x000A;=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">last_description</span></pre>
+                        </div>
+                        <div class='source'>
+                          <a class='btn btn-mini source-toggle collapsed' data-toggle='collapse' href='#method-i-last_description-source'>
+                            <span class='show'>
+                              <span class='icon-resize-full'></span>
+                              Show
+                            </span>
+                            <span class='hide'>
+                              <span class='icon-resize-small'></span>
+                              Hide
+                            </span>
+                            Source
+                          </a>
+                          <div class='collapse' id='method-i-last_description-source'>
+                            <div class="CodeRay">
+                              <div class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">last_description</span>
+                              <span style="color:#080;font-weight:bold">if</span> <span style="color:#33B">@next</span> != <span style="color:#00D">0</span>
+                                <span style="color:#33B">@commands</span>[<span style="color:#33B">@next</span> - <span style="color:#00D">1</span>].description
+                              <span style="color:#080;font-weight:bold">else</span>
+                                <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">No commands have been executed yet</span><span style="color:#710">'</span></span>
+                              <span style="color:#080;font-weight:bold">end</span>
+                            <span style="color:#080;font-weight:bold">end</span></pre></div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                      <a name='method-i-last_status'></a>
+                      <section class='method public-instance' id='method-method-i-last_status'>
+                        <h3 class='synopsis'>
+                          <span class='name'>last_status</span>
+                          <span class='arguments'>()</span>
+                        </h3>
+                        <div class='description'>
+                          
+                          <p>public: Returns the status of the last command executed</p>
+                          
+                          <p>Examples</p>
+                          
+                          <pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command</span> = <span class="ruby-constant">Command</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;A new base command&#39;</span>)&#x000A;=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">add_command</span>(<span class="ruby-identifier">command</span>)&#x000A;=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">last_status</span></pre>
+                        </div>
+                        <div class='source'>
+                          <a class='btn btn-mini source-toggle collapsed' data-toggle='collapse' href='#method-i-last_status-source'>
+                            <span class='show'>
+                              <span class='icon-resize-full'></span>
+                              Show
+                            </span>
+                            <span class='hide'>
+                              <span class='icon-resize-small'></span>
+                              Hide
+                            </span>
+                            Source
+                          </a>
+                          <div class='collapse' id='method-i-last_status-source'>
+                            <div class="CodeRay">
+                              <div class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">last_status</span>
+                              <span style="color:#080;font-weight:bold">if</span> <span style="color:#33B">@next</span> != <span style="color:#00D">0</span>
+                                <span style="color:#33B">@commands</span>[<span style="color:#33B">@next</span> - <span style="color:#00D">1</span>].status
+                              <span style="color:#080;font-weight:bold">else</span>
+                                <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">No commands have been executed yet</span><span style="color:#710">'</span></span>
+                              <span style="color:#080;font-weight:bold">end</span>
+                            <span style="color:#080;font-weight:bold">end</span></pre></div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                      <a name='method-i-next_description'></a>
+                      <section class='method public-instance' id='method-method-i-next_description'>
+                        <h3 class='synopsis'>
+                          <span class='name'>next_description</span>
+                          <span class='arguments'>()</span>
+                        </h3>
+                        <div class='description'>
+                          
+                          <p>public: Returns the description of the next command in the list</p>
+                          
+                          <p>Examples</p>
+                          
+                          <pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command</span> = <span class="ruby-constant">Command</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;A new base command&#39;</span>)&#x000A;=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">add_command</span>(<span class="ruby-identifier">command</span>)&#x000A;=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">next_description</span></pre>
+                        </div>
+                        <div class='source'>
+                          <a class='btn btn-mini source-toggle collapsed' data-toggle='collapse' href='#method-i-next_description-source'>
+                            <span class='show'>
+                              <span class='icon-resize-full'></span>
+                              Show
+                            </span>
+                            <span class='hide'>
+                              <span class='icon-resize-small'></span>
+                              Hide
+                            </span>
+                            Source
+                          </a>
+                          <div class='collapse' id='method-i-next_description-source'>
+                            <div class="CodeRay">
+                              <div class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">next_description</span>
+                              <span style="color:#080;font-weight:bold">if</span> <span style="color:#33B">@commands</span>[<span style="color:#33B">@next</span>] != <span style="color:#069">nil</span>
+                                <span style="color:#33B">@commands</span>[<span style="color:#33B">@next</span>].description
+                              <span style="color:#080;font-weight:bold">else</span>
+                                <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">No more commands in list</span><span style="color:#710">'</span></span>
+                              <span style="color:#080;font-weight:bold">end</span>
+                            <span style="color:#080;font-weight:bold">end</span></pre></div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                      <a name='method-i-next_status'></a>
+                      <section class='method public-instance' id='method-method-i-next_status'>
+                        <h3 class='synopsis'>
+                          <span class='name'>next_status</span>
+                          <span class='arguments'>()</span>
+                        </h3>
+                        <div class='description'>
+                          
+                          <p>public: Returns the status of the next command in the list</p>
+                          
+                          <p>Examples</p>
+                          
+                          <pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command</span> = <span class="ruby-constant">Command</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;A new base command&#39;</span>)&#x000A;=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">add_command</span>(<span class="ruby-identifier">command</span>)&#x000A;=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">next_status</span></pre>
+                        </div>
+                        <div class='source'>
+                          <a class='btn btn-mini source-toggle collapsed' data-toggle='collapse' href='#method-i-next_status-source'>
+                            <span class='show'>
+                              <span class='icon-resize-full'></span>
+                              Show
+                            </span>
+                            <span class='hide'>
+                              <span class='icon-resize-small'></span>
+                              Hide
+                            </span>
+                            Source
+                          </a>
+                          <div class='collapse' id='method-i-next_status-source'>
+                            <div class="CodeRay">
+                              <div class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">next_status</span>
+                              <span style="color:#080;font-weight:bold">if</span> <span style="color:#33B">@commands</span>[<span style="color:#33B">@next</span>] != <span style="color:#069">nil</span>
+                                <span style="color:#33B">@commands</span>[<span style="color:#33B">@next</span>].status
+                              <span style="color:#080;font-weight:bold">else</span>
+                                <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">No more commands in list</span><span style="color:#710">'</span></span>
+                              <span style="color:#080;font-weight:bold">end</span>
+                            <span style="color:#080;font-weight:bold">end</span></pre></div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                      <a name='method-i-status'></a>
+                      <section class='method public-instance' id='method-method-i-status'>
+                        <h3 class='synopsis'>
+                          <span class='name'>status</span>
+                          <span class='arguments'>()</span>
+                        </h3>
+                        <div class='description'>
+                          
+                          <p>public: Returns the string of the status of all commands in the list</p>
+                          
+                          <p>Examples</p>
+                          
+                          <pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">status</span></pre>
+                        </div>
+                        <div class='source'>
+                          <a class='btn btn-mini source-toggle collapsed' data-toggle='collapse' href='#method-i-status-source'>
+                            <span class='show'>
+                              <span class='icon-resize-full'></span>
+                              Show
+                            </span>
+                            <span class='hide'>
+                              <span class='icon-resize-small'></span>
+                              Hide
+                            </span>
+                            Source
+                          </a>
+                          <div class='collapse' id='method-i-status-source'>
+                            <div class="CodeRay">
+                              <div class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">status</span>
+                              status = <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#710">'</span></span>
+                              <span style="color:#33B">@commands</span>.each { |cmd| status += cmd.status + <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span>}
+                              status
+                            <span style="color:#080;font-weight:bold">end</span></pre></div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                      <a name='method-i-undo'></a>
+                      <section class='method public-instance' id='method-method-i-undo'>
+                        <h3 class='synopsis'>
+                          <span class='name'>undo</span>
+                          <span class='arguments'>()</span>
+                        </h3>
+                        <div class='description'>
+                          
+                          <p>also only practical if you want to reverse every command in the list</p>
+                        </div>
+                        <div class='source'>
+                          <a class='btn btn-mini source-toggle collapsed' data-toggle='collapse' href='#method-i-undo-source'>
+                            <span class='show'>
+                              <span class='icon-resize-full'></span>
+                              Show
+                            </span>
+                            <span class='hide'>
+                              <span class='icon-resize-small'></span>
+                              Hide
+                            </span>
+                            Source
+                          </a>
+                          <div class='collapse' id='method-i-undo-source'>
+                            <div class="CodeRay">
+                              <div class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">undo</span>
+                              <span style="color:#33B">@commands</span>.reverse.each { |cmd| cmd.undo }
+                            <span style="color:#080;font-weight:bold">end</span></pre></div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                      <a name='method-i-undo_last'></a>
+                      <section class='method public-instance' id='method-method-i-undo_last'>
+                        <h3 class='synopsis'>
+                          <span class='name'>undo_last</span>
+                          <span class='arguments'>()</span>
+                        </h3>
+                        <div class='description'>
+                          
+                          <p>public: Undoes the last command executed</p>
+                          
+                          <p>Examples</p>
+                          
+                          <pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command</span> = <span class="ruby-constant">Command</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;A new base command&#39;</span>)&#x000A;=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">add_command</span>(<span class="ruby-identifier">command</span>)&#x000A;=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">execute_next</span>&#x000A;=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">undo_last</span></pre>
+                        </div>
+                        <div class='source'>
+                          <a class='btn btn-mini source-toggle collapsed' data-toggle='collapse' href='#method-i-undo_last-source'>
+                            <span class='show'>
+                              <span class='icon-resize-full'></span>
+                              Show
+                            </span>
+                            <span class='hide'>
+                              <span class='icon-resize-small'></span>
+                              Hide
+                            </span>
+                            Source
+                          </a>
+                          <div class='collapse' id='method-i-undo_last-source'>
+                            <div class="CodeRay">
+                              <div class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">undo_last</span>
+                              <span style="color:#080;font-weight:bold">if</span> <span style="color:#33B">@next</span> &gt; <span style="color:#00D">0</span>
+                                <span style="color:#33B">@commands</span>[<span style="color:#33B">@next</span> - <span style="color:#00D">1</span>].undo
+                                <span style="color:#33B">@next</span> = <span style="color:#33B">@next</span> - <span style="color:#00D">1</span>
+                              <span style="color:#080;font-weight:bold">end</span>
+                            <span style="color:#080;font-weight:bold">end</span></pre></div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class='span3'>
+            <ul class='nav nav-list'>
+              <li class='nav-header'>Defined IN</li>
+              <li>
+                <a href="../../files/app/models/command/command_list_rb.html">app/models/command/command_list.rb</a>
+              </li>
+              <li class='nav-header'>Parent</li>
+              <li>
+                <strong>
+                  <a href="../Patterns.html">Patterns</a>
+                </strong>
+              </li>
+              <li class='divider'></li>
+              <li class='nav-header'>Public Class</li>
+              <li><a href="#method-c-new">new</a></li>
+              <li class='nav-header'>Public Instance</li>
+              <li><a href="#method-i-add_command">add_command</a></li>
+              <li><a href="#method-i-add_commands">add_commands</a></li>
+              <li><a href="#method-i-description">description</a></li>
+              <li><a href="#method-i-execute">execute</a></li>
+              <li><a href="#method-i-execute_next">execute_next</a></li>
+              <li><a href="#method-i-last_description">last_description</a></li>
+              <li><a href="#method-i-last_status">last_status</a></li>
+              <li><a href="#method-i-next_description">next_description</a></li>
+              <li><a href="#method-i-next_status">next_status</a></li>
+              <li><a href="#method-i-status">status</a></li>
+              <li><a href="#method-i-undo">undo</a></li>
+              <li><a href="#method-i-undo_last">undo_last</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class='container'>
+        <p>
+          Generated by
+          <a href="https://github.com/rdoc/rdoc">RDoc 4.1.0</a>
+          .
+        </p>
+        <p>
+          Generated with the
+          <a href="http://github.com/ngs/hanna-bootstrap">Hanna Bootstrap RDoc Generator 0.0.5</a>
+          .
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
