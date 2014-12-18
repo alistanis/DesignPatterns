@@ -7,6 +7,9 @@ module Patterns
 
     # Initializes the CopyFile Class
     #
+    # * +source+ - The source path for the file to be copied
+    # * +target+ - The target destination for the copied file
+    #
     # Examples
     #
     #   => copy_file_cmd = CopyFile.new(file_to_copy, destination)

@@ -6,8 +6,8 @@ module Patterns
   #
   # Private
   #
-  # - @next - stores the next node in the list. The only necessary
-  # - @commands - the list of commands
+  # - +@next+ - stores the next node in the list. The only necessary
+  # - +@commands+ - the list of commands
   class CommandList < Patterns::Command
 
     # public: Initializes the command list
@@ -22,6 +22,8 @@ module Patterns
 
     # public: Adds a command to the list
     #
+    # * +cmd+ - The command to be added to the list
+    #
     # Examples
     #   => command = Command.new('A new base command')
     #   => command_list.add_command(command)
@@ -33,6 +35,8 @@ module Patterns
     end
 
     # public: Adds a list of commands to the list
+    #
+    # * +cmds+ - The list of commands to add to the command list
     #
     # Examples
     #   => list_of_commands = [Command.new('A new base command'), Command.new('Another new base command')]

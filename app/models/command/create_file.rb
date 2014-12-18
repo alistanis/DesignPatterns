@@ -7,6 +7,9 @@ module Patterns
 
     # Initializes the CreateFile Class
     #
+    # * +path+ - The file path to write the file
+    # * +data+ - The data to write to the file
+    #
     # Examples
     #
     #   => create_file_cmd = CreateFile.new(file_path, data_to_write)

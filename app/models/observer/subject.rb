@@ -2,8 +2,11 @@ module Patterns
 
   # Subject -> Object
   #
+  # * +@observers+ - The list of observers this subject stores
+  #
   # Contains a list of observers that are watching this subject
   class Subject
+    #list of observers to notify about changes to this subject
     attr_reader :observers
 
     # Initializes the subject class
@@ -17,6 +20,8 @@ module Patterns
 
     # Adds an observer to the list of observers
     #
+    # * +observer+ - The observer to add to the list
+    #
     # Examples
     #
     # => subject_observer = Observer.new
@@ -27,6 +32,8 @@ module Patterns
 
     # Removes an observer from the list of observers
     #
+    # * +observer+ - The observer to remove from the list
+    #
     # Examples
     #
     # => subject.remove_observer(subject_observer)
@@ -35,6 +42,9 @@ module Patterns
     end
 
     # Notifies the observer of some change
+    #
+    # * +notification+ - The notification to send to the observers
+    # * +event+ - The event to send to the observers
     #
     # Examples
     #

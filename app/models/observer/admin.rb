@@ -4,6 +4,9 @@ module Patterns
 
   # Admin -> Observer
   #
+  # * +@name+ - The administrator's name
+  # * +@email+ - The administrator's email
+  #
   # An example class to show how the observer pattern can be practically applied
   class Admin < Patterns::Observer
 

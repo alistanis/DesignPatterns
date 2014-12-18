@@ -7,6 +7,8 @@ module Patterns
 
     # Initializes the DeleteFile Class
     #
+    # * +path+ - The path of the file to delete
+    #
     # Examples
     #
     #   => delete_file_cmd = DeleteFile.new(file_path)

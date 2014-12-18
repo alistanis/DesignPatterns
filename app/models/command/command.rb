@@ -11,13 +11,17 @@ module Patterns
   #
   # Public
   #
-  # - @description - stores the description that is passed to the initializer upon object instantiation
-  # - @status - the most recent status of the command
+  # * - +@description+ - stores the description that is passed to the initializer upon object instantiation
+  # * - +@status+ - the most recent status of the command
   class Command
+
+    #Descrition and status store information about the command
     attr_accessor :description, :status
 
     # Initializes the Command Class
     # Designed to be called by a child class in its initialize method
+    #
+    # * +description+ - The description of the sub class
     #
     # Examples
     #   => #inside child class
@@ -31,6 +35,8 @@ module Patterns
     end
 
     # Called by the child class' execute function
+    #
+    # * +function+ - The actual command that will be executed, passed in from the sub class
     #
     # Examples
     #
@@ -48,6 +54,8 @@ module Patterns
     end
 
     # Called by the child class' undo function.
+    #
+    # * +function+ - The command that will perform the undo operation
     #
     # Examples
     #
