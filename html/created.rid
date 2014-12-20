@@ -1,4 +1,4 @@
-Sat, 20 Dec 2014 07:19:35 -0500
+Sat, 20 Dec 2014 18:06:31 -0500
 ./app/models/command/command.rb	Sat, 20 Dec 2014 06:29:17 -0500
 ./app/models/command/command_list.rb	Sat, 20 Dec 2014 06:29:17 -0500
 ./app/models/command/copy_file.rb	Sat, 20 Dec 2014 06:29:17 -0500
@@ -8,20 +8,20 @@ Sat, 20 Dec 2014 07:19:35 -0500
 ./app/models/observer/observer.rb	Sat, 20 Dec 2014 06:29:17 -0500
 ./app/models/observer/subject.rb	Sat, 20 Dec 2014 06:29:17 -0500
 ./app/models/observer/user.rb	Sat, 20 Dec 2014 06:29:17 -0500
-./app/models/singleton/game_manager.rb	Sat, 20 Dec 2014 07:12:56 -0500
-./app/models/singleton/log/game_log.log	Sat, 20 Dec 2014 07:05:52 -0500
-./app/models/singleton/logger.rb	Sat, 20 Dec 2014 07:14:38 -0500
-./app/models/singleton/player.rb	Sat, 20 Dec 2014 06:29:17 -0500
-./app/models/singleton/singleton.rb	Sat, 20 Dec 2014 07:12:56 -0500
-./Gemfile	Sat, 20 Dec 2014 07:05:52 -0500
-./Gemfile.lock	Thu, 18 Dec 2014 03:50:25 -0500
-./lib/Patterns/version.rb	Sat, 20 Dec 2014 07:19:11 -0500
+./app/models/singleton/game_manager.rb	Sat, 20 Dec 2014 17:30:11 -0500
+./app/models/singleton/log/game_log.log	Sat, 20 Dec 2014 17:54:26 -0500
+./app/models/singleton/logger.rb	Sat, 20 Dec 2014 17:59:37 -0500
+./app/models/singleton/player.rb	Sat, 20 Dec 2014 17:59:37 -0500
+./app/models/singleton/singleton.rb	Sat, 20 Dec 2014 17:59:37 -0500
+./Gemfile	Sat, 20 Dec 2014 07:25:59 -0500
+./Gemfile.lock	Sat, 20 Dec 2014 07:23:20 -0500
+./lib/Patterns/version.rb	Sat, 20 Dec 2014 07:25:59 -0500
 ./lib/Patterns.rb	Sat, 20 Dec 2014 06:29:17 -0500
 ./LICENSE.txt	Sat, 20 Dec 2014 06:29:17 -0500
 ./Patterns.gemspec	Sat, 20 Dec 2014 06:29:17 -0500
-./Rakefile	Sat, 20 Dec 2014 06:29:17 -0500
-./README.md	Sat, 20 Dec 2014 07:05:52 -0500
-./script/run_tests.rb	Sat, 20 Dec 2014 07:17:42 -0500
-./test/command_spec.rb	Sat, 20 Dec 2014 06:29:17 -0500
-./test/observer_spec.rb	Sat, 20 Dec 2014 06:29:17 -0500
-./test/singleton_spec.rb	Sat, 20 Dec 2014 07:12:56 -0500
+./Rakefile	Sat, 20 Dec 2014 18:06:01 -0500
+./README.md	Sat, 20 Dec 2014 07:25:59 -0500
+./script/run_tests.rb	Sat, 20 Dec 2014 07:38:11 -0500
+./test/command_spec.rb	Sat, 20 Dec 2014 17:54:25 -0500
+./test/observer_spec.rb	Sat, 20 Dec 2014 17:59:37 -0500
+./test/singleton_spec.rb	Sat, 20 Dec 2014 17:59:37 -0500
