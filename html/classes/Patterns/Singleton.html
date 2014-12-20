@@ -2,7 +2,7 @@
 <html lang='en'>
   <head>
     <meta charset='utf-8'>
-    <title>Patterns::Admin - RDoc Documentation</title>
+    <title>Patterns::Singleton - RDoc Documentation</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
     <link href='../../css/bootstrap.min.css' media='screen' rel='stylesheet' type='text/css'>
     <link href='../../css/application.css' media='screen' rel='stylesheet' type='text/css'>
@@ -83,64 +83,26 @@
             <div class='page-header'>
               <h1 class='name'>
                 <span class='type'>class</span>
-                Patterns::Admin
+                Patterns::Singleton
               </h1>
             </div>
             <section id='content'>
               <div id='text'>
                 <div id='description'>
                   
-                  <p><a href="Admin.html">Admin</a> -&gt; <a href="Observer.html">Observer</a></p>
+                  <p><a href="Singleton.html">Singleton</a> -&gt; <a
+                  href="../Object.html">Object</a></p>
                   
-                  <p>An example class to show how the observer pattern can be practically
-                  applied</p>
+                  <p>Implementations:</p>
+                  
+                  <p><a href="GameManager.html">GameManager</a> -&gt; <a
+                  href="../Object.html">Object</a> <a href="Logger.html">Logger</a> -&gt; <a
+                  href="../Object.html">Object</a> with <a
+                  href="Singleton.html">Singleton</a> Module</p>
                 </div>
                 <div id='context'>
                 </div>
                 <div id='section'>
-                  <div id='methods'>
-                    <article id='public class-methods'>
-                      <h2>Public Class methods</h2>
-                      <a name='method-c-new'></a>
-                      <section class='method public-class' id='method-method-c-new'>
-                        <h3 class='synopsis'>
-                          <span class='name'>new</span>
-                          <span class='arguments'>(name, email)</span>
-                        </h3>
-                        <div class='description'>
-                          
-                          <p>Initializes the <a href="Admin.html">Admin</a> class and the <a
-                          href="Observer.html">Observer</a> superclass</p>
-                          
-                          <p>Examples</p>
-                          
-                          <pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">admin</span> = <span class="ruby-constant">Admin</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Chris&#39;</span>, <span class="ruby-string">&#39;ccooper@sessionm.com&#39;</span>)</pre>
-                        </div>
-                        <div class='source'>
-                          <a class='btn btn-mini source-toggle collapsed' data-toggle='collapse' href='#method-c-new-source'>
-                            <span class='show'>
-                              <span class='icon-resize-full'></span>
-                              Show
-                            </span>
-                            <span class='hide'>
-                              <span class='icon-resize-small'></span>
-                              Hide
-                            </span>
-                            Source
-                          </a>
-                          <div class='collapse' id='method-c-new-source'>
-                            <div class="CodeRay">
-                              <div class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">initialize</span>(name, email)
-                              <span style="color:#080;font-weight:bold">super</span>()
-                              <span style="color:#33B">@name</span> = name
-                              <span style="color:#33B">@email</span> = email
-                            <span style="color:#080;font-weight:bold">end</span></pre></div>
-                            </div>
-                          </div>
-                        </div>
-                      </section>
-                    </article>
-                  </div>
                 </div>
               </div>
             </section>
@@ -149,7 +111,7 @@
             <ul class='nav nav-list'>
               <li class='nav-header'>Defined IN</li>
               <li>
-                <a href="../../files/app/models/observer/admin_rb.html">app/models/observer/admin.rb</a>
+                <a href="../../files/app/models/singleton/singleton_rb.html">app/models/singleton/singleton.rb</a>
               </li>
               <li class='nav-header'>Parent</li>
               <li>
@@ -157,9 +119,6 @@
                   <a href="../Patterns.html">Patterns</a>
                 </strong>
               </li>
-              <li class='divider'></li>
-              <li class='nav-header'>Public Class</li>
-              <li><a href="#method-c-new">new</a></li>
             </ul>
           </div>
         </div>

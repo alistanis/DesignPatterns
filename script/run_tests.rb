@@ -4,19 +4,21 @@ test_files = []
 
 Dir["#{File.expand_path('../../test', __FILE__)}/**/*.rb"].each { |f| test_files << f }
 
+# Extends the String class
 class String
+  # Wraps the ansi standard color code around a string
   def colorize(color_code)
     "\e[#{color_code}m#{self}\e[0m"
   end
-
+  # Wraps the ansi standard color code 1 around a string
   def light_colorize(color_code)
     "\e[1;#{color_code}m#{self}\e[0m"
   end
-
+  # Prints red text
   def red
     colorize(31)
   end
-
+  # Prints green text
   def green
     colorize(32)
   end

@@ -55,7 +55,3 @@ describe 'SingletonTests' do
     threads.each { |t| t.join }
   end
 end
-
-
-
-

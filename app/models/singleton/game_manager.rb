@@ -8,10 +8,15 @@ module Patterns
   # A different type of singleton that acts as a global constant object. Methods are added to the GameManager object.
   class << GameManager
 
+    # Width of the game world
     WIDTH = 40
+    # Height of the game world
     HEIGHT = 20
+    # The ASCII character to represent a wall
     WALL = '#'
+    # The ASCII character to represent a floor
     FLOOR = '.'
+    # The ASCII character to represent a player
     PLAYER = '@'
 
     # Initializes the game world, builds a game map, and sets the player's location

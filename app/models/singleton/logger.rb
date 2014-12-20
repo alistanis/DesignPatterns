@@ -1,5 +1,7 @@
 require 'singleton'
 module Patterns
+
+  # The default log path to write data to
   DEFAULT_LOG_PATH = File.dirname(__FILE__) + '/log/game_log.log'
 
   # Logger -> Object
