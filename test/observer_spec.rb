@@ -24,5 +24,4 @@ describe 'ObserverTests' do
 
   end
 
-
 end

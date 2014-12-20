@@ -26,6 +26,8 @@ module Patterns
 
     # Sets the format of our log message to error and writes data to the log file
     #
+    # * +message+ - The message to log
+    #
     # Examples
     #
     #   => logger.error 'File not found'
@@ -35,6 +37,8 @@ module Patterns
     end
 
     # Sets the format of our log message to info and writes data to the log file
+    #
+    # * +message+ - The message to log
     #
     # Examples
     #
@@ -52,6 +56,9 @@ module Patterns
     end
 
     # Sets the format style for the log message
+    #
+    # * +message+ - The message to log
+    # * +message_type+ - The type of message being passed; error, info, warning
     def format(message, message_type)
       "#{Time.now} | #{message_type}: #{message}\n"
     end

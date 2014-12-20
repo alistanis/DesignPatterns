@@ -1,11 +1,11 @@
 # Only here for documentation purposes
 
 module Patterns
-  # Singleton -> Object
+  # Singleton
   #
-  # Implementations:
+  # Implementations:\n
   #
-  # GameManager -> Object
+  # GameManager -> Object\n
   # Logger -> Object with Singleton Module
   class Singleton
   end

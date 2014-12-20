@@ -9,6 +9,9 @@ module Patterns
 
     # Initializes the Player object
     #
+    # * +x+ - The player's x position
+    # * +y+ - The player's y position
+    #
     # Examples
     #
     #   => player = Player.new(3, 5)
@@ -26,6 +29,9 @@ module Patterns
     attr_accessor :x, :y
 
     # Initializes the Vector2D object
+    #
+    # * +x+ - The x position of the object
+    # * +y+ - The y position of the object
     #
     # Examples
     #

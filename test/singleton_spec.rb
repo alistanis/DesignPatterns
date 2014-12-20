@@ -83,4 +83,5 @@ describe 'SingletonTests' do
     end
     expect difference_found == true
   end
+
 end

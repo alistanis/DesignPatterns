@@ -51,7 +51,6 @@ describe 'CommandTests' do
     copy_file.undo
 
     expect File.exists?(target) == false || source_data != File.read(target)
-
   end
 
   it 'should be able to take a list of commands, and execute the next command in the list and undo the last command in the list, in any order' do
@@ -132,6 +131,5 @@ describe 'CommandTests' do
   it 'should print the descriptions and status of the command list test' do
     expect{puts command_list_output}.to output.to_stdout
   end
-
 
 end
