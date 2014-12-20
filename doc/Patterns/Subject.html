@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Patterns::Subject - RDoc Documentation</title>
+
+<link href="../fonts.css" rel="stylesheet">
+<link href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/search_index.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/searcher.js"></script>
+<script src="../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="../Object.html">Object</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-add_observer">#add_observer</a>
+    
+    <li ><a href="#method-i-notify">#notify</a>
+    
+    <li ><a href="#method-i-remove_observer">#remove_observer</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Patterns::Subject">
+  <h1 id="class-Patterns::Subject" class="class">
+    class Patterns::Subject
+  </h1>
+
+  <section class="description">
+    
+<p><a href="Subject.html">Subject</a> -&gt; <a
+href="../Object.html">Object</a></p>
+
+<p>Contains a list of observers that are watching this subject</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-observers" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">observers</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <ul><li>
+<p><code>observers</code> - The list of observers this subject stores</p>
+</li></ul>
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Initializes the subject class</p>
+
+<p>Examples</p>
+
+<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">subject</span> = <span class="ruby-constant">Subject</span>.<span class="ruby-identifier">new</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File app/models/observer/subject.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+  <span class="ruby-ivar">@observers</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-add_observer" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_observer</span><span
+            class="method-args">(observer)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds an observer to the list of observers</p>
+<ul><li>
+<p><code>observer</code> - The observer to add to the list</p>
+</li></ul>
+
+<p>Examples</p>
+
+<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">subject_observer</span> = <span class="ruby-constant">Observer</span>.<span class="ruby-identifier">new</span>
+=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">subject</span>.<span class="ruby-identifier">add_observer</span>(<span class="ruby-identifier">subject_observer</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="add_observer-source">
+            <pre><span class="ruby-comment"># File app/models/observer/subject.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_observer</span>(<span class="ruby-identifier">observer</span>)
+  <span class="ruby-ivar">@observers</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">observer</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-notify" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">notify</span><span
+            class="method-args">(notification, event)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Notifies the observer of some change</p>
+<ul><li>
+<p><code>notification</code> - The notification to send to the observers</p>
+</li><li>
+<p><code>event</code> - The event to send to the observers</p>
+</li></ul>
+
+<p>Examples</p>
+
+<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">subject</span>.<span class="ruby-identifier">notify</span>(<span class="ruby-string">&#39;An event just happened!&#39;</span>, <span class="ruby-identifier">the_event</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="notify-source">
+            <pre><span class="ruby-comment"># File app/models/observer/subject.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">notify</span>(<span class="ruby-identifier">notification</span>, <span class="ruby-identifier">event</span>)
+  <span class="ruby-ivar">@observers</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">observer</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">observer</span>.<span class="ruby-identifier">on_notify</span>(<span class="ruby-identifier">notification</span>, <span class="ruby-identifier">event</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-remove_observer" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove_observer</span><span
+            class="method-args">(observer)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Removes an observer from the list of observers</p>
+<ul><li>
+<p><code>observer</code> - The observer to remove from the list</p>
+</li></ul>
+
+<p>Examples</p>
+
+<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">subject</span>.<span class="ruby-identifier">remove_observer</span>(<span class="ruby-identifier">subject_observer</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="remove_observer-source">
+            <pre><span class="ruby-comment"># File app/models/observer/subject.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remove_observer</span>(<span class="ruby-identifier">observer</span>)
+  <span class="ruby-ivar">@observers</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">observer</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

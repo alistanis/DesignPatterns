@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module Patterns::GameManager - RDoc Documentation</title>
+
+<link href="../fonts.css" rel="stylesheet">
+<link href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/search_index.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/searcher.js"></script>
+<script src="../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-get_player_position">#get_player_position</a>
+    
+    <li ><a href="#method-i-get_world">#get_world</a>
+    
+    <li ><a href="#method-i-get_world_size">#get_world_size</a>
+    
+    <li ><a href="#method-i-init_world">#init_world</a>
+    
+    <li ><a href="#method-i-log_world">#log_world</a>
+    
+    <li ><a href="#method-i-print_world">#print_world</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-Patterns::GameManager">
+  <h1 id="module-Patterns::GameManager" class="module">
+    module Patterns::GameManager
+  </h1>
+
+  <section class="description">
+    
+<p><a href="GameManager.html">GameManager</a> -&gt; <a
+href="../Object.html">Object</a></p>
+
+<p>A different type of singleton that acts as a global constant object.
+Methods are added to the <a href="GameManager.html">GameManager</a> object.
+Note that this example is not thread safe! If you wish to access this class
+using threads you&#39;ll need to use a Mutex or Spinlock</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="FLOOR">FLOOR
+        
+        <dd><p>The ASCII character to represent a floor</p>
+        
+      
+        <dt id="HEIGHT">HEIGHT
+        
+        <dd><p>Height of the game world</p>
+        
+      
+        <dt id="PLAYER">PLAYER
+        
+        <dd><p>The ASCII character to represent a player</p>
+        
+      
+        <dt id="WALL">WALL
+        
+        <dd><p>The ASCII character to represent a wall</p>
+        
+      
+        <dt id="WIDTH">WIDTH
+        
+        <dd><p>Width of the game world</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-get_player_position" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_player_position</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the player&#39;s position</p>
+
+<p>Examples</p>
+
+<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GameManager</span>.<span class="ruby-identifier">get_player_position</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="get_player_position-source">
+            <pre><span class="ruby-comment"># File app/models/singleton/game_manager.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_player_position</span>
+  <span class="ruby-ivar">@player</span>.<span class="ruby-identifier">position</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_world" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_world</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the current world state</p>
+
+<p>Examples</p>
+
+<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GameManager</span>.<span class="ruby-identifier">get_world</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="get_world-source">
+            <pre><span class="ruby-comment"># File app/models/singleton/game_manager.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_world</span>
+  <span class="ruby-ivar">@game_map</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_world_size" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_world_size</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the world size as a <a href="Vector2D.html">Vector2D</a> <a
+href="../Object.html">Object</a></p>
+
+<p>Examples</p>
+
+<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GameManager</span>.<span class="ruby-identifier">get_world_size</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="get_world_size-source">
+            <pre><span class="ruby-comment"># File app/models/singleton/game_manager.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_world_size</span>
+  <span class="ruby-constant">Vector2D</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">WIDTH</span>, <span class="ruby-constant">HEIGHT</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-init_world" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">init_world</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Initializes the game world, builds a game map, and sets the player&#39;s
+location</p>
+
+<p>Examples</p>
+
+<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GameManager</span>.<span class="ruby-identifier">init_world</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="init_world-source">
+            <pre><span class="ruby-comment"># File app/models/singleton/game_manager.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">init_world</span>
+  <span class="ruby-ivar">@game_map</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">HEIGHT</span>){<span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">WIDTH</span>){<span class="ruby-value">0</span>}}
+  <span class="ruby-ivar">@player</span> = <span class="ruby-constant">Player</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>, <span class="ruby-value">0</span>)
+  <span class="ruby-identifier">generate_map</span>
+  <span class="ruby-identifier">place_player</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-log_world" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">log_world</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Logs the current world state</p>
+
+<p>Examples</p>
+
+<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GameManager</span>.<span class="ruby-identifier">log_world</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="log_world-source">
+            <pre><span class="ruby-comment"># File app/models/singleton/game_manager.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">log_world</span>
+  <span class="ruby-identifier">output</span> = <span class="ruby-string">&#39;&#39;</span>
+  <span class="ruby-ivar">@game_map</span>.<span class="ruby-identifier">each_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@game_map</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">each_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">column</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@game_map</span>[<span class="ruby-identifier">row</span>][<span class="ruby-identifier">column</span>]
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">info</span> <span class="ruby-node">&quot;Current Game State: \n#{output}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-print_world" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">print_world</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Prints the game world</p>
+
+<p>Examples</p>
+
+<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GameManager</span>.<span class="ruby-identifier">print_world</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="print_world-source">
+            <pre><span class="ruby-comment"># File app/models/singleton/game_manager.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">print_world</span>
+  <span class="ruby-identifier">output</span> = <span class="ruby-string">&#39;&#39;</span>
+  <span class="ruby-ivar">@game_map</span>.<span class="ruby-identifier">each_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@game_map</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">each_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">column</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@game_map</span>[<span class="ruby-identifier">row</span>][<span class="ruby-identifier">column</span>]
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Current Game State: \n#{output}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

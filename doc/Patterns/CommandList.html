@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Patterns::CommandList - RDoc Documentation</title>
+
+<link href="../fonts.css" rel="stylesheet">
+<link href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/search_index.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/searcher.js"></script>
+<script src="../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="Command.html">Patterns::Command</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-add_command">#add_command</a>
+    
+    <li ><a href="#method-i-add_commands">#add_commands</a>
+    
+    <li ><a href="#method-i-description">#description</a>
+    
+    <li ><a href="#method-i-execute">#execute</a>
+    
+    <li ><a href="#method-i-execute_next">#execute_next</a>
+    
+    <li ><a href="#method-i-last_description">#last_description</a>
+    
+    <li ><a href="#method-i-last_status">#last_status</a>
+    
+    <li ><a href="#method-i-next_description">#next_description</a>
+    
+    <li ><a href="#method-i-next_status">#next_status</a>
+    
+    <li ><a href="#method-i-status">#status</a>
+    
+    <li ><a href="#method-i-undo">#undo</a>
+    
+    <li ><a href="#method-i-undo_last">#undo_last</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Patterns::CommandList">
+  <h1 id="class-Patterns::CommandList" class="class">
+    class Patterns::CommandList
+  </h1>
+
+  <section class="description">
+    
+<p><a href="CommandList.html">CommandList</a> -&gt; <a
+href="Command.html">Patterns::Command</a></p>
+
+<p>Class that stores a list of commands and provides a way to add and remove
+them, get status and description, and execute and undo them.</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>public: Initializes the command list</p>
+
+<p>Examples</p>
+
+<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span> = <span class="ruby-constant">CommandList</span>.<span class="ruby-identifier">new</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File app/models/command/command_list.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+  <span class="ruby-ivar">@commands</span> = []
+  <span class="ruby-ivar">@next</span> = <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-add_command" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_command</span><span
+            class="method-args">(cmd)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>public: Adds a command to the list</p>
+<ul><li>
+<p><code>cmd</code> - The command to be added to the list</p>
+</li></ul>
+
+<p>Examples</p>
+
+<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command</span> = <span class="ruby-constant">Command</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;A new base command&#39;</span>)
+=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">add_command</span>(<span class="ruby-identifier">command</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="add_command-source">
+            <pre><span class="ruby-comment"># File app/models/command/command_list.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_command</span>(<span class="ruby-identifier">cmd</span>)
+  <span class="ruby-ivar">@commands</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">cmd</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@current</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@current</span> = <span class="ruby-identifier">cmd</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-add_commands" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_commands</span><span
+            class="method-args">(cmds)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>public: Adds a list of commands to the list</p>
+<ul><li>
+<p><code>cmds</code> - The list of commands to add to the command list</p>
+</li></ul>
+
+<p>Examples</p>
+
+<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">list_of_commands</span> = [<span class="ruby-constant">Command</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;A new base command&#39;</span>), <span class="ruby-constant">Command</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Another new base command&#39;</span>)]
+=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">add_command</span>(<span class="ruby-identifier">list_of_commands</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="add_commands-source">
+            <pre><span class="ruby-comment"># File app/models/command/command_list.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_commands</span>(<span class="ruby-identifier">cmds</span>)
+  <span class="ruby-ivar">@commands</span> = <span class="ruby-ivar">@commands</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">cmds</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-description" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">description</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>public: Returns the string of the descriptions of all commands in the list</p>
+
+<p>Examples</p>
+
+<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">description</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="description-source">
+            <pre><span class="ruby-comment"># File app/models/command/command_list.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">description</span>
+  <span class="ruby-identifier">description</span> = <span class="ruby-string">&#39;&#39;</span>
+  <span class="ruby-ivar">@commands</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">cmd</span><span class="ruby-operator">|</span> <span class="ruby-identifier">description</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">cmd</span>.<span class="ruby-identifier">description</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;\n&quot;</span> }
+  <span class="ruby-identifier">description</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-execute" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">execute</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>not practical unless you want to run every command in the list; for
+demonstration only</p>
+          
+          
+
+          
+          <div class="method-source-code" id="execute-source">
+            <pre><span class="ruby-comment"># File app/models/command/command_list.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">execute</span>
+  <span class="ruby-ivar">@commands</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">cmd</span><span class="ruby-operator">|</span> <span class="ruby-identifier">cmd</span>.<span class="ruby-identifier">execute</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-execute_next" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">execute_next</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>public: Executes the next command in the list</p>
+
+<p>Examples</p>
+
+<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command</span> = <span class="ruby-constant">Command</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;A new base command&#39;</span>)
+=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">add_command</span>(<span class="ruby-identifier">command</span>)
+=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">execute_next</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="execute_next-source">
+            <pre><span class="ruby-comment"># File app/models/command/command_list.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">execute_next</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@next</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+    <span class="ruby-ivar">@commands</span>[<span class="ruby-ivar">@next</span>].<span class="ruby-identifier">execute</span>
+    <span class="ruby-ivar">@next</span> = <span class="ruby-ivar">@next</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@commands</span>[<span class="ruby-ivar">@next</span>] <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
+      <span class="ruby-ivar">@commands</span>[<span class="ruby-ivar">@next</span>].<span class="ruby-identifier">execute</span>
+      <span class="ruby-ivar">@next</span> = <span class="ruby-ivar">@next</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">CommandList</span>, <span class="ruby-string">&#39;No next command in list; index out of bounds&#39;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-last_description" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">last_description</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>public: Returns the description of the last command executed</p>
+
+<p>Examples</p>
+
+<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command</span> = <span class="ruby-constant">Command</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;A new base command&#39;</span>)
+=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">add_command</span>(<span class="ruby-identifier">command</span>)
+=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">last_description</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="last_description-source">
+            <pre><span class="ruby-comment"># File app/models/command/command_list.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">last_description</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@next</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+    <span class="ruby-ivar">@commands</span>[<span class="ruby-ivar">@next</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>].<span class="ruby-identifier">description</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-string">&#39;No commands have been executed yet&#39;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-last_status" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">last_status</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>public: Returns the status of the last command executed</p>
+
+<p>Examples</p>
+
+<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command</span> = <span class="ruby-constant">Command</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;A new base command&#39;</span>)
+=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">add_command</span>(<span class="ruby-identifier">command</span>)
+=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">last_status</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="last_status-source">
+            <pre><span class="ruby-comment"># File app/models/command/command_list.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">last_status</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@next</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+    <span class="ruby-ivar">@commands</span>[<span class="ruby-ivar">@next</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>].<span class="ruby-identifier">status</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-string">&#39;No commands have been executed yet&#39;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-next_description" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">next_description</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>public: Returns the description of the next command in the list</p>
+
+<p>Examples</p>
+
+<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command</span> = <span class="ruby-constant">Command</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;A new base command&#39;</span>)
+=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">add_command</span>(<span class="ruby-identifier">command</span>)
+=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">next_description</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="next_description-source">
+            <pre><span class="ruby-comment"># File app/models/command/command_list.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">next_description</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@commands</span>[<span class="ruby-ivar">@next</span>] <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@commands</span>[<span class="ruby-ivar">@next</span>].<span class="ruby-identifier">description</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-string">&#39;No more commands in list&#39;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-next_status" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">next_status</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>public: Returns the status of the next command in the list</p>
+
+<p>Examples</p>
+
+<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command</span> = <span class="ruby-constant">Command</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;A new base command&#39;</span>)
+=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">add_command</span>(<span class="ruby-identifier">command</span>)
+=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">next_status</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="next_status-source">
+            <pre><span class="ruby-comment"># File app/models/command/command_list.rb, line 111</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">next_status</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@commands</span>[<span class="ruby-ivar">@next</span>] <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@commands</span>[<span class="ruby-ivar">@next</span>].<span class="ruby-identifier">status</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-string">&#39;No more commands in list&#39;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-status" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">status</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>public: Returns the string of the status of all commands in the list</p>
+
+<p>Examples</p>
+
+<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">status</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="status-source">
+            <pre><span class="ruby-comment"># File app/models/command/command_list.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">status</span>
+  <span class="ruby-identifier">status</span> = <span class="ruby-string">&#39;&#39;</span>
+  <span class="ruby-ivar">@commands</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">cmd</span><span class="ruby-operator">|</span> <span class="ruby-identifier">status</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">cmd</span>.<span class="ruby-identifier">status</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;\n&quot;</span>}
+  <span class="ruby-identifier">status</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-undo" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">undo</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>also only practical if you want to reverse every command in the list</p>
+          
+          
+
+          
+          <div class="method-source-code" id="undo-source">
+            <pre><span class="ruby-comment"># File app/models/command/command_list.rb, line 138</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">undo</span>
+  <span class="ruby-ivar">@commands</span>.<span class="ruby-identifier">reverse</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">cmd</span><span class="ruby-operator">|</span> <span class="ruby-identifier">cmd</span>.<span class="ruby-identifier">undo</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-undo_last" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">undo_last</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>public: Undoes the last command executed</p>
+
+<p>Examples</p>
+
+<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command</span> = <span class="ruby-constant">Command</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;A new base command&#39;</span>)
+=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">add_command</span>(<span class="ruby-identifier">command</span>)
+=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">execute_next</span>
+=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command_list</span>.<span class="ruby-identifier">undo_last</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="undo_last-source">
+            <pre><span class="ruby-comment"># File app/models/command/command_list.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">undo_last</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@next</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+    <span class="ruby-ivar">@commands</span>[<span class="ruby-ivar">@next</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>].<span class="ruby-identifier">undo</span>
+    <span class="ruby-ivar">@next</span> = <span class="ruby-ivar">@next</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
