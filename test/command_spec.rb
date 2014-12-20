@@ -65,49 +65,47 @@ describe 'CommandTests' do
     command_list = Patterns::CommandList.new
     command_list.add_commands([create_file, copy_file, delete_file])
 
-    puts command_list.next_status
-    puts command_list.next_description
+    expect command_list.next_status == 'initialized'
+    expect command_list.next_description == 'Create File: /tmp/test.txt'
 
     command_list.execute_next
 
-    puts command_list.last_status
-    puts command_list.last_description
-    puts command_list.next_status
-    puts command_list.next_description
+    expect command_list.last_status == 'initialized'
+    expect command_list.last_description == 'Create File: /tmp/test.txt'
+    expect command_list.next_status == 'initialized'
+    expect command_list.next_description == 'Copy File: /tmp/test.txt to file: /tmp/test2.txt'
 
     expect File.exists?(path) == true
     command_list.undo_last
 
-    puts command_list.last_status
-    puts command_list.last_description
-    puts command_list.next_status
-    puts command_list.next_description
+    expect command_list.last_status == 'No commands have been executed yet'
+    expect command_list.last_description == 'No commands have been executed yet'
+    expect command_list.next_status == 'Undo completed: Create File: /tmp/test.txt'
+    expect command_list.next_description == 'Create File: /tmp/test.txt'
 
     expect File.exists?(path) == false
     command_list.execute_next
 
-    puts command_list.last_status
-    puts command_list.last_description
-    puts command_list.next_status
-    puts command_list.next_description
+    expect command_list.last_status == 'Execution completed: Create File: /tmp/test.txt'
+    expect command_list.last_description == 'Create File: /tmp/test.txt'
+    expect command_list.next_status == 'initialized'
+    expect command_list.next_description == 'Delete File: /tmp/test.txt'
     expect File.exists?(path) == true
     command_list.execute_next
 
-    puts command_list.last_status
-    puts command_list.last_description
-    puts command_list.next_status
-    puts command_list.next_description
+    expect command_list.last_status == 'Execution completed: Copy File: /tmp/test.txt to file: /tmp/test2.txt'
+    expect command_list.last_description == 'Copy File: /tmp/test.txt to file /tmp/test2.txt'
+    expect command_list.next_status == 'initialized'
+    expect command_list.next_description == 'Delete File: /tmp/test.txt'
     command_list.execute_next
 
-    puts command_list.last_status
-    puts command_list.last_description
-    puts command_list.next_status
-    puts command_list.next_description
+    expect command_list.last_status == 'Execution completed: Delete File: /tmp/test.txt'
+    expect command_list.last_description == 'Delete File: /tmp/test.txt'
+    expect command_list.next_status == 'No more commands in list'
+    expect command_list.next_description == 'No more commands in list'
     expect File.exists?(path) == false
 
   end
-
-
 
   command_list_output = ''
   it 'should take a list of commands and execute all of them, report their description and status, then undo them' do
@@ -122,15 +120,18 @@ describe 'CommandTests' do
     command_list.add_commands([create_file, copy_file, delete_file])
 
     command_list_output << command_list.description
-    command_list.execute
+    expect command_list.execute
+    expect File.exists?(path) == false
+    expect File.exists?(target) == true
     command_list_output << command_list.status
     command_list.undo
     command_list_output << command_list.status
+    expect File.exists?(target) == false
 
   end
 
   it 'should print the descriptions and status of the command list test' do
-    puts command_list_output
+    expect{puts command_list_output}.to output.to_stdout
   end
 
 

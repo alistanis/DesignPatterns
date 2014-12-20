@@ -94,6 +94,10 @@ module Patterns
     private
 
     # Generates the game_map
+    #
+    # Examples
+    #
+    #   => generate_map
     def generate_map
       @game_map.each_index do |row|
         @game_map[0].each_index do |column|
@@ -115,6 +119,10 @@ module Patterns
     end
 
     # Places the player on the game map in a random location
+    #
+    # Examples
+    #
+    #   => place_player
     def place_player
       @player.position.y = rand(1..HEIGHT-2)
       @player.position.x = rand(1..WIDTH-2)
