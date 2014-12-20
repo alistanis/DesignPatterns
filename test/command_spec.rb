@@ -56,7 +56,6 @@ describe 'CommandTests' do
 
   it 'should be able to take a list of commands, and execute the next command in the list and undo the last command in the list, in any order' do
     path = '/tmp/test.txt'
-    target = '/tmp/test2.txt'
     create_file = Patterns::CreateFile.new(path, 'Testing create file.')
     target = '/tmp/test2.txt'
     copy_file = Patterns::CopyFile.new(path, target)
