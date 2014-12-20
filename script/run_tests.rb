@@ -23,7 +23,7 @@ class String
     colorize(32)
   end
 end
-
+failures = ''
 test_files.each do |file|
   output = `rspec #{file} --format documentation --color`
 
@@ -40,8 +40,12 @@ test_files.each do |file|
     if color == 'green'
       puts line.green
     else
+      failures << line
       puts line.red
     end
   end
 end
 
+if failures != ''
+  puts failures.red
+end

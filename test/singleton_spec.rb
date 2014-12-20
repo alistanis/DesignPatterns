@@ -54,4 +54,33 @@ describe 'SingletonTests' do
     end
     threads.each { |t| t.join }
   end
+
+  it 'should verify that the game manager is NOT thread safe' do
+    # note that this will not throw an exception, it will simply cause inconsistent sets of data
+    threads = []
+    thread_count = 50
+    thread_number = 0
+    GameManager.init_world
+    stored_world_data = []
+   thread_count.times do |i|
+      threads[i] = Thread.new {
+        thread_number += 1
+        world_data = GameManager.get_world
+        stored_world_data[i] = world_data
+      }
+   end
+    threads.each { |t| t.join }
+
+    difference_found = false
+    previous = nil
+    stored_world_data.each do |data|
+      if previous != nil
+        if data != previous
+          difference_found = true
+        end
+      end
+      previous = data
+    end
+    expect difference_found == true
+  end
 end

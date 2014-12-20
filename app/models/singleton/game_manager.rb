@@ -6,6 +6,7 @@ module Patterns
   # GameManager -> Object
   #
   # A different type of singleton that acts as a global constant object. Methods are added to the GameManager object.
+  # Note that this example is not thread safe! If you wish to access this class using threads you'll need to use a Mutex or Spinlock
   class << GameManager
 
     # Width of the game world
@@ -89,6 +90,7 @@ module Patterns
     def get_world_size
       Vector2D.new(WIDTH, HEIGHT)
     end
+
     private
 
     # Generates the game_map
