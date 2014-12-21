@@ -22,7 +22,7 @@ describe 'TypeObjectTests' do
   end
 
   it 'should raise an exception if the monster type does not exist' do
-    expect {Monster.new('zombie')}.to raise_exception
+    expect {Monster.new('zombie')}.to raise_exception(MonsterNotFound)
   end
 
   it 'should be able to get a prototype name if it exists' do
@@ -32,4 +32,13 @@ describe 'TypeObjectTests' do
     dragon = Monster.new('dragon')
     expect dragon.prototype_name == 'none'
   end
+
+  it 'should give detailed exception information for MonsterNotFound' do
+    begin
+      Monster.new('zombie')
+    rescue Exception => e
+      expect {puts e.inspect}.to output.to_stdout
+    end
+  end
+
 end

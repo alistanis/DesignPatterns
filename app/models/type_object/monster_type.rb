@@ -74,7 +74,7 @@ module Patterns
         type_data = File.read(json_file_path)
         JSON.parse(type_data)
       else
-        raise 'Monster type does not exist'
+        raise MonsterNotFound, 'Monster type does not exist'
       end
     end
 
@@ -110,7 +110,9 @@ module Patterns
     def has_prototype?
       @type_data['prototype']
     end
+  end
 
+  class MonsterNotFound < StandardError
   end
 
 end
