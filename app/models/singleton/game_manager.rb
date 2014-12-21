@@ -73,6 +73,11 @@ module Patterns
       @game_map
     end
 
+    # Returns the current world formatted for printing
+    #
+    # Examples
+    #
+    #   => GameManager.get_world_string
     def get_world_string
       output = ''
       @game_map.each_index do |row|
