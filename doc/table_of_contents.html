@@ -263,6 +263,12 @@
     <a href="Patterns/Monster.html">Patterns::Monster</a>
   </li>
   <li class="class">
+    <a href="Patterns/MonsterNotFound.html">Patterns::MonsterNotFound</a>
+  </li>
+  <li class="class">
+    <a href="Patterns/MonsterPrototypes.html">Patterns::MonsterPrototypes</a>
+  </li>
+  <li class="class">
     <a href="Patterns/MonsterType.html">Patterns::MonsterType</a>
   </li>
   <li class="class">
@@ -302,9 +308,9 @@
     <span class="container">Patterns::MonsterType</span>
 
   <li class="method">
-    <a href="Patterns/Monster.html#method-c-new">::new</a>
+    <a href="Patterns/MonsterPrototypes.html#method-c-new">::new</a>
     &mdash;
-    <span class="container">Patterns::Monster</span>
+    <span class="container">Patterns::MonsterPrototypes</span>
 
   <li class="method">
     <a href="Patterns/CommandList.html#method-c-new">::new</a>
@@ -312,14 +318,9 @@
     <span class="container">Patterns::CommandList</span>
 
   <li class="method">
-    <a href="Patterns/CreateFile.html#method-c-new">::new</a>
+    <a href="Patterns/Monster.html#method-c-new">::new</a>
     &mdash;
-    <span class="container">Patterns::CreateFile</span>
-
-  <li class="method">
-    <a href="Patterns/DeleteFile.html#method-c-new">::new</a>
-    &mdash;
-    <span class="container">Patterns::DeleteFile</span>
+    <span class="container">Patterns::Monster</span>
 
   <li class="method">
     <a href="Patterns/Vector2D.html#method-c-new">::new</a>
@@ -332,19 +333,14 @@
     <span class="container">Patterns::Player</span>
 
   <li class="method">
-    <a href="Patterns/Admin.html#method-c-new">::new</a>
+    <a href="Patterns/Logger.html#method-c-new">::new</a>
     &mdash;
-    <span class="container">Patterns::Admin</span>
+    <span class="container">Patterns::Logger</span>
 
   <li class="method">
     <a href="Patterns/User.html#method-c-new">::new</a>
     &mdash;
     <span class="container">Patterns::User</span>
-
-  <li class="method">
-    <a href="Patterns/CopyFile.html#method-c-new">::new</a>
-    &mdash;
-    <span class="container">Patterns::CopyFile</span>
 
   <li class="method">
     <a href="Patterns/Subject.html#method-c-new">::new</a>
@@ -357,9 +353,24 @@
     <span class="container">Patterns::Observer</span>
 
   <li class="method">
-    <a href="Patterns/Logger.html#method-c-new">::new</a>
+    <a href="Patterns/Admin.html#method-c-new">::new</a>
     &mdash;
-    <span class="container">Patterns::Logger</span>
+    <span class="container">Patterns::Admin</span>
+
+  <li class="method">
+    <a href="Patterns/DeleteFile.html#method-c-new">::new</a>
+    &mdash;
+    <span class="container">Patterns::DeleteFile</span>
+
+  <li class="method">
+    <a href="Patterns/CreateFile.html#method-c-new">::new</a>
+    &mdash;
+    <span class="container">Patterns::CreateFile</span>
+
+  <li class="method">
+    <a href="Patterns/CopyFile.html#method-c-new">::new</a>
+    &mdash;
+    <span class="container">Patterns::CopyFile</span>
 
   <li class="method">
     <a href="Patterns/CommandList.html#method-i-add_command">#add_command</a>
@@ -387,6 +398,11 @@
     <span class="container">Patterns::User</span>
 
   <li class="method">
+    <a href="Patterns/MonsterPrototypes.html#method-i-clone_type">#clone_type</a>
+    &mdash;
+    <span class="container">Patterns::MonsterPrototypes</span>
+
+  <li class="method">
     <a href="String.html#method-i-colorize">#colorize</a>
     &mdash;
     <span class="container">String</span>
@@ -402,9 +418,14 @@
     <span class="container">Patterns::Logger</span>
 
   <li class="method">
-    <a href="Patterns/DeleteFile.html#method-i-execute">#execute</a>
+    <a href="Patterns/Command.html#method-i-execute">#execute</a>
     &mdash;
-    <span class="container">Patterns::DeleteFile</span>
+    <span class="container">Patterns::Command</span>
+
+  <li class="method">
+    <a href="Patterns/CommandList.html#method-i-execute">#execute</a>
+    &mdash;
+    <span class="container">Patterns::CommandList</span>
 
   <li class="method">
     <a href="Patterns/CreateFile.html#method-i-execute">#execute</a>
@@ -412,19 +433,14 @@
     <span class="container">Patterns::CreateFile</span>
 
   <li class="method">
-    <a href="Patterns/Command.html#method-i-execute">#execute</a>
-    &mdash;
-    <span class="container">Patterns::Command</span>
-
-  <li class="method">
     <a href="Patterns/CopyFile.html#method-i-execute">#execute</a>
     &mdash;
     <span class="container">Patterns::CopyFile</span>
 
   <li class="method">
-    <a href="Patterns/CommandList.html#method-i-execute">#execute</a>
+    <a href="Patterns/DeleteFile.html#method-i-execute">#execute</a>
     &mdash;
-    <span class="container">Patterns::CommandList</span>
+    <span class="container">Patterns::DeleteFile</span>
 
   <li class="method">
     <a href="Patterns/CommandList.html#method-i-execute_next">#execute_next</a>
@@ -450,6 +466,11 @@
     <a href="String.html#method-i-green">#green</a>
     &mdash;
     <span class="container">String</span>
+
+  <li class="method">
+    <a href="Patterns/MonsterType.html#method-i-has_prototype-3F">#has_prototype?</a>
+    &mdash;
+    <span class="container">Patterns::MonsterType</span>
 
   <li class="method">
     <a href="Patterns/Monster.html#method-i-health">#health</a>
@@ -497,14 +518,14 @@
     <span class="container">Patterns::CommandList</span>
 
   <li class="method">
-    <a href="Patterns/Subject.html#method-i-notify">#notify</a>
-    &mdash;
-    <span class="container">Patterns::Subject</span>
-
-  <li class="method">
     <a href="Patterns/User.html#method-i-notify">#notify</a>
     &mdash;
     <span class="container">Patterns::User</span>
+
+  <li class="method">
+    <a href="Patterns/Subject.html#method-i-notify">#notify</a>
+    &mdash;
+    <span class="container">Patterns::Subject</span>
 
   <li class="method">
     <a href="Patterns/Observer.html#method-i-on_notify">#on_notify</a>
@@ -525,6 +546,16 @@
     <a href="Patterns/GameManager.html#method-i-print_world">#print_world</a>
     &mdash;
     <span class="container">Patterns::GameManager</span>
+
+  <li class="method">
+    <a href="Patterns/MonsterType.html#method-i-prototype_name">#prototype_name</a>
+    &mdash;
+    <span class="container">Patterns::MonsterType</span>
+
+  <li class="method">
+    <a href="Patterns/Monster.html#method-i-prototype_name">#prototype_name</a>
+    &mdash;
+    <span class="container">Patterns::Monster</span>
 
   <li class="method">
     <a href="Patterns/Monster.html#method-i-range">#range</a>
@@ -552,6 +583,11 @@
     <span class="container">Patterns::CommandList</span>
 
   <li class="method">
+    <a href="Patterns/CreateFile.html#method-i-undo">#undo</a>
+    &mdash;
+    <span class="container">Patterns::CreateFile</span>
+
+  <li class="method">
     <a href="Patterns/CommandList.html#method-i-undo">#undo</a>
     &mdash;
     <span class="container">Patterns::CommandList</span>
@@ -562,19 +598,14 @@
     <span class="container">Patterns::CopyFile</span>
 
   <li class="method">
-    <a href="Patterns/DeleteFile.html#method-i-undo">#undo</a>
-    &mdash;
-    <span class="container">Patterns::DeleteFile</span>
-
-  <li class="method">
     <a href="Patterns/Command.html#method-i-undo">#undo</a>
     &mdash;
     <span class="container">Patterns::Command</span>
 
   <li class="method">
-    <a href="Patterns/CreateFile.html#method-i-undo">#undo</a>
+    <a href="Patterns/DeleteFile.html#method-i-undo">#undo</a>
     &mdash;
-    <span class="container">Patterns::CreateFile</span>
+    <span class="container">Patterns::DeleteFile</span>
 
   <li class="method">
     <a href="Patterns/CommandList.html#method-i-undo_last">#undo_last</a>
