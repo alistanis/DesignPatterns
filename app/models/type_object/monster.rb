@@ -59,6 +59,15 @@ module Patterns
     def weaknesses
       @monster_type.weaknesses
     end
+
+    # Gets this monster's prototype name if it has one and the string 'none' if it does not
+    #
+    # Examples
+    #
+    #   => orc_wizard.prototype_name
+    def prototype_name
+      @monster_type.prototype_name
+    end
   end
 
 end

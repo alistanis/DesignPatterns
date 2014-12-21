@@ -44,7 +44,7 @@ module Patterns
         @resistances = @prototype_data['resistances']
         @weaknesses = @prototype_data['weaknesses']
       end
-      if @type_data['health'] != nil
+      if has_prototype?
         @health = @type_data['health']
       end
       if @type_data['attack'] != nil
@@ -87,7 +87,30 @@ module Patterns
       @prototype_data = populate_type_data(@type_data['prototype_name'])
     end
 
+    # Returns the prototype name if it has one, returns 'none' otherwise
+    #
+    # Examples
+    #
+    #   => prototype_name
+    def prototype_name
+      if has_prototype?
+        @prototype_data['name']
+      else
+        'none'
+      end
+    end
+
+    # Returns true of false if the type has a prototype
+    #
+    # Examples
+    #
+    #   => if has_prototype?
+    #   =>  @prototype_data = populate_type_data
+    #   => end
+    def has_prototype?
+      @type_data['prototype']
+    end
+
   end
 
 end
-
