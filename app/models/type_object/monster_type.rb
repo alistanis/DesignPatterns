@@ -3,13 +3,13 @@ require 'json'
 module Patterns
 
   # The default monster json data path
-  MONSTER_JSON_PATH = File.dirname(__FILE__) + '/monster_types/'
+  MONSTER_JSON_PATH = File.dirname(__FILE__) + '/monster_types'
 
   # MonsterType -> Object
   #
   # A type object that uses prototype data for a monster if it exists, or uses the base data if it doesn't.
   # This makes creating new types of monsters very easy and means that this data doesn't have a reliance on code.
-  # If we built a monster generator, we could simply save all the monster data as json and be able to declar them immediately.
+  # If we built a monster generator, we could simply save all the monster data as json and be able to declare them immediately.
   class MonsterType
 
     # The name of the monster
@@ -69,7 +69,7 @@ module Patterns
     #   => populate_type_data('orc')
     def populate_type_data(monster_type)
       json_file_name = monster_type + '.json'
-      json_file_path = MONSTER_JSON_PATH + json_file_name
+      json_file_path = MONSTER_JSON_PATH + '/' + json_file_name
       if File.exist?(json_file_path)
         type_data = File.read(json_file_path)
         JSON.parse(type_data)
@@ -112,6 +112,9 @@ module Patterns
     end
   end
 
+  # MonsterNotFound -> StandardError
+  #
+  # Raises a MonsterNotFound exception when the monster json file doesn't exist
   class MonsterNotFound < StandardError
   end
 

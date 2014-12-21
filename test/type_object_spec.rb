@@ -41,4 +41,18 @@ describe 'TypeObjectTests' do
     end
   end
 
+  it 'should be able to load all monster prototypes into memory, clone them, and verify that their object_id\'s are different' do
+    monsters = MonsterPrototypes.new
+
+    dragon = monsters.clone_type('dragon')
+    dragon2 = monsters.clone_type('dragon')
+
+    orc = monsters.clone_type('orc_wizard')
+    orc2 = monsters.clone_type('orc_wizard')
+
+    expect dragon.object_id != dragon2.object_id
+    expect orc.object_id != orc2.object_id
+
+  end
+
 end
