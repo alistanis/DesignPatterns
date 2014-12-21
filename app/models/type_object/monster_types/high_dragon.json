@@ -1,0 +1,8 @@
+{
+  "name": "high_dragon",
+  "health": 150,
+  "attack" : 50,
+  "prototype" : true,
+  "prototype_name" : "dragon"
+}
+

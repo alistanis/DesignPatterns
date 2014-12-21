@@ -1,0 +1,16 @@
+{
+  "name": "dragon",
+  "health": 100,
+  "attack" : 30,
+  "range" : 20,
+  "resists": [
+    "cold",
+    "poison",
+    "fire"
+  ],
+  "weaknesses": [
+    "light"
+  ],
+  "prototype" : false
+}
+

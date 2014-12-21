@@ -1,0 +1,93 @@
+require 'json'
+
+module Patterns
+
+  # The default monster json data path
+  MONSTER_JSON_PATH = File.dirname(__FILE__) + '/monster_types/'
+
+  # MonsterType -> Object
+  #
+  # A type object that uses prototype data for a monster if it exists, or uses the base data if it doesn't.
+  # This makes creating new types of monsters very easy and means that this data doesn't have a reliance on code.
+  # If we built a monster generator, we could simply save all the monster data as json and be able to declar them immediately.
+  class MonsterType
+
+    # The name of the monster
+    attr_accessor :name
+    # The health of the monster
+    attr_accessor :health
+    # The attack power of the monster
+    attr_accessor :attack
+    # A list of the monster's resistances
+    attr_accessor :resistances
+    # A list of the monster's weaknesses
+    attr_accessor :weaknesses
+    # The attack range of the monster
+    attr_accessor :range
+
+    # Initializes the monster type object. If the monster has a prototype, it collects and sets the prototype data first.
+    # Then the initializer sets the base type data. The base type will always override the prototype if the base type has differing data.
+    # In a real implementation, it would likely be beneficial to allow for multiple prototypes or prototype inheritance.
+    # That solution would be recursive and would set all data from the lowest prototype back up to the base type.
+    #
+    # Examples
+    #
+    #   => monster_type = MonsterType.new('dragon')
+    def initialize(monster_type)
+      @monster_type = monster_type
+      @type_data = populate_type_data(@monster_type)
+      if @type_data['prototype']
+        populate_prototype_data
+        @health = @prototype_data['health']
+        @attack = @prototype_data['attack']
+        @range = @prototype_data['attack_range']
+        @resistances = @prototype_data['resistances']
+        @weaknesses = @prototype_data['weaknesses']
+      end
+      if @type_data['health'] != nil
+        @health = @type_data['health']
+      end
+      if @type_data['attack'] != nil
+        @attack = @type_data['attack']
+      end
+      if @type_data['range'] != nil
+        @range = @type_data['range']
+      end
+      if @type_data['resistances'] != nil
+        @resistances = @type_data['resistances']
+      end
+      if @type_data['weaknesses'] != nil
+        @weaknesses = @type_data['weaknesses']
+      end
+      @name = @type_data['name']
+    end
+
+    # Populates type data based on monster name
+    #
+    # Examples
+    #
+    #   => populate_type_data('orc')
+    def populate_type_data(monster_type)
+      json_file_name = monster_type + '.json'
+      json_file_path = MONSTER_JSON_PATH + json_file_name
+      if File.exist?(json_file_path)
+        type_data = File.read(json_file_path)
+        JSON.parse(type_data)
+      else
+        raise 'Monster type does not exist'
+      end
+    end
+
+    # Populates prototype data
+    #
+    # Examples
+    #
+    #   => populate_prototype_data
+    def populate_prototype_data
+      @prototype_data = populate_type_data(@type_data['prototype_name'])
+    end
+
+  end
+
+end
+

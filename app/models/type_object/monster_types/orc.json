@@ -1,0 +1,16 @@
+{
+  "name": "orc",
+  "health": 30,
+  "attack" : 5,
+  "range" : 2,
+  "resists": [
+    "cold",
+    "poison"
+  ],
+  "weaknesses": [
+    "fire",
+    "light"
+  ],
+  "prototype" : false
+}
+
