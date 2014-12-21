@@ -6,6 +6,7 @@ module Patterns
   # This is an example of the Type Object pattern.
   class Monster
 
+    attr_accessor :monster_type
     # Initializes the monster class
     #
     # Examples
