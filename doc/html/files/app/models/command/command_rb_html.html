@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>command_rb.html - RDoc Documentation</title>
+
+<link href="../../../../../fonts.css" rel="stylesheet">
+<link href="../../../../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../../../";
+</script>
+
+<script src="../../../../../js/jquery.js"></script>
+<script src="../../../../../js/navigation.js"></script>
+<script src="../../../../../js/search_index.js"></script>
+<script src="../../../../../js/search.js"></script>
+<script src="../../../../../js/searcher.js"></script>
+<script src="../../../../../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../../../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../../../../table_of_contents.html#pages">Pages</a>
+    <a href="../../../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../../../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../../../../../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../../../../../LICENSE_txt.html">LICENSE</a>
+  
+    <li><a href="../../../../../Patterns_gemspec.html">Patterns.gemspec</a>
+  
+    <li><a href="../../../../../README_md.html">README</a>
+  
+    <li><a href="../../../../../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../../../../../app/models/singleton/log/game_log_log.html">game_log.log</a>
+  
+    <li><a href="../../../../../app/models/type_object/monster_types/dragon_json.html">dragon.json</a>
+  
+    <li><a href="../../../../../app/models/type_object/monster_types/high_dragon_json.html">high_dragon.json</a>
+  
+    <li><a href="../../../../../app/models/type_object/monster_types/orc_json.html">orc.json</a>
+  
+    <li><a href="../../../../../app/models/type_object/monster_types/orc_wizard_json.html">orc_wizard.json</a>
+  
+    <li><a href="../../../../../html/classes/Object_html.html">Object.html</a>
+  
+    <li><a href="../../../../../html/classes/Patterns_html.html">Patterns.html</a>
+  
+    <li><a href="../../../../../html/classes/Patterns/Admin_html.html">Admin.html</a>
+  
+    <li><a href="../../../../../html/classes/Patterns/Command_html.html">Command.html</a>
+  
+    <li><a href="../../../../../html/classes/Patterns/CommandList_html.html">CommandList.html</a>
+  
+    <li><a href="../../../../../html/classes/Patterns/CopyFile_html.html">CopyFile.html</a>
+  
+    <li><a href="../../../../../html/classes/Patterns/CreateFile_html.html">CreateFile.html</a>
+  
+    <li><a href="../../../../../html/classes/Patterns/DeleteFile_html.html">DeleteFile.html</a>
+  
+    <li><a href="../../../../../html/classes/Patterns/GameManager_html.html">GameManager.html</a>
+  
+    <li><a href="../../../../../html/classes/Patterns/Logger_html.html">Logger.html</a>
+  
+    <li><a href="../../../../../html/classes/Patterns/Observer_html.html">Observer.html</a>
+  
+    <li><a href="../../../../../html/classes/Patterns/Player_html.html">Player.html</a>
+  
+    <li><a href="../../../../../html/classes/Patterns/Singleton_html.html">Singleton.html</a>
+  
+    <li><a href="../../../../../html/classes/Patterns/Subject_html.html">Subject.html</a>
+  
+    <li><a href="../../../../../html/classes/Patterns/User_html.html">User.html</a>
+  
+    <li><a href="../../../../../html/classes/Patterns/Vector2D_html.html">Vector2D.html</a>
+  
+    <li><a href="../../../../../html/classes/String_html.html">String.html</a>
+  
+    <li><a href="../../../../../html/classes/index_html.html">index.html</a>
+  
+    <li><a href="../../../../../html/css/application_css.html">application.css</a>
+  
+    <li><a href="../../../../../html/css/bootstrap_min_css.html">bootstrap.min.css</a>
+  
+    <li><a href="../../../../../html/css/coderay_css.html">coderay.css</a>
+  
+    <li><a href="../../../../../html/files/Gemfile_html.html">Gemfile.html</a>
+  
+    <li><a href="../../../../../html/files/Gemfile_lock_html.html">Gemfile_lock.html</a>
+  
+    <li><a href="../../../../../html/files/LICENSE_txt_html.html">LICENSE_txt.html</a>
+  
+    <li><a href="../../../../../html/files/Patterns_gemspec_html.html">Patterns_gemspec.html</a>
+  
+    <li><a href="../../../../../html/files/README_md_html.html">README_md.html</a>
+  
+    <li><a href="../../../../../html/files/Rakefile_html.html">Rakefile.html</a>
+  
+    <li><a href="../../../../../html/files/app/models/command/command_list_rb_html.html">command_list_rb.html</a>
+  
+    <li><a href="../../../../../html/files/app/models/command/command_rb_html.html">command_rb.html</a>
+  
+    <li><a href="../../../../../html/files/app/models/command/copy_file_rb_html.html">copy_file_rb.html</a>
+  
+    <li><a href="../../../../../html/files/app/models/command/create_file_rb_html.html">create_file_rb.html</a>
+  
+    <li><a href="../../../../../html/files/app/models/command/delete_file_rb_html.html">delete_file_rb.html</a>
+  
+    <li><a href="../../../../../html/files/app/models/observer/admin_rb_html.html">admin_rb.html</a>
+  
+    <li><a href="../../../../../html/files/app/models/observer/observer_rb_html.html">observer_rb.html</a>
+  
+    <li><a href="../../../../../html/files/app/models/observer/subject_rb_html.html">subject_rb.html</a>
+  
+    <li><a href="../../../../../html/files/app/models/observer/user_rb_html.html">user_rb.html</a>
+  
+    <li><a href="../../../../../html/files/app/models/singleton/game_manager_rb_html.html">game_manager_rb.html</a>
+  
+    <li><a href="../../../../../html/files/app/models/singleton/log/game_log_log_html.html">game_log_log.html</a>
+  
+    <li><a href="../../../../../html/files/app/models/singleton/logger_rb_html.html">logger_rb.html</a>
+  
+    <li><a href="../../../../../html/files/app/models/singleton/player_rb_html.html">player_rb.html</a>
+  
+    <li><a href="../../../../../html/files/app/models/singleton/singleton_rb_html.html">singleton_rb.html</a>
+  
+    <li><a href="../../../../../html/files/index_html.html">index.html</a>
+  
+    <li><a href="../../../../../html/files/lib/Patterns/version_rb_html.html">version_rb.html</a>
+  
+    <li><a href="../../../../../html/files/lib/Patterns_rb_html.html">Patterns_rb.html</a>
+  
+    <li><a href="../../../../../html/files/script/run_tests_rb_html.html">run_tests_rb.html</a>
+  
+    <li><a href="../../../../../html/files/test/command_spec_rb_html.html">command_spec_rb.html</a>
+  
+    <li><a href="../../../../../html/files/test/observer_spec_rb_html.html">observer_spec_rb.html</a>
+  
+    <li><a href="../../../../../html/files/test/singleton_spec_rb_html.html">singleton_spec_rb.html</a>
+  
+    <li><a href="../../../../../html/js/application_js.html">application.js</a>
+  
+    <li><a href="../../../../../html/js/bootstrap_min_js.html">bootstrap.min.js</a>
+  
+    <li><a href="../../../../../html/js/index_js.html">index.js</a>
+  
+    <li><a href="../../../../../html/js/jquery_js.html">jquery.js</a>
+  
+    <li><a href="../../../../../html/method/index_html.html">index.html</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page html/files/app/models/command/command_rb.html">
+
+<p>&lt;!DOCTYPE html&gt; &lt;html lang=&#39;en&#39;&gt;</p>
+
+<pre>&lt;head&gt;
+  &lt;meta charset=&#39;utf-8&#39;&gt;
+  &lt;title&gt;command.rb - RDoc Documentation&lt;/title&gt;
+  &lt;meta content=&#39;width=device-width, initial-scale=1, maximum-scale=1&#39; name=&#39;viewport&#39;&gt;
+  &lt;link href=&#39;../../../../css/bootstrap.min.css&#39; media=&#39;screen&#39; rel=&#39;stylesheet&#39; type=&#39;text/css&#39;&gt;
+  &lt;link href=&#39;../../../../css/application.css&#39; media=&#39;screen&#39; rel=&#39;stylesheet&#39; type=&#39;text/css&#39;&gt;
+  &lt;link href=&#39;../../../../css/coderay.css&#39; media=&#39;screen&#39; rel=&#39;stylesheet&#39; type=&#39;text/css&#39;&gt;
+  &lt;script src=&#39;../../../../js/jquery.js&#39; type=&#39;text/javascript&#39;&gt;&lt;/script&gt;
+  &lt;script src=&#39;../../../../js/bootstrap.min.js&#39; type=&#39;text/javascript&#39;&gt;&lt;/script&gt;
+  &lt;script src=&#39;../../../../js/index.js&#39; type=&#39;text/javascript&#39;&gt;&lt;/script&gt;
+  &lt;script src=&#39;../../../../js/application.js&#39; type=&#39;text/javascript&#39;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body class=&#39;file&#39;&gt;
+  &lt;div class=&#39;navbar navbar-fixed-top&#39;&gt;
+    &lt;div class=&#39;navbar-inner&#39;&gt;
+      &lt;div class=&#39;container&#39;&gt;
+        &lt;a class=&#39;btn btn-navbar&#39; data-target=&#39;.nav-collapse&#39; data-toggle=&#39;collapse&#39;&gt;
+          &lt;span class=&#39;icon-bar&#39;&gt;&lt;/span&gt;
+          &lt;span class=&#39;icon-bar&#39;&gt;&lt;/span&gt;
+          &lt;span class=&#39;icon-bar&#39;&gt;&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;a href=&quot;../../../..&quot; class=&quot;brand&quot;&gt;RDoc Documentation&lt;/a&gt;
+        &lt;div class=&#39;nav-collapse&#39;&gt;
+          &lt;ul class=&#39;nav&#39;&gt;
+            &lt;li class=&#39;dropdown&#39;&gt;
+              &lt;a class=&#39;dropdown-toggle&#39; data-toggle=&#39;dropdown&#39; href=&#39;#&#39;&gt;
+                Classes
+                &lt;b class=&#39;caret&#39;&gt;&lt;/b&gt;
+              &lt;/a&gt;
+              &lt;ul class=&#39;dropdown-menu&#39; role=&#39;menu&#39;&gt;
+                &lt;li&gt;&lt;a href=&quot;../../../../classes/Object.html&quot;&gt;Object&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;../../../../classes/Patterns.html&quot;&gt;Patterns&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;../../../../classes/Patterns/Admin.html&quot;&gt;&lt;span class=&quot;parent&quot;&gt;Patterns::&lt;/span&gt;Admin&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;../../../../classes/Patterns/Command.html&quot;&gt;&lt;span class=&quot;parent&quot;&gt;Patterns::&lt;/span&gt;Command&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;../../../../classes/Patterns/CommandList.html&quot;&gt;&lt;span class=&quot;parent&quot;&gt;Patterns::&lt;/span&gt;CommandList&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;../../../../classes/Patterns/CopyFile.html&quot;&gt;&lt;span class=&quot;parent&quot;&gt;Patterns::&lt;/span&gt;CopyFile&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;../../../../classes/Patterns/CreateFile.html&quot;&gt;&lt;span class=&quot;parent&quot;&gt;Patterns::&lt;/span&gt;CreateFile&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;../../../../classes/Patterns/DeleteFile.html&quot;&gt;&lt;span class=&quot;parent&quot;&gt;Patterns::&lt;/span&gt;DeleteFile&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;../../../../classes/Patterns/GameManager.html&quot;&gt;&lt;span class=&quot;parent&quot;&gt;Patterns::&lt;/span&gt;GameManager&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;../../../../classes/Patterns/Logger.html&quot;&gt;&lt;span class=&quot;parent&quot;&gt;Patterns::&lt;/span&gt;Logger&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;../../../../classes/Patterns/Observer.html&quot;&gt;&lt;span class=&quot;parent&quot;&gt;Patterns::&lt;/span&gt;Observer&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;../../../../classes/Patterns/Player.html&quot;&gt;&lt;span class=&quot;parent&quot;&gt;Patterns::&lt;/span&gt;Player&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;../../../../classes/Patterns/Singleton.html&quot;&gt;&lt;span class=&quot;parent&quot;&gt;Patterns::&lt;/span&gt;Singleton&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;../../../../classes/Patterns/Subject.html&quot;&gt;&lt;span class=&quot;parent&quot;&gt;Patterns::&lt;/span&gt;Subject&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;../../../../classes/Patterns/User.html&quot;&gt;&lt;span class=&quot;parent&quot;&gt;Patterns::&lt;/span&gt;User&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;../../../../classes/Patterns/Vector2D.html&quot;&gt;&lt;span class=&quot;parent&quot;&gt;Patterns::&lt;/span&gt;Vector2D&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;../../../../classes/String.html&quot;&gt;String&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li class=&#39;dropdown&#39;&gt;
+              &lt;a class=&#39;dropdown-toggle&#39; data-toggle=&#39;dropdown&#39; href=&#39;#&#39;&gt;
+                Files
+                &lt;b class=&#39;caret&#39;&gt;&lt;/b&gt;
+              &lt;/a&gt;
+              &lt;ul class=&#39;dropdown-menu&#39; role=&#39;menu&#39;&gt;
+                &lt;li&gt;&lt;a href=&quot;../../../Gemfile.html&quot;&gt;Gemfile&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;../../../Gemfile_lock.html&quot;&gt;Gemfile.lock&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;../../../LICENSE_txt.html&quot;&gt;LICENSE.txt&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;../../../Patterns_gemspec.html&quot;&gt;Patterns.gemspec&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;../../../README_md.html&quot;&gt;README.md&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;../../../Rakefile.html&quot;&gt;Rakefile&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;command_rb.html&quot;&gt;command.rb&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;command_list_rb.html&quot;&gt;command_list.rb&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;copy_file_rb.html&quot;&gt;copy_file.rb&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;create_file_rb.html&quot;&gt;create_file.rb&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;delete_file_rb.html&quot;&gt;delete_file.rb&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;../observer/admin_rb.html&quot;&gt;admin.rb&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;../observer/observer_rb.html&quot;&gt;observer.rb&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;../observer/subject_rb.html&quot;&gt;subject.rb&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;../observer/user_rb.html&quot;&gt;user.rb&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;../singleton/game_manager_rb.html&quot;&gt;game_manager.rb&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;../singleton/log/game_log_log.html&quot;&gt;game_log.log&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;../singleton/logger_rb.html&quot;&gt;logger.rb&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;../singleton/player_rb.html&quot;&gt;player.rb&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;../singleton/singleton_rb.html&quot;&gt;singleton.rb&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;../../../lib/Patterns_rb.html&quot;&gt;Patterns.rb&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;../../../lib/Patterns/version_rb.html&quot;&gt;version.rb&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;../../../script/run_tests_rb.html&quot;&gt;run_tests.rb&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;../../../test/command_spec_rb.html&quot;&gt;command_spec.rb&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;../../../test/observer_spec_rb.html&quot;&gt;observer_spec.rb&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;../../../test/singleton_spec_rb.html&quot;&gt;singleton_spec.rb&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+          &lt;form class=&#39;navbar-search pull-right&#39;&gt;
+            &lt;input class=&#39;search-query span2&#39; id=&#39;search-query&#39; placeholder=&#39;Search methods&#39; type=&#39;text&#39;&gt;
+            &lt;ul aria-labelledby=&#39;search-query&#39; class=&#39;dropdown-menu&#39; id=&#39;search-results&#39; role=&#39;menu&#39;&gt;&lt;/ul&gt;
+          &lt;/form&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div id=&#39;main&#39;&gt;
+    &lt;div class=&#39;container&#39; id=&#39;documentation&#39;&gt;
+      &lt;div class=&#39;row&#39;&gt;
+        &lt;div class=&#39;span9&#39;&gt;
+          &lt;div class=&#39;page-header&#39;&gt;
+            &lt;h1 class=&#39;name&#39;&gt;
+              command.rb
+            &lt;/h1&gt;
+          &lt;/div&gt;
+          &lt;section id=&#39;content&#39;&gt;
+            &lt;div id=&#39;text&#39;&gt;
+              &lt;div id=&#39;description&#39;&gt;&lt;/div&gt;
+              &lt;div id=&#39;context&#39;&gt;
+                &lt;section id=&#39;requires&#39;&gt;
+                  &lt;h2&gt;Required files&lt;/h2&gt;
+                  &lt;ol&gt;
+                    &lt;li&gt;Patterns/version&lt;/li&gt;
+                  &lt;/ol&gt;
+                &lt;/section&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/section&gt;
+        &lt;/div&gt;
+        &lt;div class=&#39;span3&#39;&gt;
+          &lt;ul class=&#39;nav nav-list&#39;&gt;
+            &lt;li class=&#39;nav-header&#39;&gt;Path&lt;/li&gt;
+            &lt;li&gt;app/models/command/command.rb&lt;/li&gt;
+            &lt;li class=&#39;nav-header&#39;&gt;Last Update&lt;/li&gt;
+            &lt;li&gt;
+              &lt;span class=&#39;datetime&#39;&gt;2014-12-20 06:29:17 -0500&lt;/span&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;footer&gt;
+    &lt;div class=&#39;container&#39;&gt;
+      &lt;p&gt;
+        Generated by
+        &lt;a href=&quot;https://github.com/rdoc/rdoc&quot;&gt;RDoc 4.1.0&lt;/a&gt;
+        .
+      &lt;/p&gt;
+      &lt;p&gt;
+        Generated with the
+        &lt;a href=&quot;http://github.com/ngs/hanna-bootstrap&quot;&gt;Hanna Bootstrap RDoc Generator 0.0.5&lt;/a&gt;
+        .
+      &lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;</pre>
+
+<p>&lt;/html&gt;</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

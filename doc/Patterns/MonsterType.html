@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Patterns::MonsterType - RDoc Documentation</title>
+
+<link href="../fonts.css" rel="stylesheet">
+<link href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/search_index.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/searcher.js"></script>
+<script src="../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="../Object.html">Object</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-populate_prototype_data">#populate_prototype_data</a>
+    
+    <li ><a href="#method-i-populate_type_data">#populate_type_data</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Patterns::MonsterType">
+  <h1 id="class-Patterns::MonsterType" class="class">
+    class Patterns::MonsterType
+  </h1>
+
+  <section class="description">
+    
+<p><a href="MonsterType.html">MonsterType</a> -&gt; <a
+href="../Object.html">Object</a></p>
+
+<p>A type object that uses prototype data for a monster if it exists, or uses
+the base data if it doesn&#39;t. This makes creating new types of monsters
+very easy and means that this data doesn&#39;t have a reliance on code. If
+we built a monster generator, we could simply save all the monster data as
+json and be able to declar them immediately.</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-attack" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">attack</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The attack power of the monster</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-health" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">health</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The health of the monster</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">name</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The name of the monster</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-range" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">range</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The attack range of the monster</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-resistances" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">resistances</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>A list of the monster&#39;s resistances</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-weaknesses" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">weaknesses</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>A list of the monster&#39;s weaknesses</p>
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(monster_type)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Initializes the monster type object. If the monster has a prototype, it
+collects and sets the prototype data first. Then the initializer sets the
+base type data. The base type will always override the prototype if the
+base type has differing data. In a real implementation, it would likely be
+beneficial to allow for multiple prototypes or prototype inheritance. That
+solution would be recursive and would set all data from the lowest
+prototype back up to the base type.</p>
+
+<p>Examples</p>
+
+<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">monster_type</span> = <span class="ruby-constant">MonsterType</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;dragon&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File app/models/type_object/monster_type.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">monster_type</span>)
+  <span class="ruby-ivar">@monster_type</span> = <span class="ruby-identifier">monster_type</span>
+  <span class="ruby-ivar">@type_data</span> = <span class="ruby-identifier">populate_type_data</span>(<span class="ruby-ivar">@monster_type</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@type_data</span>[<span class="ruby-string">&#39;prototype&#39;</span>]
+    <span class="ruby-identifier">populate_prototype_data</span>
+    <span class="ruby-ivar">@health</span> = <span class="ruby-ivar">@prototype_data</span>[<span class="ruby-string">&#39;health&#39;</span>]
+    <span class="ruby-ivar">@attack</span> = <span class="ruby-ivar">@prototype_data</span>[<span class="ruby-string">&#39;attack&#39;</span>]
+    <span class="ruby-ivar">@range</span> = <span class="ruby-ivar">@prototype_data</span>[<span class="ruby-string">&#39;attack_range&#39;</span>]
+    <span class="ruby-ivar">@resistances</span> = <span class="ruby-ivar">@prototype_data</span>[<span class="ruby-string">&#39;resistances&#39;</span>]
+    <span class="ruby-ivar">@weaknesses</span> = <span class="ruby-ivar">@prototype_data</span>[<span class="ruby-string">&#39;weaknesses&#39;</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@type_data</span>[<span class="ruby-string">&#39;health&#39;</span>] <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@health</span> = <span class="ruby-ivar">@type_data</span>[<span class="ruby-string">&#39;health&#39;</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@type_data</span>[<span class="ruby-string">&#39;attack&#39;</span>] <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@attack</span> = <span class="ruby-ivar">@type_data</span>[<span class="ruby-string">&#39;attack&#39;</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@type_data</span>[<span class="ruby-string">&#39;range&#39;</span>] <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@range</span> = <span class="ruby-ivar">@type_data</span>[<span class="ruby-string">&#39;range&#39;</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@type_data</span>[<span class="ruby-string">&#39;resistances&#39;</span>] <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@resistances</span> = <span class="ruby-ivar">@type_data</span>[<span class="ruby-string">&#39;resistances&#39;</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@type_data</span>[<span class="ruby-string">&#39;weaknesses&#39;</span>] <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@weaknesses</span> = <span class="ruby-ivar">@type_data</span>[<span class="ruby-string">&#39;weaknesses&#39;</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@name</span> = <span class="ruby-ivar">@type_data</span>[<span class="ruby-string">&#39;name&#39;</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-populate_prototype_data" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">populate_prototype_data</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Populates prototype data</p>
+
+<p>Examples</p>
+
+<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">populate_prototype_data</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="populate_prototype_data-source">
+            <pre><span class="ruby-comment"># File app/models/type_object/monster_type.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">populate_prototype_data</span>
+  <span class="ruby-ivar">@prototype_data</span> = <span class="ruby-identifier">populate_type_data</span>(<span class="ruby-ivar">@type_data</span>[<span class="ruby-string">&#39;prototype_name&#39;</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-populate_type_data" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">populate_type_data</span><span
+            class="method-args">(monster_type)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Populates type data based on monster name</p>
+
+<p>Examples</p>
+
+<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">populate_type_data</span>(<span class="ruby-string">&#39;orc&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="populate_type_data-source">
+            <pre><span class="ruby-comment"># File app/models/type_object/monster_type.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">populate_type_data</span>(<span class="ruby-identifier">monster_type</span>)
+  <span class="ruby-identifier">json_file_name</span> = <span class="ruby-identifier">monster_type</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;.json&#39;</span>
+  <span class="ruby-identifier">json_file_path</span> = <span class="ruby-constant">MONSTER_JSON_PATH</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">json_file_name</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">json_file_path</span>)
+    <span class="ruby-identifier">type_data</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">json_file_path</span>)
+    <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">type_data</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-string">&#39;Monster type does not exist&#39;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
