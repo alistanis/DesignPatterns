@@ -32,7 +32,15 @@ module Patterns
     #   => dragon = monsters.clone_type('dragon')
     def clone_type(type_name)
       if @prototypes[type_name] != nil
-        Marshal.load(Marshal.dump(@prototypes[type_name]))
+        serialized_object = Marshal.dump(@prototypes[type_name])
+        # Just in case someone was able to write some json onto disk and inject something.
+        # This won't actually help anything because the type name is still being read from the same source, but it serves as a security example.
+        if %w(exec system eval throw puts exit fork syscall %x send `).include? serialized_object
+          Monster.new(type_name)
+        else
+          Marshal.load(serialized_object)
+        end
+
       end
     end
 
