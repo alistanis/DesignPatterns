@@ -40,7 +40,6 @@ module Patterns
         else
           Marshal.load(serialized_object)
         end
-
       end
     end
 

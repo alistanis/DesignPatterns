@@ -14,10 +14,10 @@ describe 'TypeObjectTests' do
     orc = Monster.new('orc')
     orc_wizard = Monster.new('orc_wizard')
 
-    expect dragon.health == 100
-    expect high_dragon.health == 150
-    expect orc.health == 30
-    expect orc_wizard.health == 30
+    expect(dragon.health).to eql(100)
+    expect(high_dragon.health).to eql(150)
+    expect(orc.health).to eql(30)
+    expect(orc_wizard.health).to eql(30)
 
   end
 
@@ -27,10 +27,10 @@ describe 'TypeObjectTests' do
 
   it 'should be able to get a prototype name if it exists' do
     high_dragon = Monster.new('high_dragon')
-    expect high_dragon.prototype_name == 'dragon'
+    expect(high_dragon.prototype_name).to eql('dragon')
 
     dragon = Monster.new('dragon')
-    expect dragon.prototype_name == 'none'
+    expect(dragon.prototype_name).to eql('none')
   end
 
   it 'should give detailed exception information for MonsterNotFound' do
@@ -50,8 +50,8 @@ describe 'TypeObjectTests' do
     orc = monsters.clone_type('orc_wizard')
     orc2 = monsters.clone_type('orc_wizard')
 
-    expect dragon.object_id != dragon2.object_id
-    expect orc.object_id != orc2.object_id
+    expect(dragon.object_id).not_to eql(dragon2.object_id)
+    expect(orc.object_id).not_to eql(orc2.object_id)
 
   end
 
@@ -61,7 +61,7 @@ describe 'TypeObjectTests' do
     orc = monsters.clone_type('orc')
     orc2 = monsters.clone_type('orc')
 
-    expect orc.monster_type.object_id != orc2.monster_type.object_id
+    expect(orc.monster_type.object_id).not_to eql(orc2.monster_type.object_id)
   end
 
   it 'should demonstrate that a shallow clone is not sufficient for prototyping by showing that the object id\'s for clones are different, but the underlying prototype id\'s are the same' do
@@ -70,8 +70,8 @@ describe 'TypeObjectTests' do
     orc = monsters.clone_type('orc')
     orc2 = orc.clone
 
-    expect orc.object_id != orc2.object_id
-    expect orc.monster_type.object_id == orc2.monster_type.object_id
+    expect(orc.object_id).not_to eql(orc2.object_id)
+    expect(orc.monster_type.object_id).to eql(orc2.monster_type.object_id)
   end
 
 end

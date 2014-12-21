@@ -45,7 +45,7 @@ module Patterns
         end
         output << "\n"
       end
-      puts "Current Game State: \n#{output}"
+      puts "\nCurrent Game State: \n#{output}"
     end
 
     # Logs the current world state
@@ -61,7 +61,7 @@ module Patterns
         end
         output << "\n"
       end
-      Logger.instance.info "Current Game State: \n#{output}"
+      Logger.instance.info "\nCurrent Game State: \n#{output}"
     end
 
     # Returns the current world state
@@ -71,6 +71,17 @@ module Patterns
     #   => GameManager.get_world
     def get_world
       @game_map
+    end
+
+    def get_world_string
+      output = ''
+      @game_map.each_index do |row|
+        @game_map[0].each_index do |column|
+          output << @game_map[row][column]
+        end
+        output << "\n"
+      end
+      output
     end
 
     # Returns the player's position

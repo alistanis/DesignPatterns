@@ -36,7 +36,7 @@ module Patterns
     def initialize(monster_type)
       @monster_type = monster_type
       @type_data = populate_type_data(@monster_type)
-      if @type_data['prototype']
+      if has_prototype?
         populate_prototype_data
         @health = @prototype_data['health']
         @attack = @prototype_data['attack']
@@ -44,7 +44,7 @@ module Patterns
         @resistances = @prototype_data['resistances']
         @weaknesses = @prototype_data['weaknesses']
       end
-      if has_prototype?
+      if @type_data['health'] != nil
         @health = @type_data['health']
       end
       if @type_data['attack'] != nil

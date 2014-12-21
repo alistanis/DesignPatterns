@@ -1,7 +1,7 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-app_models = File.expand_path('..app/models', __FILE__)
+app_models = File.expand_path('../app/models', __FILE__)
 $LOAD_PATH.unshift(app_models) unless $LOAD_PATH.include?(app_models)
 require 'Patterns/version'
 

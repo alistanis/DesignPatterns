@@ -41,17 +41,10 @@ module Patterns
     #   => copy_file_cmd.undo
     def undo
       function = Proc.new do
-        if @data
-          f = File.open(@target,'w')
-          f.write(@data)
-          f.close
-        else
-          File.delete(@data)
-        end
+          File.delete(@target)
       end
       super(function)
     end
-
   end
 
 end
