@@ -4,10 +4,14 @@ module Patterns
   #
   # The monster class. It delegates its calls to the monster type class.
   # This is an example of the Type Object pattern.
+  # This is also an example of the concept of Object Composition over inheritance. The monster HAS a type attribute instead of inheriting one.
+  # This allows us to decouple the monster from its type and stops inheritance from getting out of control in a system with many similar objects.
   class Monster
 
     attr_accessor :monster_type
     # Initializes the monster class
+    #
+    # * +monster_type+ The type of the monster that has a corresponding json file
     #
     # Examples
     #

@@ -26,6 +26,8 @@ module Patterns
 
     # Performs a marshalling of the Monster stored in the Prototype array, which is returned as a new Monster to the caller as a clone of the original
     #
+    # * +type_name+ The type of the monster to clone
+    #
     # Examples
     #
     #   => monsters = MonsterPrototypes.new

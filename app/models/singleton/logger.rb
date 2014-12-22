@@ -8,12 +8,10 @@ module Patterns
   #
   # The standard singleton pattern example - a logger to handle writing to a log file.
   class Logger
-
-    # The output that will be written to a log file
-    attr_reader :output
-
     # Includes Ruby's built in Singleton support for this example
     include Singleton
+    # The output that will be written to a log file
+    attr_reader :output
 
     # Initializes the Logger, the Singleton include will ensure it is only initialized once, and only when it needs to be called
     #

@@ -1,14 +1,15 @@
-
 module Patterns
-  # Singleton
+  # TypeObject
   #
   # This class only exists for documentation purposes
   #
   # Implementations:
   #
-  # GameManager -> Object
-  # Logger -> Object with Singleton Module
-  class Singleton
+  # MonsterType -> Object
+  #
+  # Used in:
+  #
+  # Monster -> Object
+  class TypeObject
   end
 end
-

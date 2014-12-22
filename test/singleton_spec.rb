@@ -1,9 +1,7 @@
 require 'rspec'
 require 'Patterns/version'
-
-Dir["#{File.expand_path('../../app/', __FILE__)}/**/*.rb"].each { |f| load(f) }
-
 include Patterns
+require File.expand_path('../../test', __FILE__) +'/test_env.rb'
 
 describe 'SingletonTests' do
 

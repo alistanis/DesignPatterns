@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 test_files = []
-
+require File.expand_path('../../test', __FILE__) + '/test_env.rb'
 Dir["#{File.expand_path('../../test', __FILE__)}/**/*.rb"].each { |f| test_files << f }
 
 # Extends the String class

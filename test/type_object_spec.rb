@@ -1,9 +1,9 @@
 require 'rspec'
 require 'Patterns/version'
-
-Dir["#{File.expand_path('../../app/', __FILE__)}/**/*.rb"].each { |f| load(f) }
-
 include Patterns
+require File.expand_path('../../test', __FILE__) +'/test_env.rb'
+
+
 
 describe 'TypeObjectTests' do
   it 'should be able to load prototype and base type data if it exists for all monster types, or just base type if it does not have a prototype' do
@@ -55,7 +55,7 @@ describe 'TypeObjectTests' do
 
   end
 
-  it 'should be able to load all monster prototypes into memory, clone them, and verify that their prototype object_id\'s are different' do
+  it 'should be able to load all monster prototypes into memory, deep clone them(marshal/unmarshal), and verify that their prototype object_id\'s are different' do
     monsters = MonsterPrototypes.new
 
     orc = monsters.clone_type('orc')
