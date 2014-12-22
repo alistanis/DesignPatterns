@@ -30,30 +30,7 @@ class String
   end
 end
 
-# does a very simple and very naive output parsing for failures and colors the text accordingly
-failures = ''
+# captures the output using script, so ansi colors are kept and will output correctly
 test_files.each do |file|
-  output = `rspec #{file} --format documentation`
-
-  color = 'green'
-  output.lines.each do |line|
-    #rspec adds an additional output formatter
-    line = line.gsub("\n", '')
-    if line.include?('Failures:')
-      color = 'red'
-    end
-    if line.include?('Finished')
-      color = 'green'
-    end
-    if color == 'green'
-      puts line.green
-    else
-      failures << line
-      puts line.red
-    end
-  end
-end
-
-if failures != ''
-  puts failures.red
+  system("script -q /dev/null rspec #{file} --format documentation --color")
 end
