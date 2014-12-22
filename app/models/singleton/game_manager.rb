@@ -7,6 +7,8 @@ module Patterns
   #
   # A different type of singleton that acts as a global constant object. Methods are added to the GameManager object.
   # Note that this example is not thread safe! If you wish to access this class using threads you'll need to use a Mutex or Spinlock
+  # class << GameManager is an example of dynamically adding attributes and functionality to an instance of a class.
+  # This is the purpose of the Decorator Pattern, which exists inherently in Ruby in many forms.
   class << GameManager
 
     # Width of the game world

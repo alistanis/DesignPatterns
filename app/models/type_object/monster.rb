@@ -11,7 +11,7 @@ module Patterns
     attr_accessor :monster_type
     # Initializes the monster class
     #
-    # * +monster_type+ The type of the monster that has a corresponding json file
+    # * +monster_type+ - The type of the monster that has a corresponding json file
     #
     # Examples
     #

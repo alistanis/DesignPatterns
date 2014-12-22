@@ -30,7 +30,7 @@ module Patterns
     # In a real implementation, it would likely be beneficial to allow for multiple prototypes or prototype inheritance.
     # That solution would be recursive and would set all data from the lowest prototype back up to the base type.
     #
-    # * +monster_type+ The type of the monster that has a corresponding json file
+    # * +monster_type+ - The type of the monster that has a corresponding json file
     #
     # Examples
     #
@@ -67,7 +67,7 @@ module Patterns
     # Populates type data based on monster name
     #
     #
-    # * +monster_type+ The type of the monster that has a corresponding json file
+    # * +monster_type+ - The type of the monster that has a corresponding json file
     #
     # Examples
     #

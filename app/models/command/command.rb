@@ -12,8 +12,10 @@ module Patterns
   #   - • Command – declares an interface for executing an operation.
   class Command
 
-    # * - +@description+ - stores the description that is passed to the initializer upon object instantiation \n * - +@status+ - the most recent status of the command
-    attr_accessor :description, :status
+    # stores the description that is passed to the initializer upon object instantiation
+    attr_accessor :description
+    # the most recent status of the command
+    attr_accessor :status
 
     # Initializes the Command Class
     # Designed to be called by a child class in its initialize method

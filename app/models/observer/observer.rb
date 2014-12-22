@@ -8,9 +8,10 @@ module Patterns
   # This implementation can be inherited or used by itself. For example, it could be an Admin class watching a User class, or it could just be a class called UserObserver.
   # We would simply add this class to whatever subject list we want to observe.
   class Observer
-    # * +@last_notification+ - The last notification this observer received
-    # * +@last_event+ - The last event this observer received
-    attr_reader :last_notification, :last_event
+    # The last notification this observer received
+    attr_reader :last_notification
+    # The last event this observer received
+    attr_reader :last_event
 
     # Initializes the observer class
     #

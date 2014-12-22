@@ -3,8 +3,6 @@ require 'Patterns/version'
 include Patterns
 require File.expand_path('../../test', __FILE__) +'/test_env.rb'
 
-
-
 describe 'TypeObjectTests' do
   it 'should be able to load prototype and base type data if it exists for all monster types, or just base type if it does not have a prototype' do
 

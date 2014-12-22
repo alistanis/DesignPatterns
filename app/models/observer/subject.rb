@@ -6,7 +6,7 @@ module Patterns
   #
   # Contains a list of observers that are watching this subject
   class Subject
-    # * +observers+ - The list of observers this subject stores
+    # The list of observers this subject stores
     attr_reader :observers
 
     # Initializes the subject class
