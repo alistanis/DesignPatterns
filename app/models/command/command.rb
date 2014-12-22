@@ -5,6 +5,8 @@ module Patterns
   # Command -> Object
   #
   # Base Class that acts as a receiver and allows execution for a command while also storing status and description
+  # All of this class' subclasses may optionally implement undo, which is an example of the Memento Pattern.
+  # Memento will be covered more fully in the Abstract State Machine/Finite State Machine pattern.
   #
   # From Design Patterns (Gang of Four)
   #   - • Command – declares an interface for executing an operation.

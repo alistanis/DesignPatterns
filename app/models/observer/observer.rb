@@ -24,7 +24,11 @@ module Patterns
 
     # Is called when this function is invoked by a subject
     #
-    # Note: in a real implementation, the event would likely be a complete object or hash, and would contain much more useful information
+    # Note: in a real implementation, the event would likely be a complete object or hash, and would contain much more useful information.
+    # It would also likely contain a call to a function to do something, like log the event, or execute an event callback.
+    # If it does execute an event callback and the callback could possibly block while your main application waits for it to return,
+    # it would be a reasonable choice to use asynchronous scheduling, threads, fork a child process,
+    # or some other means of asynchronous processing to complete the callback.
     #
     # * +notification+ - The notification received from the subclass
     # * +event+ - The event received from the subclass

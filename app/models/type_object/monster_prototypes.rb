@@ -2,8 +2,9 @@ module Patterns
 
   # MonsterPrototypes -> Object
   #
-  # A true prototype class, this class allows for the copying of a class to quickly create a new one.
-  # All monsters are loaded into memory immediately.
+  # This class allows for the copying of any monster class to quickly create a new one.
+  # All monsters are loaded into memory immediately and can be copied later on demand by name.
+  # This uses the builder and prototype patterns.
   class MonsterPrototypes
 
     # The Hash of all the prototypes in the monster_types folder

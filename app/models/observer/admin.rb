@@ -5,6 +5,7 @@ module Patterns
   # Admin -> Observer
   #
   # An example class to show how the observer pattern can be practically applied
+  # This example uses Inheritance but could also use Object Composition.
   class Admin < Patterns::Observer
 
     # Initializes the Admin class and the Observer superclass

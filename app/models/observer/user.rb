@@ -3,6 +3,7 @@ module Patterns
   # User -> Subject
   #
   # An example class to show how the Subject functions in the Observer pattern
+  # This model uses Inheritance, but Object Composition is possible as well
   class User < Patterns::Subject
 
     # Initializes the User class and the Subject superclass

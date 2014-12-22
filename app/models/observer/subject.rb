@@ -2,6 +2,7 @@ module Patterns
 
   # Subject -> Object
   #
+  # The object that will be observed.
   #
   # Contains a list of observers that are watching this subject
   class Subject
