@@ -52,6 +52,7 @@ describe 'SingletonTests' do
     threads.each { |t| t.join }
   end
 
+  # needs to be 'fixed' so that there is a more obvious race condition
   it 'should verify that the game manager is NOT thread safe' do
     # note that this will not throw an exception, it will simply cause inconsistent sets of data
     threads = []
@@ -73,7 +74,6 @@ describe 'SingletonTests' do
       stored_world_data.each do |data|
         if previous != nil
           if output != previous
-            puts 'true'
             difference_found = true
           end
         end

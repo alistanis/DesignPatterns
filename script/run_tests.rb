@@ -1,8 +1,14 @@
 #!/usr/bin/env ruby
 
 test_files = []
+# Load test environment file
 require File.expand_path('../../test', __FILE__) + '/test_env.rb'
-Dir["#{File.expand_path('../../test', __FILE__)}/**/*.rb"].each { |f| test_files << f }
+# Load test files (they must contain the string 'spec')
+Dir["#{File.expand_path('../../test', __FILE__)}/**/*.rb"].each { |f|
+  if f.include?('spec')
+    test_files << f
+  end
+}
 
 # Extends the String class
 class String
@@ -23,9 +29,11 @@ class String
     colorize(32)
   end
 end
+
+# does a very simple and very naive output parsing for failures and colors the text accordingly
 failures = ''
 test_files.each do |file|
-  output = `rspec #{file} --format documentation --color`
+  output = `rspec #{file} --format documentation`
 
   color = 'green'
   output.lines.each do |line|
