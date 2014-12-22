@@ -199,7 +199,7 @@
 
 <p>lib = File.expand_path(&#39;../lib&#39;, __FILE__) $LOAD_PATH.unshift(lib)
 unless $LOAD_PATH.include?(lib) app_models =
-File.expand_path(&#39;..app/models&#39;, __FILE__)
+File.expand_path(&#39;../app/models&#39;, __FILE__)
 $LOAD_PATH.unshift(app_models) unless $LOAD_PATH.include?(app_models)
 require &#39;Patterns/version&#39;</p>
 

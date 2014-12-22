@@ -130,11 +130,7 @@ list we want to observe.</p>
 
         <div class="method-description">
         
-        <ul><li>
-<p>+@last_notification+ - The last notification this observer received</p>
-</li><li>
-<p>+@last_event+ - The last event this observer received</p>
-</li></ul>
+        <p>The last event this observer received</p>
         
         </div>
       </div>
@@ -147,11 +143,7 @@ list we want to observe.</p>
 
         <div class="method-description">
         
-        <ul><li>
-<p>+@last_notification+ - The last notification this observer received</p>
-</li><li>
-<p>+@last_event+ - The last event this observer received</p>
-</li></ul>
+        <p>The last notification this observer received</p>
         
         </div>
       </div>
@@ -190,7 +182,7 @@ list we want to observe.</p>
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/models/observer/observer.rb, line 20</span>
+            <pre><span class="ruby-comment"># File app/models/observer/observer.rb, line 21</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
   <span class="ruby-ivar">@last_notification</span> = <span class="ruby-string">&#39;No notifications received&#39;</span>
   <span class="ruby-ivar">@last_event</span> = <span class="ruby-string">&#39;No events received&#39;</span>
@@ -229,7 +221,13 @@ list we want to observe.</p>
           <p>Is called when this function is invoked by a subject</p>
 
 <p>Note: in a real implementation, the event would likely be a complete object
-or hash, and would contain much more useful information</p>
+or hash, and would contain much more useful information. It would also
+likely contain a call to a function to do something, like log the event, or
+execute an event callback. If it does execute an event callback and the
+callback could possibly block while your main application waits for it to
+return, it would be a reasonable choice to use asynchronous scheduling,
+threads, fork a child process, or some other means of asynchronous
+processing to complete the callback.</p>
 <ul><li>
 <p><code>notification</code> - The notification received from the subclass</p>
 </li><li>
@@ -249,7 +247,7 @@ or hash, and would contain much more useful information</p>
 
           
           <div class="method-source-code" id="on_notify-source">
-            <pre><span class="ruby-comment"># File app/models/observer/observer.rb, line 39</span>
+            <pre><span class="ruby-comment"># File app/models/observer/observer.rb, line 44</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">on_notify</span>(<span class="ruby-identifier">notification</span>, <span class="ruby-identifier">event</span>)
   <span class="ruby-ivar">@last_notification</span> = <span class="ruby-identifier">notification</span>
   <span class="ruby-ivar">@last_event</span> = <span class="ruby-identifier">event</span>

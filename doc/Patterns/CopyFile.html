@@ -258,13 +258,7 @@ another, and to undo that copy</p>
             <pre><span class="ruby-comment"># File app/models/command/copy_file.rb, line 42</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">undo</span>
   <span class="ruby-identifier">function</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span>
-    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@data</span>
-      <span class="ruby-identifier">f</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-ivar">@target</span>,<span class="ruby-string">&#39;w&#39;</span>)
-      <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span>(<span class="ruby-ivar">@data</span>)
-      <span class="ruby-identifier">f</span>.<span class="ruby-identifier">close</span>
-    <span class="ruby-keyword">else</span>
-      <span class="ruby-constant">File</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-ivar">@data</span>)
-    <span class="ruby-keyword">end</span>
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-ivar">@target</span>)
   <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">super</span>(<span class="ruby-identifier">function</span>)
 <span class="ruby-keyword">end</span></pre>

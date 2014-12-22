@@ -104,7 +104,12 @@
 href="../Object.html">Object</a></p>
 
 <p>The monster class. It delegates its calls to the monster type class. This
-is an example of the Type <a href="../Object.html">Object</a> pattern.</p>
+is an example of the Type <a href="../Object.html">Object</a> pattern. This
+is also an example of the concept of <a href="../Object.html">Object</a>
+Composition over inheritance. The monster HAS a type attribute instead of
+inheriting one. This allows us to decouple the monster from its type and
+stops inheritance from getting out of control in a system with many similar
+objects.</p>
 
   </section>
 
@@ -118,6 +123,27 @@ is an example of the Type <a href="../Object.html">Object</a> pattern.</p>
 
     
 
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-monster_type" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">monster_type</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
     
 
     
@@ -141,6 +167,10 @@ is an example of the Type <a href="../Object.html">Object</a> pattern.</p>
         <div class="method-description">
           
           <p>Initializes the monster class</p>
+<ul><li>
+<p><code>monster_type</code> - The type of the monster that has a
+corresponding json file</p>
+</li></ul>
 
 <p>Examples</p>
 
@@ -151,7 +181,7 @@ is an example of the Type <a href="../Object.html">Object</a> pattern.</p>
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 14</span>
+            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 19</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">monster_type</span>)
   <span class="ruby-ivar">@monster_type</span> = <span class="ruby-constant">MonsterType</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">monster_type</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -186,7 +216,8 @@ is an example of the Type <a href="../Object.html">Object</a> pattern.</p>
 
         <div class="method-description">
           
-          <p>Delegates getting monster attack to the monster_type</p>
+          <p>Delegates getting monster attack to the <a
+href="Monster.html#attribute-i-monster_type">#monster_type</a></p>
 
 <p>Examples</p>
 
@@ -197,7 +228,7 @@ is an example of the Type <a href="../Object.html">Object</a> pattern.</p>
 
           
           <div class="method-source-code" id="attack-source">
-            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 32</span>
+            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 37</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">attack</span>
   <span class="ruby-ivar">@monster_type</span>.<span class="ruby-identifier">attack</span>
 <span class="ruby-keyword">end</span></pre>
@@ -224,7 +255,8 @@ is an example of the Type <a href="../Object.html">Object</a> pattern.</p>
 
         <div class="method-description">
           
-          <p>Delegates getting monster health to the monster_type</p>
+          <p>Delegates getting monster health to the <a
+href="Monster.html#attribute-i-monster_type">#monster_type</a></p>
 
 <p>Examples</p>
 
@@ -235,7 +267,7 @@ is an example of the Type <a href="../Object.html">Object</a> pattern.</p>
 
           
           <div class="method-source-code" id="health-source">
-            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 23</span>
+            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 28</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">health</span>
   <span class="ruby-ivar">@monster_type</span>.<span class="ruby-identifier">health</span>
 <span class="ruby-keyword">end</span></pre>
@@ -274,7 +306,7 @@ is an example of the Type <a href="../Object.html">Object</a> pattern.</p>
 
           
           <div class="method-source-code" id="prototype_name-source">
-            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 68</span>
+            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 73</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">prototype_name</span>
   <span class="ruby-ivar">@monster_type</span>.<span class="ruby-identifier">prototype_name</span>
 <span class="ruby-keyword">end</span></pre>
@@ -301,7 +333,8 @@ is an example of the Type <a href="../Object.html">Object</a> pattern.</p>
 
         <div class="method-description">
           
-          <p>Delegates getting monster range to the monster_type</p>
+          <p>Delegates getting monster range to the <a
+href="Monster.html#attribute-i-monster_type">#monster_type</a></p>
 
 <p>Examples</p>
 
@@ -312,7 +345,7 @@ is an example of the Type <a href="../Object.html">Object</a> pattern.</p>
 
           
           <div class="method-source-code" id="range-source">
-            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 41</span>
+            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 46</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">range</span>
   <span class="ruby-ivar">@monster_type</span>.<span class="ruby-identifier">range</span>
 <span class="ruby-keyword">end</span></pre>
@@ -339,7 +372,8 @@ is an example of the Type <a href="../Object.html">Object</a> pattern.</p>
 
         <div class="method-description">
           
-          <p>Delegates getting monster resistances to the monster_type</p>
+          <p>Delegates getting monster resistances to the <a
+href="Monster.html#attribute-i-monster_type">#monster_type</a></p>
 
 <p>Examples</p>
 
@@ -350,7 +384,7 @@ is an example of the Type <a href="../Object.html">Object</a> pattern.</p>
 
           
           <div class="method-source-code" id="resistances-source">
-            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 50</span>
+            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 55</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">resistances</span>
   <span class="ruby-ivar">@monster_type</span>.<span class="ruby-identifier">resistances</span>
 <span class="ruby-keyword">end</span></pre>
@@ -377,7 +411,8 @@ is an example of the Type <a href="../Object.html">Object</a> pattern.</p>
 
         <div class="method-description">
           
-          <p>Delegates getting monster weaknesses to the monster_type</p>
+          <p>Delegates getting monster weaknesses to the <a
+href="Monster.html#attribute-i-monster_type">#monster_type</a></p>
 
 <p>Examples</p>
 
@@ -388,7 +423,7 @@ is an example of the Type <a href="../Object.html">Object</a> pattern.</p>
 
           
           <div class="method-source-code" id="weaknesses-source">
-            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 59</span>
+            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 64</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">weaknesses</span>
   <span class="ruby-ivar">@monster_type</span>.<span class="ruby-identifier">weaknesses</span>
 <span class="ruby-keyword">end</span></pre>

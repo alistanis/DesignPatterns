@@ -96,7 +96,10 @@
 href="../Object.html">Object</a></p>
 
 <p>Base Class that acts as a receiver and allows execution for a command while
-also storing status and description</p>
+also storing status and description All of this class&#39; subclasses may
+optionally implement undo, which is an example of the Memento Pattern.
+Memento will be covered more fully in the Abstract State Machine/Finite
+State Machine pattern.</p>
 
 <p>From Design <a href="../Patterns.html">Patterns</a> (Gang of Four)</p>
 
@@ -129,12 +132,8 @@ also storing status and description</p>
 
         <div class="method-description">
         
-        <ul><li><ul><li>
-<p>+@description+ - stores the description that is passed to the initializer
-upon object instantiation n * - +@status+ - the most recent status of the
-command</p>
-</li></ul>
-</li></ul>
+        <p>stores the description that is passed to the initializer upon object
+instantiation</p>
         
         </div>
       </div>
@@ -147,12 +146,7 @@ command</p>
 
         <div class="method-description">
         
-        <ul><li><ul><li>
-<p>+@description+ - stores the description that is passed to the initializer
-upon object instantiation n * - +@status+ - the most recent status of the
-command</p>
-</li></ul>
-</li></ul>
+        <p>the most recent status of the command</p>
         
         </div>
       </div>
@@ -199,7 +193,7 @@ called by a child class in its initialize method</p>
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/models/command/command.rb, line 27</span>
+            <pre><span class="ruby-comment"># File app/models/command/command.rb, line 31</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">description</span>)
   <span class="ruby-ivar">@description</span> = <span class="ruby-identifier">description</span>
   <span class="ruby-ivar">@status</span> = <span class="ruby-string">&#39;initialized&#39;</span>
@@ -256,7 +250,7 @@ from the sub class</p>
 
           
           <div class="method-source-code" id="execute-source">
-            <pre><span class="ruby-comment"># File app/models/command/command.rb, line 45</span>
+            <pre><span class="ruby-comment"># File app/models/command/command.rb, line 49</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">execute</span>(<span class="ruby-identifier">function</span>)
   <span class="ruby-ivar">@status</span> = <span class="ruby-node">&quot;Command began: #{@description}&quot;</span>
   <span class="ruby-identifier">function</span>.<span class="ruby-identifier">call</span>
@@ -305,7 +299,7 @@ from the sub class</p>
 
           
           <div class="method-source-code" id="undo-source">
-            <pre><span class="ruby-comment"># File app/models/command/command.rb, line 64</span>
+            <pre><span class="ruby-comment"># File app/models/command/command.rb, line 68</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">undo</span>(<span class="ruby-identifier">function</span>)
   <span class="ruby-ivar">@status</span> = <span class="ruby-node">&quot;Undo began: #{@description}&quot;</span>
   <span class="ruby-identifier">function</span>.<span class="ruby-identifier">call</span>

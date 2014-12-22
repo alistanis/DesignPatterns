@@ -95,7 +95,9 @@
 <p><a href="User.html">User</a> -&gt; <a href="Subject.html">Subject</a></p>
 
 <p>An example class to show how the <a href="Subject.html">Subject</a>
-functions in the <a href="Observer.html">Observer</a> pattern</p>
+functions in the <a href="Observer.html">Observer</a> pattern This model
+uses Inheritance, but <a href="../Object.html">Object</a> Composition is
+possible as well</p>
 
   </section>
 
@@ -155,7 +157,7 @@ href="Subject.html">Subject</a> superclass</p>
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/models/observer/user.rb, line 17</span>
+            <pre><span class="ruby-comment"># File app/models/observer/user.rb, line 18</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">user_name</span>, <span class="ruby-identifier">email</span>, <span class="ruby-identifier">password</span>)
   <span class="ruby-keyword">super</span>()
   <span class="ruby-ivar">@user_name</span> = <span class="ruby-identifier">user_name</span>
@@ -208,7 +210,7 @@ password to</p>
 
           
           <div class="method-source-code" id="change_password-source">
-            <pre><span class="ruby-comment"># File app/models/observer/user.rb, line 31</span>
+            <pre><span class="ruby-comment"># File app/models/observer/user.rb, line 32</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">change_password</span>(<span class="ruby-identifier">new_password</span>)
   <span class="ruby-ivar">@password</span> = <span class="ruby-identifier">new_password</span>
   <span class="ruby-identifier">notify</span>(<span class="ruby-node">&quot;Password changed for user: #{@user_name}&quot;</span>, <span class="ruby-string">&#39;PasswordChange&#39;</span>)
@@ -258,7 +260,7 @@ observers</p>
 
           
           <div class="method-source-code" id="notify-source">
-            <pre><span class="ruby-comment"># File app/models/observer/user.rb, line 44</span>
+            <pre><span class="ruby-comment"># File app/models/observer/user.rb, line 45</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">notify</span>(<span class="ruby-identifier">notification</span>, <span class="ruby-identifier">event</span>)
   <span class="ruby-keyword">super</span>(<span class="ruby-identifier">notification</span>, <span class="ruby-identifier">event</span>)
 <span class="ruby-keyword">end</span></pre>

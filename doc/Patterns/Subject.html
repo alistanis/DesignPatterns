@@ -97,6 +97,8 @@
 <p><a href="Subject.html">Subject</a> -&gt; <a
 href="../Object.html">Object</a></p>
 
+<p>The object that will be observed.</p>
+
 <p>Contains a list of observers that are watching this subject</p>
 
   </section>
@@ -126,9 +128,7 @@ href="../Object.html">Object</a></p>
 
         <div class="method-description">
         
-        <ul><li>
-<p><code>observers</code> - The list of observers this subject stores</p>
-</li></ul>
+        <p>The list of observers this subject stores</p>
         
         </div>
       </div>
@@ -167,7 +167,7 @@ href="../Object.html">Object</a></p>
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/models/observer/subject.rb, line 16</span>
+            <pre><span class="ruby-comment"># File app/models/observer/subject.rb, line 17</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
   <span class="ruby-ivar">@observers</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
 <span class="ruby-keyword">end</span></pre>
@@ -217,7 +217,7 @@ href="../Object.html">Object</a></p>
 
           
           <div class="method-source-code" id="add_observer-source">
-            <pre><span class="ruby-comment"># File app/models/observer/subject.rb, line 28</span>
+            <pre><span class="ruby-comment"># File app/models/observer/subject.rb, line 29</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">add_observer</span>(<span class="ruby-identifier">observer</span>)
   <span class="ruby-ivar">@observers</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">observer</span>
 <span class="ruby-keyword">end</span></pre>
@@ -260,7 +260,7 @@ href="../Object.html">Object</a></p>
 
           
           <div class="method-source-code" id="notify-source">
-            <pre><span class="ruby-comment"># File app/models/observer/subject.rb, line 51</span>
+            <pre><span class="ruby-comment"># File app/models/observer/subject.rb, line 52</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">notify</span>(<span class="ruby-identifier">notification</span>, <span class="ruby-identifier">event</span>)
   <span class="ruby-ivar">@observers</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">observer</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">observer</span>.<span class="ruby-identifier">on_notify</span>(<span class="ruby-identifier">notification</span>, <span class="ruby-identifier">event</span>)
@@ -303,7 +303,7 @@ href="../Object.html">Object</a></p>
 
           
           <div class="method-source-code" id="remove_observer-source">
-            <pre><span class="ruby-comment"># File app/models/observer/subject.rb, line 39</span>
+            <pre><span class="ruby-comment"># File app/models/observer/subject.rb, line 40</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">remove_observer</span>(<span class="ruby-identifier">observer</span>)
   <span class="ruby-ivar">@observers</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">observer</span>)
 <span class="ruby-keyword">end</span></pre>

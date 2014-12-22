@@ -93,8 +93,9 @@
 <p><a href="MonsterPrototypes.html">MonsterPrototypes</a> -&gt; <a
 href="../Object.html">Object</a></p>
 
-<p>A true prototype class, this class allows for the copying of a class to
-quickly create a new one. All monsters are loaded into memory immediately.</p>
+<p>This class allows for the copying of any monster class to quickly create a
+new one. All monsters are loaded into memory immediately and can be copied
+later on demand by name. This uses the builder and prototype patterns.</p>
 
   </section>
 
@@ -174,7 +175,7 @@ and then creates new monsters for each name found.</p>
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/models/type_object/monster_prototypes.rb, line 17</span>
+            <pre><span class="ruby-comment"># File app/models/type_object/monster_prototypes.rb, line 18</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
   <span class="ruby-ivar">@monster_names</span> = []
   <span class="ruby-ivar">@prototypes</span> = {}
@@ -216,8 +217,12 @@ and then creates new monsters for each name found.</p>
         <div class="method-description">
           
           <p>Performs a marshalling of the <a href="Monster.html">Monster</a> stored in
-the Prototype array, which is returned as a new <a
-href="Monster.html">Monster</a> to the caller as a clone of the original</p>
+the <a href="Prototype.html">Prototype</a> array, which is returned as a
+new <a href="Monster.html">Monster</a> to the caller as a clone of the
+original</p>
+<ul><li>
+<p><code>type_name</code> - The type of the monster to clone</p>
+</li></ul>
 
 <p>Examples</p>
 
@@ -229,10 +234,17 @@ href="Monster.html">Monster</a> to the caller as a clone of the original</p>
 
           
           <div class="method-source-code" id="clone_type-source">
-            <pre><span class="ruby-comment"># File app/models/type_object/monster_prototypes.rb, line 33</span>
+            <pre><span class="ruby-comment"># File app/models/type_object/monster_prototypes.rb, line 36</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">clone_type</span>(<span class="ruby-identifier">type_name</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-ivar">@prototypes</span>[<span class="ruby-identifier">type_name</span>] <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
-    <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">load</span>(<span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">dump</span>(<span class="ruby-ivar">@prototypes</span>[<span class="ruby-identifier">type_name</span>]))
+    <span class="ruby-identifier">serialized_object</span> = <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">dump</span>(<span class="ruby-ivar">@prototypes</span>[<span class="ruby-identifier">type_name</span>])
+    <span class="ruby-comment"># Just in case someone was able to write some json onto disk and inject something.</span>
+    <span class="ruby-comment"># This won&#39;t actually help anything because the type name is still being read from the same source, but it serves as a security example.</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-node">%w(exec system eval throw puts exit fork syscall %x send `)</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">serialized_object</span>
+      <span class="ruby-constant">Monster</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">type_name</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">load</span>(<span class="ruby-identifier">serialized_object</span>)
+    <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>

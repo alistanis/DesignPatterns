@@ -72,6 +72,8 @@
     
     <li ><a href="#method-i-get_world_size">#get_world_size</a>
     
+    <li ><a href="#method-i-get_world_string">#get_world_string</a>
+    
     <li ><a href="#method-i-init_world">#init_world</a>
     
     <li ><a href="#method-i-log_world">#log_world</a>
@@ -97,7 +99,10 @@ href="../Object.html">Object</a></p>
 <p>A different type of singleton that acts as a global constant object.
 Methods are added to the <a href="GameManager.html">GameManager</a> object.
 Note that this example is not thread safe! If you wish to access this class
-using threads you&#39;ll need to use a Mutex or Spinlock</p>
+using threads you&#39;ll need to use a Mutex or Spinlock class &lt;&lt; <a
+href="GameManager.html">GameManager</a> is an example of dynamically adding
+attributes and functionality to an instance of a class. This is the purpose
+of the Decorator Pattern, which exists inherently in Ruby in many forms.</p>
 
   </section>
 
@@ -178,7 +183,7 @@ using threads you&#39;ll need to use a Mutex or Spinlock</p>
 
           
           <div class="method-source-code" id="get_player_position-source">
-            <pre><span class="ruby-comment"># File app/models/singleton/game_manager.rb, line 81</span>
+            <pre><span class="ruby-comment"># File app/models/singleton/game_manager.rb, line 99</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_player_position</span>
   <span class="ruby-ivar">@player</span>.<span class="ruby-identifier">position</span>
 <span class="ruby-keyword">end</span></pre>
@@ -216,7 +221,7 @@ using threads you&#39;ll need to use a Mutex or Spinlock</p>
 
           
           <div class="method-source-code" id="get_world-source">
-            <pre><span class="ruby-comment"># File app/models/singleton/game_manager.rb, line 72</span>
+            <pre><span class="ruby-comment"># File app/models/singleton/game_manager.rb, line 74</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_world</span>
   <span class="ruby-ivar">@game_map</span>
 <span class="ruby-keyword">end</span></pre>
@@ -255,9 +260,54 @@ href="../Object.html">Object</a></p>
 
           
           <div class="method-source-code" id="get_world_size-source">
-            <pre><span class="ruby-comment"># File app/models/singleton/game_manager.rb, line 90</span>
+            <pre><span class="ruby-comment"># File app/models/singleton/game_manager.rb, line 108</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_world_size</span>
   <span class="ruby-constant">Vector2D</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">WIDTH</span>, <span class="ruby-constant">HEIGHT</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_world_string" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_world_string</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the current world formatted for printing</p>
+
+<p>Examples</p>
+
+<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">GameManager</span>.<span class="ruby-identifier">get_world_string</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="get_world_string-source">
+            <pre><span class="ruby-comment"># File app/models/singleton/game_manager.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_world_string</span>
+  <span class="ruby-identifier">output</span> = <span class="ruby-string">&#39;&#39;</span>
+  <span class="ruby-ivar">@game_map</span>.<span class="ruby-identifier">each_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@game_map</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">each_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">column</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@game_map</span>[<span class="ruby-identifier">row</span>][<span class="ruby-identifier">column</span>]
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">output</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -294,7 +344,7 @@ location</p>
 
           
           <div class="method-source-code" id="init_world-source">
-            <pre><span class="ruby-comment"># File app/models/singleton/game_manager.rb, line 28</span>
+            <pre><span class="ruby-comment"># File app/models/singleton/game_manager.rb, line 30</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">init_world</span>
   <span class="ruby-ivar">@game_map</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">HEIGHT</span>){<span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">WIDTH</span>){<span class="ruby-value">0</span>}}
   <span class="ruby-ivar">@player</span> = <span class="ruby-constant">Player</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>, <span class="ruby-value">0</span>)
@@ -335,7 +385,7 @@ location</p>
 
           
           <div class="method-source-code" id="log_world-source">
-            <pre><span class="ruby-comment"># File app/models/singleton/game_manager.rb, line 56</span>
+            <pre><span class="ruby-comment"># File app/models/singleton/game_manager.rb, line 58</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">log_world</span>
   <span class="ruby-identifier">output</span> = <span class="ruby-string">&#39;&#39;</span>
   <span class="ruby-ivar">@game_map</span>.<span class="ruby-identifier">each_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
@@ -344,7 +394,7 @@ location</p>
     <span class="ruby-keyword">end</span>
     <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n&quot;</span>
   <span class="ruby-keyword">end</span>
-  <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">info</span> <span class="ruby-node">&quot;Current Game State: \n#{output}&quot;</span>
+  <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">info</span> <span class="ruby-node">&quot;\nCurrent Game State: \n#{output}&quot;</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -380,7 +430,7 @@ location</p>
 
           
           <div class="method-source-code" id="print_world-source">
-            <pre><span class="ruby-comment"># File app/models/singleton/game_manager.rb, line 40</span>
+            <pre><span class="ruby-comment"># File app/models/singleton/game_manager.rb, line 42</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">print_world</span>
   <span class="ruby-identifier">output</span> = <span class="ruby-string">&#39;&#39;</span>
   <span class="ruby-ivar">@game_map</span>.<span class="ruby-identifier">each_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
@@ -389,7 +439,7 @@ location</p>
     <span class="ruby-keyword">end</span>
     <span class="ruby-identifier">output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n&quot;</span>
   <span class="ruby-keyword">end</span>
-  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Current Game State: \n#{output}&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;\nCurrent Game State: \n#{output}&quot;</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           
