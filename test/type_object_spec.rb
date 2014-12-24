@@ -99,9 +99,8 @@ describe 'TypeObjectTests' do
         }
       end
       threads.each {|t| t.join}
-      end_time = Time.now
-      total_run_time = end_time - start_time
-      expect(total_run_time).to be_between(5, 15)
+      total_run_time = Time.now - start_time
+      expect(total_run_time).to be_between(0, 40)
     end
 
 
@@ -121,12 +120,12 @@ describe 'TypeObjectTests' do
         orc_clones[count] = monsters.clone_type('orc')
         count += 1
       end
-      end_time = Time.now
-      $total_marshal_run_time = end_time - start_time
+
+      $total_marshal_run_time = Time.now - start_time
       expect($total_marshal_run_time).not_to be_between(0, num / (num * 0.1))
     end
 
-    it 'Completes n number of efficient clones in n / (n * 0.1) seconds' do
+    it 'Completes n number of efficient clones in less time than the total marshalling time(previous test)' do
       start_time = Time.now
       orcs = []
       num = 100000
@@ -134,15 +133,39 @@ describe 'TypeObjectTests' do
       for i in 0..num
         orcs[i] = Monster.new('orc')
       end
-
       count = 0
       orcs.each do |orc|
         orc_clones[count] = orc.deep_clone
         count += 1
       end
-      end_time = Time.now
-      total_run_time = end_time - start_time
+      total_run_time = Time.now - start_time
       expect(total_run_time).to be_between(0, $total_marshal_run_time)
     end
   end
+
+  context 'TypeObject Thread Pool Cloning' do
+    it 'Clones objects much faster using threads (total_marshal_time / (num_cpus / 2))' do
+      start_time = Time.now
+      thread_count = `sysctl -n hw.ncpu`.to_i
+      threads = []
+      mutex = Mutex.new
+      num_orcs = 0
+      orcs = []
+      orc = Monster.new('orc_wizard')
+      thread_count.times do |i|
+        threads[i] = Thread.new {
+          until num_orcs >= 100000
+            orcs[num_orcs] = orc.deep_clone
+            mutex.synchronize {
+              num_orcs += 1
+            }
+          end
+        }
+      end
+      threads.each {|t| t.join}
+      total_run_time = Time.now - start_time
+      expect(total_run_time).to be_between(0, $total_marshal_run_time / (thread_count / 2 ))
+    end
+  end
+
 end
