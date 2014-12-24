@@ -5,7 +5,7 @@ require File.expand_path('../../test', __FILE__) +'/test_env.rb'
 
 describe 'CommandTests' do
 
-  it 'should create a file, verify it exists, and then delete a file' do
+  it 'Creates a file, verifies it exists, and then deletes a file' do
 
     path = '/tmp/test.txt'
     create_file = Patterns::CreateFile.new(path, 'Testing create file.')
@@ -16,7 +16,7 @@ describe 'CommandTests' do
 
   end
 
-  it 'should delete a file, store its data, and then undo the operation' do
+  it 'Deletes a file, stores its data, and then undoes the operation' do
 
     path = '/tmp/test.txt'
     `touch #{path}`
@@ -29,7 +29,7 @@ describe 'CommandTests' do
 
   end
 
-  it 'should copy a file from a source path to a target path' do
+  it 'Copies a file from a source path to a target path' do
     source = '/tmp/test.txt'
     target = '/tmp/test2.txt'
 
@@ -50,7 +50,7 @@ describe 'CommandTests' do
     expect(File.exists?(target)).to eql(false)
   end
 
-  it 'should be able to take a list of commands, and execute the next command in the list and undo the last command in the list, in any order' do
+  it 'Able to take a list of commands, and execute the next command in the list and undo the last command in the list, in any order' do
     path = '/tmp/test.txt'
     create_file = Patterns::CreateFile.new(path, 'Testing create file.')
     target = '/tmp/test2.txt'
@@ -103,7 +103,7 @@ describe 'CommandTests' do
   end
 
   command_list_output = ''
-  it 'should take a list of commands and execute all of them, report their description and status, then undo them' do
+  it 'Takes a list of commands and executes all of them, reports their descriptions and statuses, then undoes them' do
 
     path = '/tmp/test.txt'
     create_file = Patterns::CreateFile.new(path, 'Testing create file.')
@@ -125,7 +125,7 @@ describe 'CommandTests' do
 
   end
 
-  it 'should print the descriptions and status of the command list test' do
+  it 'Prints the descriptions and statuses of the command list test' do
     expect{puts command_list_output}.to output.to_stdout
   end
 

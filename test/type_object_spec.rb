@@ -146,6 +146,7 @@ describe 'TypeObjectTests' do
   context 'TypeObject Thread Pool Cloning' do
     it 'Clones objects much faster using threads (total_marshal_time / (num_cpus / 2))' do
       start_time = Time.now
+      #only safe on a mac, might implement other OS's later
       thread_count = `sysctl -n hw.ncpu`.to_i
       threads = []
       mutex = Mutex.new
@@ -164,7 +165,7 @@ describe 'TypeObjectTests' do
       end
       threads.each {|t| t.join}
       total_run_time = Time.now - start_time
-      expect(total_run_time).to be_between(0, $total_marshal_run_time / (thread_count / 2 ))
+      expect(total_run_time).to be_between(0, $total_marshal_run_time / (thread_count / 2 )), "Total run time for test: #{total_run_time}. Test ran #{$total_marshal_run_time/total_run_time}% faster."
     end
   end
 

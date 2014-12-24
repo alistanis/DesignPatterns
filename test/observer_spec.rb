@@ -5,7 +5,7 @@ require File.expand_path('../../test', __FILE__) +'/test_env.rb'
 
 describe 'ObserverTests' do
 
-  it 'should be able to add an observer and notify it of an event' do
+  it 'Able to add an observer and notify it of an event' do
 
     admin = Patterns::Admin.new('Chris', 'ccooper@sessionm.com')
 

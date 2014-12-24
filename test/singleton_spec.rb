@@ -5,24 +5,24 @@ require File.expand_path('../../test', __FILE__) +'/test_env.rb'
 
 describe 'SingletonTests' do
 
-  it 'should verify that a game manager can not be instantiated' do
+  it 'Verifies that a game manager can not be instantiated' do
     expect { GameManager.new }.to raise_exception
   end
 
-  it 'should verify that a logger can not be instantiated' do
+  it 'Verifies that a logger can not be instantiated' do
     expect {Patterns::Logger.new}.to raise_exception
   end
 
-  it 'should be able to get an instance of Patterns::Logger' do
+  it 'Able to get an instance of Patterns::Logger' do
     expect(Logger.instance).to be_a(Patterns::Logger)
   end
 
-  it 'should be ale to initialize a game world and print it' do
+  it 'Able to initialize a game world and print it' do
     GameManager.init_world
     expect { print(GameManager.print_world) }.to output.to_stdout
   end
 
-  it 'should be able to print the game state to the game log and verify it logged correctly' do
+  it 'Able to print the game state to the game log and verify it logged correctly' do
 
     GameManager.init_world
     player_position = GameManager.get_player_position
@@ -36,7 +36,7 @@ describe 'SingletonTests' do
 
   end
 
-  it 'should verify that the logger is thread safe' do
+  it 'Verifies that the logger is thread safe' do
     mutex       = Mutex.new
     threads     = []
     thread_count = 4
@@ -53,7 +53,7 @@ describe 'SingletonTests' do
   end
 
   # needs to be 'fixed' so that there is a more obvious race condition
-  it 'should verify that the game manager is NOT thread safe' do
+  it 'Verifies that the game manager is NOT thread safe' do
     # note that this will not throw an exception, it will simply cause inconsistent sets of data
     threads = []
     thread_count = 10
