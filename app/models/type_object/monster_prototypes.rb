@@ -45,7 +45,6 @@ module Patterns
         end
       end
     end
-
   end
 
 end

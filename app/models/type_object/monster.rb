@@ -20,6 +20,10 @@ module Patterns
       @monster_type = MonsterType.new(monster_type)
     end
 
+    def deep_clone
+      Monster.new(@monster_type)
+    end
+
     # Delegates getting monster health to the monster_type
     #
     # Examples

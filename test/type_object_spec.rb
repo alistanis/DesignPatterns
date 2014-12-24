@@ -72,4 +72,17 @@ describe 'TypeObjectTests' do
     expect(orc.monster_type.object_id).to eql(orc2.monster_type.object_id)
   end
 
+  it 'should demonstrate a better clone method (on the monster class) by showing that all object id\'s are different' do
+    orc = Monster.new('orc')
+    orc2 = orc.deep_clone
+
+    expect(orc.monster_type.object_id).not_to eql(orc2.monster_type.object_id)
+  end
+
+  it 'should raise an UnsupportedType exception if something other than a String or MonsterType is passed to Monster.new' do
+    expect {Monster.new(0)}.to raise_exception(UnsupportedType)
+    expect {Monster.new(:symbol)}.to raise_exception(UnsupportedType)
+    expect {Monster.new('werewolf')}.to raise_exception(MonsterNotFound)
+  end
+
 end

@@ -24,28 +24,39 @@ module Patterns
     attr_accessor :weaknesses
     # The attack range of the monster
     attr_accessor :range
+    # The name of the prototype monster if it exists, or none if it does not
+    attr_accessor :prototype_name
 
     # Initializes the monster type object. If the monster has a prototype, it collects and sets the prototype data first.
     # Then the initializer sets the base type data. The base type will always override the prototype if the base type has differing data.
     # In a real implementation, it would likely be beneficial to allow for multiple prototypes or prototype inheritance.
     # That solution would be recursive and would set all data from the lowest prototype back up to the base type.
     #
-    # * +monster_type+ - The type of the monster that has a corresponding json file
+    # * +monster_type+ - The type of the monster that has a corresponding json file as a String, or a MonsterType Object
     #
     # Examples
     #
     #   => monster_type = MonsterType.new('dragon')
     def initialize(monster_type)
-      @monster_type = monster_type
-      @type_data = populate_type_data(@monster_type)
-      if has_prototype?
-        populate_prototype_data
-        @health = @prototype_data['health']
-        @attack = @prototype_data['attack']
-        @range = @prototype_data['attack_range']
-        @resistances = @prototype_data['resistances']
-        @weaknesses = @prototype_data['weaknesses']
+      @type_data = {}
+
+      if monster_type.is_a?(String)
+        @monster_type = monster_type
+        @type_data = populate_type_data(@monster_type)
+        if has_prototype?
+          populate_prototype_data
+          @health = @prototype_data['health']
+          @attack = @prototype_data['attack']
+          @range = @prototype_data['attack_range']
+          @resistances = @prototype_data['resistances']
+          @weaknesses = @prototype_data['weaknesses']
+        end
+      elsif monster_type.is_a?(MonsterType)
+        @type_data = monster_type.to_h
+      else
+        raise UnsupportedType, 'Type must be either MonsterType or String'
       end
+
       if @type_data['health'] != nil
         @health = @type_data['health']
       end
@@ -117,10 +128,20 @@ module Patterns
     end
   end
 
+  def to_h
+    {'name' => @name, 'health' => @health, 'attack' => @attack, 'attack_range' => @range, 'resistances' => @resistances, 'weaknesses' => @weaknesses, 'prototype' => @prototype}
+  end
+
+
   # MonsterNotFound -> StandardError
   #
   # Raises a MonsterNotFound exception when the monster json file doesn't exist
   class MonsterNotFound < StandardError
   end
 
+  # UnsupportedType -> StandardError
+  #
+  # Raises an UnsupportedType exception when the argument passed in is not a String, Hash, or MonsterType
+  class UnsupportedType < StandardError
+  end
 end

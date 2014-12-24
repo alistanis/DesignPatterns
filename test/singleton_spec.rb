@@ -17,7 +17,7 @@ describe 'SingletonTests' do
     expect(Logger.instance).to be_a(Patterns::Logger)
   end
 
-  it 'should be able to initialize a game world and print it' do
+  it 'should be ale to initialize a game world and print it' do
     GameManager.init_world
     expect { print(GameManager.print_world) }.to output.to_stdout
   end
