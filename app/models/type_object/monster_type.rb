@@ -32,6 +32,8 @@ module Patterns
     # In a real implementation, it would likely be beneficial to allow for multiple prototypes or prototype inheritance.
     # That solution would be recursive and would set all data from the lowest prototype back up to the base type.
     #
+    # The initialize function also provides the capacity to perform a deep clone of an object by accepting a MonsterType as the monster_type instead of a String
+    #
     # * +monster_type+ - The type of the monster that has a corresponding json file as a String, or a MonsterType Object
     #
     # Examples
@@ -128,10 +130,14 @@ module Patterns
     end
   end
 
+  # Converts the MonsterType to a Hash object
+  #
+  # Examples
+  #
+  #   => monster_type_hash = monster_type.to_h
   def to_h
     {'name' => @name, 'health' => @health, 'attack' => @attack, 'attack_range' => @range, 'resistances' => @resistances, 'weaknesses' => @weaknesses, 'prototype' => @prototype}
   end
-
 
   # MonsterNotFound -> StandardError
   #

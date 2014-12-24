@@ -8,7 +8,9 @@ module Patterns
   # This allows us to decouple the monster from its type and stops inheritance from getting out of control in a system with many similar objects.
   class Monster
 
+    # The MonsterType object of the Monster
     attr_accessor :monster_type
+
     # Initializes the monster class
     #
     # * +monster_type+ - The type of the monster that has a corresponding json file
@@ -20,6 +22,11 @@ module Patterns
       @monster_type = MonsterType.new(monster_type)
     end
 
+    # Performs a deep clone of the Monster Object by utilizing the MonsterType object
+    #
+    # Examples
+    #
+    #   => orc2 = orc.clone
     def deep_clone
       Monster.new(@monster_type)
     end
