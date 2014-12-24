@@ -85,4 +85,43 @@ describe 'TypeObjectTests' do
     expect {Monster.new('werewolf')}.to raise_exception(MonsterNotFound)
   end
 
+  it 'should take longer than n / (n * 0.1) seconds to marshal-clone objects' do
+    monsters = MonsterPrototypes.new
+    start_time = Time.now
+    orcs = []
+    num = 100000
+    orc_clones = []
+    for i in 0..num
+      orcs[i] = Monster.new('orc')
+    end
+
+    count = 0
+    orcs.each do |orc|
+      orc_clones[count] = monsters.clone_type('orc')
+      count += 1
+    end
+    end_time = Time.now
+    total_run_time = end_time - start_time
+    expect(total_run_time).not_to be_between(0, num / (num * 0.1))
+  end
+
+  it 'should complete n number of efficient clones in n / (n * 0.1) seconds' do
+    start_time = Time.now
+    orcs = []
+    num = 100000
+    orc_clones = []
+    for i in 0..num
+      orcs[i] = Monster.new('orc')
+    end
+
+    count = 0
+    orcs.each do |orc|
+      orc_clones[count] = orc.deep_clone
+      count += 1
+    end
+    end_time = Time.now
+    total_run_time = end_time - start_time
+    expect(total_run_time).to be_between(0, num / (num * 0.1))
+  end
+
 end
