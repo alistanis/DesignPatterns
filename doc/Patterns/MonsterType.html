@@ -81,8 +81,6 @@
     
     <li ><a href="#method-i-populate_type_data">#populate_type_data</a>
     
-    <li ><a href="#method-i-prototype_name">#prototype_name</a>
-    
   </ul>
 </div>
 
@@ -163,6 +161,19 @@ json and be able to declare them immediately.</p>
         </div>
       </div>
       
+      <div id="attribute-i-prototype_name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">prototype_name</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The name of the prototype monster if it exists, or none if it does not</p>
+        
+        </div>
+      </div>
+      
       <div id="attribute-i-range" class="method-detail">
         <div class="method-heading attribute-method-heading">
           <span class="method-name">range</span><span
@@ -232,9 +243,14 @@ base type has differing data. In a real implementation, it would likely be
 beneficial to allow for multiple prototypes or prototype inheritance. That
 solution would be recursive and would set all data from the lowest
 prototype back up to the base type.</p>
+
+<p>The initialize function also provides the capacity to perform a deep clone
+of an object by accepting a <a href="MonsterType.html">MonsterType</a> as
+the monster_type instead of a <a href="../String.html">String</a></p>
 <ul><li>
 <p><code>monster_type</code> - The type of the monster that has a
-corresponding json file</p>
+corresponding json file as a <a href="../String.html">String</a>, or a <a
+href="MonsterType.html">MonsterType</a> <a href="../Object.html">Object</a></p>
 </li></ul>
 
 <p>Examples</p>
@@ -246,18 +262,27 @@ corresponding json file</p>
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/models/type_object/monster_type.rb, line 38</span>
+            <pre><span class="ruby-comment"># File app/models/type_object/monster_type.rb, line 42</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">monster_type</span>)
-  <span class="ruby-ivar">@monster_type</span> = <span class="ruby-identifier">monster_type</span>
-  <span class="ruby-ivar">@type_data</span> = <span class="ruby-identifier">populate_type_data</span>(<span class="ruby-ivar">@monster_type</span>)
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">has_prototype?</span>
-    <span class="ruby-identifier">populate_prototype_data</span>
-    <span class="ruby-ivar">@health</span> = <span class="ruby-ivar">@prototype_data</span>[<span class="ruby-string">&#39;health&#39;</span>]
-    <span class="ruby-ivar">@attack</span> = <span class="ruby-ivar">@prototype_data</span>[<span class="ruby-string">&#39;attack&#39;</span>]
-    <span class="ruby-ivar">@range</span> = <span class="ruby-ivar">@prototype_data</span>[<span class="ruby-string">&#39;attack_range&#39;</span>]
-    <span class="ruby-ivar">@resistances</span> = <span class="ruby-ivar">@prototype_data</span>[<span class="ruby-string">&#39;resistances&#39;</span>]
-    <span class="ruby-ivar">@weaknesses</span> = <span class="ruby-ivar">@prototype_data</span>[<span class="ruby-string">&#39;weaknesses&#39;</span>]
+  <span class="ruby-ivar">@type_data</span> = {}
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">monster_type</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
+    <span class="ruby-ivar">@monster_type</span> = <span class="ruby-identifier">monster_type</span>
+    <span class="ruby-ivar">@type_data</span> = <span class="ruby-identifier">populate_type_data</span>(<span class="ruby-ivar">@monster_type</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">has_prototype?</span>
+      <span class="ruby-identifier">populate_prototype_data</span>
+      <span class="ruby-ivar">@health</span> = <span class="ruby-ivar">@prototype_data</span>[<span class="ruby-string">&#39;health&#39;</span>]
+      <span class="ruby-ivar">@attack</span> = <span class="ruby-ivar">@prototype_data</span>[<span class="ruby-string">&#39;attack&#39;</span>]
+      <span class="ruby-ivar">@range</span> = <span class="ruby-ivar">@prototype_data</span>[<span class="ruby-string">&#39;attack_range&#39;</span>]
+      <span class="ruby-ivar">@resistances</span> = <span class="ruby-ivar">@prototype_data</span>[<span class="ruby-string">&#39;resistances&#39;</span>]
+      <span class="ruby-ivar">@weaknesses</span> = <span class="ruby-ivar">@prototype_data</span>[<span class="ruby-string">&#39;weaknesses&#39;</span>]
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">monster_type</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">MonsterType</span>)
+    <span class="ruby-ivar">@type_data</span> = <span class="ruby-identifier">monster_type</span>.<span class="ruby-identifier">to_h</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">UnsupportedType</span>, <span class="ruby-string">&#39;Type must be either MonsterType or String&#39;</span>
   <span class="ruby-keyword">end</span>
+
   <span class="ruby-keyword">if</span> <span class="ruby-ivar">@type_data</span>[<span class="ruby-string">&#39;health&#39;</span>] <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
     <span class="ruby-ivar">@health</span> = <span class="ruby-ivar">@type_data</span>[<span class="ruby-string">&#39;health&#39;</span>]
   <span class="ruby-keyword">end</span>
@@ -319,7 +344,7 @@ corresponding json file</p>
 
           
           <div class="method-source-code" id="has_prototype-3F-source">
-            <pre><span class="ruby-comment"># File app/models/type_object/monster_type.rb, line 115</span>
+            <pre><span class="ruby-comment"># File app/models/type_object/monster_type.rb, line 128</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">has_prototype?</span>
   <span class="ruby-ivar">@type_data</span>[<span class="ruby-string">&#39;prototype&#39;</span>]
 <span class="ruby-keyword">end</span></pre>
@@ -357,7 +382,7 @@ corresponding json file</p>
 
           
           <div class="method-source-code" id="populate_prototype_data-source">
-            <pre><span class="ruby-comment"># File app/models/type_object/monster_type.rb, line 91</span>
+            <pre><span class="ruby-comment"># File app/models/type_object/monster_type.rb, line 104</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">populate_prototype_data</span>
   <span class="ruby-ivar">@prototype_data</span> = <span class="ruby-identifier">populate_type_data</span>(<span class="ruby-ivar">@type_data</span>[<span class="ruby-string">&#39;prototype_name&#39;</span>])
 <span class="ruby-keyword">end</span></pre>
@@ -399,7 +424,7 @@ corresponding json file</p>
 
           
           <div class="method-source-code" id="populate_type_data-source">
-            <pre><span class="ruby-comment"># File app/models/type_object/monster_type.rb, line 75</span>
+            <pre><span class="ruby-comment"># File app/models/type_object/monster_type.rb, line 88</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">populate_type_data</span>(<span class="ruby-identifier">monster_type</span>)
   <span class="ruby-identifier">json_file_name</span> = <span class="ruby-identifier">monster_type</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;.json&#39;</span>
   <span class="ruby-identifier">json_file_path</span> = <span class="ruby-constant">MONSTER_JSON_PATH</span> <span class="ruby-operator">+</span> <span class="ruby-string">&#39;/&#39;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">json_file_name</span>
@@ -408,48 +433,6 @@ corresponding json file</p>
     <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">type_data</span>)
   <span class="ruby-keyword">else</span>
     <span class="ruby-identifier">raise</span> <span class="ruby-constant">MonsterNotFound</span>, <span class="ruby-string">&#39;Monster type does not exist&#39;</span>
-  <span class="ruby-keyword">end</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
-    
-      <div id="method-i-prototype_name" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">prototype_name</span><span
-            class="method-args">()</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Returns the prototype name if it has one, returns &#39;none&#39; otherwise</p>
-
-<p>Examples</p>
-
-<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">prototype_name</span>
-</pre>
-          
-          
-
-          
-          <div class="method-source-code" id="prototype_name-source">
-            <pre><span class="ruby-comment"># File app/models/type_object/monster_type.rb, line 100</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">prototype_name</span>
-  <span class="ruby-keyword">if</span> <span class="ruby-identifier">has_prototype?</span>
-    <span class="ruby-ivar">@prototype_data</span>[<span class="ruby-string">&#39;name&#39;</span>]
-  <span class="ruby-keyword">else</span>
-    <span class="ruby-string">&#39;none&#39;</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>

@@ -60,7 +60,17 @@
     
     
     
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
     
+    <li ><a href="#method-i-to_h">#to_h</a>
+    
+  </ul>
+</div>
+
   </div>
 </nav>
 
@@ -120,6 +130,53 @@ all are complete, the major version number will switch to 1.</p>
     
 
     
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-to_h" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_h</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Converts the <a href="Patterns/MonsterType.html">MonsterType</a> to a Hash
+object</p>
+
+<p>Examples</p>
+
+<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">monster_type_hash</span> = <span class="ruby-identifier">monster_type</span>.<span class="ruby-identifier">to_h</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="to_h-source">
+            <pre><span class="ruby-comment"># File app/models/type_object/monster_type.rb, line 138</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_h</span>
+  {<span class="ruby-string">&#39;name&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@name</span>, <span class="ruby-string">&#39;health&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@health</span>, <span class="ruby-string">&#39;attack&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@attack</span>, <span class="ruby-string">&#39;attack_range&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@range</span>, <span class="ruby-string">&#39;resistances&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@resistances</span>, <span class="ruby-string">&#39;weaknesses&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@weaknesses</span>, <span class="ruby-string">&#39;prototype&#39;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@prototype</span>}
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
   </section>
 </main>
 

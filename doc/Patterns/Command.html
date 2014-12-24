@@ -193,7 +193,7 @@ called by a child class in its initialize method</p>
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/models/command/command.rb, line 31</span>
+            <pre><span class="ruby-comment"># File app/models/command/command.rb, line 30</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">description</span>)
   <span class="ruby-ivar">@description</span> = <span class="ruby-identifier">description</span>
   <span class="ruby-ivar">@status</span> = <span class="ruby-string">&#39;initialized&#39;</span>
@@ -250,7 +250,7 @@ from the sub class</p>
 
           
           <div class="method-source-code" id="execute-source">
-            <pre><span class="ruby-comment"># File app/models/command/command.rb, line 49</span>
+            <pre><span class="ruby-comment"># File app/models/command/command.rb, line 48</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">execute</span>(<span class="ruby-identifier">function</span>)
   <span class="ruby-ivar">@status</span> = <span class="ruby-node">&quot;Command began: #{@description}&quot;</span>
   <span class="ruby-identifier">function</span>.<span class="ruby-identifier">call</span>
@@ -299,7 +299,7 @@ from the sub class</p>
 
           
           <div class="method-source-code" id="undo-source">
-            <pre><span class="ruby-comment"># File app/models/command/command.rb, line 68</span>
+            <pre><span class="ruby-comment"># File app/models/command/command.rb, line 67</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">undo</span>(<span class="ruby-identifier">function</span>)
   <span class="ruby-ivar">@status</span> = <span class="ruby-node">&quot;Undo began: #{@description}&quot;</span>
   <span class="ruby-identifier">function</span>.<span class="ruby-identifier">call</span>

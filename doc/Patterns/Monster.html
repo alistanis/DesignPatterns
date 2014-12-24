@@ -77,6 +77,8 @@
     
     <li ><a href="#method-i-attack">#attack</a>
     
+    <li ><a href="#method-i-deep_clone">#deep_clone</a>
+    
     <li ><a href="#method-i-health">#health</a>
     
     <li ><a href="#method-i-prototype_name">#prototype_name</a>
@@ -138,7 +140,8 @@ objects.</p>
 
         <div class="method-description">
         
-        
+        <p>The <a href="MonsterType.html">MonsterType</a> object of the <a
+href="Monster.html">Monster</a></p>
         
         </div>
       </div>
@@ -181,7 +184,7 @@ corresponding json file</p>
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 19</span>
+            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 21</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">monster_type</span>)
   <span class="ruby-ivar">@monster_type</span> = <span class="ruby-constant">MonsterType</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">monster_type</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -228,9 +231,49 @@ href="Monster.html#attribute-i-monster_type">#monster_type</a></p>
 
           
           <div class="method-source-code" id="attack-source">
-            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 37</span>
+            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 48</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">attack</span>
   <span class="ruby-ivar">@monster_type</span>.<span class="ruby-identifier">attack</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-deep_clone" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">deep_clone</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Performs a deep clone of the <a href="Monster.html">Monster</a> <a
+href="../Object.html">Object</a> by utilizing the <a
+href="MonsterType.html">MonsterType</a> object</p>
+
+<p>Examples</p>
+
+<pre class="ruby">=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">orc2</span> = <span class="ruby-identifier">orc</span>.<span class="ruby-identifier">clone</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="deep_clone-source">
+            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">deep_clone</span>
+  <span class="ruby-constant">Monster</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@monster_type</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -267,7 +310,7 @@ href="Monster.html#attribute-i-monster_type">#monster_type</a></p>
 
           
           <div class="method-source-code" id="health-source">
-            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 28</span>
+            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 39</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">health</span>
   <span class="ruby-ivar">@monster_type</span>.<span class="ruby-identifier">health</span>
 <span class="ruby-keyword">end</span></pre>
@@ -306,7 +349,7 @@ href="Monster.html#attribute-i-monster_type">#monster_type</a></p>
 
           
           <div class="method-source-code" id="prototype_name-source">
-            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 73</span>
+            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 84</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">prototype_name</span>
   <span class="ruby-ivar">@monster_type</span>.<span class="ruby-identifier">prototype_name</span>
 <span class="ruby-keyword">end</span></pre>
@@ -345,7 +388,7 @@ href="Monster.html#attribute-i-monster_type">#monster_type</a></p>
 
           
           <div class="method-source-code" id="range-source">
-            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 46</span>
+            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 57</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">range</span>
   <span class="ruby-ivar">@monster_type</span>.<span class="ruby-identifier">range</span>
 <span class="ruby-keyword">end</span></pre>
@@ -384,7 +427,7 @@ href="Monster.html#attribute-i-monster_type">#monster_type</a></p>
 
           
           <div class="method-source-code" id="resistances-source">
-            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 55</span>
+            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 66</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">resistances</span>
   <span class="ruby-ivar">@monster_type</span>.<span class="ruby-identifier">resistances</span>
 <span class="ruby-keyword">end</span></pre>
@@ -423,7 +466,7 @@ href="Monster.html#attribute-i-monster_type">#monster_type</a></p>
 
           
           <div class="method-source-code" id="weaknesses-source">
-            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 64</span>
+            <pre><span class="ruby-comment"># File app/models/type_object/monster.rb, line 75</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">weaknesses</span>
   <span class="ruby-ivar">@monster_type</span>.<span class="ruby-identifier">weaknesses</span>
 <span class="ruby-keyword">end</span></pre>
