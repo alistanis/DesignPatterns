@@ -11,3 +11,16 @@ SingletonTests
 Finished in 0.01371 seconds (files took 0.11919 seconds to load)
 7 examples, 0 failures
 
+2014-12-24 21:55:38 -0500 | INFO: 
+SingletonTests
+  Verifies that a game manager can not be instantiated
+  Verifies that a logger can not be instantiated
+  Able to get an instance of Patterns::Logger
+  Able to initialize a game world and print it
+  Able to print the game state to the game log and verify it logged correctly
+  Verifies that the logger is thread safe
+  Verifies that the game manager is NOT thread safe
+
+Finished in 0.01265 seconds (files took 0.11215 seconds to load)
+7 examples, 0 failures
+

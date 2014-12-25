@@ -5,3 +5,10 @@ ObserverTests
 Finished in 0.00278 seconds (files took 0.10436 seconds to load)
 1 example, 0 failures
 
+2014-12-24 21:55:38 -0500 | INFO: 
+ObserverTests
+  Able to add an observer and notify it of an event
+
+Finished in 0.00413 seconds (files took 0.10957 seconds to load)
+1 example, 0 failures
+

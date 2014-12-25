@@ -34,8 +34,6 @@ class String
 
 end
 
-
-
 # captures the output using script, so ansi colors are kept and will output correctly
 test_files.each do |file|
   out_file = File.expand_path('../../test', __FILE__) + '/logs/' + File.basename(file, '.rb') + '.log'
@@ -62,6 +60,3 @@ test_files.each do |file|
 
   Logger.instance.info output_log.join('').gsub('[32m', '').gsub('[0m', ''), out_file
 end
-
-
-
