@@ -15,6 +15,8 @@ module Patterns
 
     # Initializes the Logger, the Singleton include will ensure it is only initialized once, and only when it needs to be called
     #
+    # * +log_file+ - The path of the log file
+    #
     # Examples
     #
     #   => logger = Logger.instance
@@ -29,9 +31,9 @@ module Patterns
     # Examples
     #
     #   => logger.error 'File not found'
-    def error(message)
+    def error(message, log_file = DEFAULT_LOG_PATH)
       @output = format(message, 'ERROR')
-      write
+      write(log_file)
     end
 
     # Sets the format of our log message to info and writes data to the log file
@@ -41,16 +43,16 @@ module Patterns
     # Examples
     #
     #   => logger.info 'This is some useful info'
-    def info(message)
+    def info(message, log_file = DEFAULT_LOG_PATH)
       @output = format(message, 'INFO')
-      write
+      write(log_file)
     end
 
     private
 
     # Performs the actual write operation
-    def write
-      File.open(DEFAULT_LOG_PATH, 'a') { |f| f << output }
+    def write(log_file)
+      File.open(log_file, 'a') { |f| f << output }
     end
 
     # Sets the format style for the log message

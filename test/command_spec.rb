@@ -122,7 +122,6 @@ describe 'CommandTests' do
     command_list.undo
     command_list_output << command_list.status
     expect(File.exists?(target)).to eql(false)
-
   end
 
   it 'Prints the descriptions and statuses of the command list test' do

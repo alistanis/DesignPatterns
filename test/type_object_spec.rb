@@ -53,7 +53,6 @@ describe 'TypeObjectTests' do
 
       expect(dragon.object_id).not_to eql(dragon2.object_id)
       expect(orc.object_id).not_to eql(orc2.object_id)
-
     end
 
     it 'Loads all monster prototypes into memory, deep clones them(marshal/unmarshal), and verifies that their prototype object_id\'s are different' do
@@ -165,7 +164,7 @@ describe 'TypeObjectTests' do
       end
       threads.each {|t| t.join}
       total_run_time = Time.now - start_time
-      expect(total_run_time).to be_between(0, $total_marshal_run_time / (thread_count / 2 )), "Total run time for test: #{total_run_time}. Test ran #{$total_marshal_run_time/total_run_time}% faster."
+      expect(total_run_time).to be_between(0, $total_marshal_run_time / (thread_count / 2 )), "Total run time for test: #{total_run_time}. Expected run time to be less than #{$total_marshal_run_time / (thread_count / 2)}."
     end
   end
 

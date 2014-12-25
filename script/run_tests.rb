@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
-
+require 'Patterns/version'
+require 'open3'
 test_files = []
 # Load test environment file
 require File.expand_path('../../test', __FILE__) + '/test_env.rb'
@@ -9,6 +10,8 @@ Dir["#{File.expand_path('../../test', __FILE__)}/**/*.rb"].each { |f|
     test_files << f
   end
 }
+
+include Patterns
 
 # Extends the String class
 class String
@@ -28,9 +31,37 @@ class String
   def green
     colorize(32)
   end
+
 end
+
+
 
 # captures the output using script, so ansi colors are kept and will output correctly
 test_files.each do |file|
-  system("script -q /dev/null rspec #{file} --format documentation --color")
+  out_file = File.expand_path('../../test', __FILE__) + '/logs/' + File.basename(file, '.rb') + '.log'
+  cmd = "script -q /dev/null rspec #{file} --format documentation --color"
+  output_log = []
+
+  Open3.popen3(cmd) { |stdin, stdout, stderr|
+    begin
+      ready = IO.select([stdout, stderr])
+      readable = ready[0]
+
+      readable.each do |io|
+        until (str = io.gets).nil? do
+          printf str
+          output_log << str
+        end
+      end
+    rescue Exception => e
+      puts e.backtrace
+    end
+  }
+
+  puts output_log.join('')
+
+  Logger.instance.info output_log.join('').gsub('[32m', '').gsub('[0m', ''), out_file
 end
+
+
+
