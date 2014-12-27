@@ -10,7 +10,7 @@ ECHO = $(ECHO1:0=@echo)
 
 #### Start of system configuration section. ####
 
-srcdir = /Users/Chris/src/Gems/DesignPatterns/lib/extensions/pthreads
+srcdir = .
 topdir = /Users/Chris/.rvm/rubies/ruby-2.1.5/include/ruby-2.1.0
 hdrdir = $(topdir)
 arch_hdrdir = /Users/Chris/.rvm/rubies/ruby-2.1.5/include/ruby-2.1.0/x86_64-darwin14.0
@@ -133,9 +133,9 @@ extout_prefix =
 target_prefix = 
 LOCAL_LIBS = 
 LIBS =   -lpthread -ldl -lobjc 
-ORIG_SRCS = pthreads.c
+ORIG_SRCS = Pthreads.c
 SRCS = $(ORIG_SRCS) 
-OBJS = pthreads.o
+OBJS = Pthreads.o
 HDRS = 
 TARGET = pthreads
 TARGET_NAME = pthreads
