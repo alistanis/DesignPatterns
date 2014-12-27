@@ -105,6 +105,8 @@ VALUE pthread_test(VALUE self) {
 
 // The initialization method for this module. Defines the module and its methods for us to use in Ruby.
 void Init_PThreads() {
+    // Defines the PThreads module in ruby
     PThreads = rb_define_module("PThreads");
+    //Defines the pthreads method in ruby
     rb_define_method(PThreads, "pthreads", pthread_test, 0);
 }

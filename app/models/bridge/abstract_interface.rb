@@ -7,14 +7,15 @@ module Patterns
     class InterfaceNotImplemented < StandardError
     end
 
-    #
+    # Tells the class to include and extend AbstractInterface::Methods
     def self.included(klass)
       klass.send(:include, AbstractInterface::Methods)
       klass.send(:extend, AbstractInterface::Methods)
     end
 
+    # Specifies the api_not_implemented method
     module Methods
-
+      # Raises an InterfaceNotImplemented exception if the class does not implement the function it is calling
       def api_not_implemented(klass)
         caller.first.match(/in `(.+)'/)
         method_name = $1
