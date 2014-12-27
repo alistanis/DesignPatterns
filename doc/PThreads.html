@@ -81,6 +81,10 @@
 
   <section class="description">
     
+<p>For documentation - A C extension that leverages <a
+href="PThreads.html">PThreads</a> instead of ruby threads in order to
+maximize performance</p>
+
   </section>
 
   
@@ -121,9 +125,57 @@
 
           
           <div class="method-source-code" id="pthreads-source">
-            <pre>VALUE pthread_test(VALUE self, int num_threads, ) {
-        int x = 10;
-        return INT2NUM(x);
+            <pre>VALUE pthread_test(VALUE self) {
+    time_t rawtime;
+    struct tm *timeinfo;
+    int num_threads = get_cpu_count();
+    time ( &amp;rawtime );
+    timeinfo = localtime ( &amp;rawtime );
+    printf ( &quot;Current local time and date: %s&quot;, asctime (timeinfo) );
+
+    clock_t begin, end;
+    double time_spent;
+
+    begin = clock();
+
+    pthread_t threads[num_threads];
+    int rc;
+    long t;
+
+    VALUE p;
+
+    if(rb_block_given_p())
+    {
+        p = rb_block_proc();
+        printf(&quot;Block was provided.\n&quot;);
+    }
+    else
+    {
+        rb_raise(rb_eArgError, &quot;a block is required&quot;);
+        return Qnil;
+    }
+        // Acceptable to be outside if/else because we raise an error and return if there is no block given.
+    rb_funcall(p, rb_intern(&quot;call&quot;), 0);
+
+    for(t=0; t &lt; num_threads; t++){
+        printf(&quot;In main: creating thread %ld\n&quot;, t);
+
+        struct arg_struct thread_args;
+        thread_args.threadid = t;
+
+
+        rc = pthread_create(&amp;threads[t], NULL, run_block, (void *)&amp;thread_args);
+        if (rc){
+            printf(&quot;ERROR; return code from pthread_create() is %d\n&quot;, rc);
+            exit(-1);
+        }
+    }
+
+    end = clock();
+    time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+
+    VALUE run_time = rb_float_new(time_spent);
+    return run_time;
 }</pre>
           </div>
           

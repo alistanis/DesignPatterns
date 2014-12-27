@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Patterns::Kicker - RDoc Documentation</title>
+
+<link href="../fonts.css" rel="stylesheet">
+<link href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/search_index.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/searcher.js"></script>
+<script src="../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="FootballPlayer.html">Patterns::FootballPlayer</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li class="calls-super" ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-kick_ball">#kick_ball</a>
+    
+    <li ><a href="#method-i-position">#position</a>
+    
+    <li ><a href="#method-i-run_ball">#run_ball</a>
+    
+    <li ><a href="#method-i-salary">#salary</a>
+    
+    <li ><a href="#method-i-throw_ball">#throw_ball</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Patterns::Kicker">
+  <h1 id="class-Patterns::Kicker" class="class">
+    class Patterns::Kicker
+  </h1>
+
+  <section class="description">
+    
+<p><a href="Kicker.html">Kicker</a> -&gt; <a
+href="FootballPlayer.html">FootballPlayer</a></p>
+
+<p>Overrides required methods from the <a
+href="FootballPlayer.html">FootballPlayer</a> class</p>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Initializes the kicker class</p>
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              <a href="FootballPlayer.html#method-c-new">Patterns::FootballPlayer.new</a>
+            </div>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File app/models/bridge/kicker.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+  <span class="ruby-keyword">super</span>()
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-kick_ball" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">kick_ball</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Overrides <a href="FootballPlayer.html">FootballPlayer</a> <a
+href="Kicker.html#method-i-kick_ball">#kick_ball</a> method</p>
+          
+          
+
+          
+          <div class="method-source-code" id="kick_ball-source">
+            <pre><span class="ruby-comment"># File app/models/bridge/kicker.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">kick_ball</span>
+  <span class="ruby-string">&#39;The kicker kicks the ball!&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-position" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">position</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Overrides <a href="FootballPlayer.html">FootballPlayer</a> position method</p>
+          
+          
+
+          
+          <div class="method-source-code" id="position-source">
+            <pre><span class="ruby-comment"># File app/models/bridge/kicker.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">position</span>
+  <span class="ruby-string">&#39;Kicker&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-run_ball" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run_ball</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Overrides <a href="FootballPlayer.html">FootballPlayer</a> <a
+href="Kicker.html#method-i-run_ball">#run_ball</a> method</p>
+          
+          
+
+          
+          <div class="method-source-code" id="run_ball-source">
+            <pre><span class="ruby-comment"># File app/models/bridge/kicker.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">run_ball</span>
+  <span class="ruby-string">&#39;The kicker tries to run the ball and will likely be fired before the next game.&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-salary" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">salary</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Overrides <a href="FootballPlayer.html">FootballPlayer</a> salary method</p>
+          
+          
+
+          
+          <div class="method-source-code" id="salary-source">
+            <pre><span class="ruby-comment"># File app/models/bridge/kicker.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">salary</span>
+  <span class="ruby-string">&#39;30 Million over 10 years.&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-throw_ball" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">throw_ball</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Overrides <a href="FootballPlayer.html">FootballPlayer</a> <a
+href="Kicker.html#method-i-throw_ball">#throw_ball</a> method</p>
+          
+          
+
+          
+          <div class="method-source-code" id="throw_ball-source">
+            <pre><span class="ruby-comment"># File app/models/bridge/kicker.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">throw_ball</span>
+  <span class="ruby-string">&#39;The kicker tries to throw the ball, and it is an hilarious failure.&#39;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

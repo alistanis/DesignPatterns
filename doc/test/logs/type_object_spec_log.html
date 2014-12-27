@@ -191,6 +191,8 @@
   
     <li><a href="../../lib/extensions/pthreads/Makefile.html">Makefile</a>
   
+    <li><a href="../../test/logs/bridge_spec_log.html">bridge_spec.log</a>
+  
     <li><a href="../../test/logs/command_spec_log.html">command_spec.log</a>
   
     <li><a href="../../test/logs/composite_spec_log.html">composite_spec.log</a>
@@ -277,6 +279,41 @@ less time than the total marshalling time(previous test)</p>
 (num_cpus / 2))</p>
 
 <p>Finished in 25.22 seconds (files took 0.11549 seconds to load) 13
+examples, 0 failures</p>
+
+<p>2014-12-27 06:03:13 -0500 | INFO:  TypeObjectTests</p>
+
+<pre>TypeObject assignment</pre>
+
+<p>    Loads prototype and base type data if it exists for all monster types,
+or just base type if it does not have a prototype     Raises an exception
+if the monster type does not exist     Gets a prototype name if it
+exists, and returns “none” if it does not     Gives detailed exception
+information for MonsterNotFound</p>
+
+<pre>TypeObject Marshal and Deep Clone Tests</pre>
+
+<p>    Loads all monster prototypes into memory, clones them, and verifies
+that their object_id&#39;s are different     Loads all monster prototypes
+into memory, deep clones them(marshal/unmarshal), and verifies that their
+prototype object_id&#39;s are different     Demonstrates that a shallow
+clone is not sufficient for prototyping by showing that the object id&#39;s
+for clones are different, but the underlying prototype id&#39;s are the
+same     Demonstrates a better clone method (on the monster class) by
+showing that all object id&#39;s are different     Raises an
+UnsupportedType exception if something other than a <a
+href="../../String.html">String</a> or MonsterType is passed to
+Monster.new     Create n number of orcs using threads and demonstrates
+the ruby threadwall     Take longer than n / (n * 0.1) seconds to marshal
+and then unmarshal objects     Completes n number of efficient clones in
+less time than the total marshalling time(previous test)</p>
+
+<pre>TypeObject Thread Pool Cloning</pre>
+
+<p>    Clones objects much faster using threads (total_marshal_time /
+(num_cpus / 2))</p>
+
+<p>Finished in 25.91 seconds (files took 0.11431 seconds to load) 13
 examples, 0 failures</p>
 </main>
 
