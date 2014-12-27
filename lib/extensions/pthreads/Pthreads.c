@@ -1,5 +1,25 @@
 #include "Pthreads.h"
 
+/*
+ *	How to call this from Ruby:
+ *		run Ruby extconf.rb
+ *		run make
+ *		run make install
+ *	This will install the correct package for your operating system. Currently only tested on Mac OSX 10.10
+ *
+ *	From Ruby:
+ *		require 'PThreads' (this name will possibly change, and I will likely write a bytecode interpreter so I can pass data as well as functions)
+ *		include PThreads
+ *			then run either:
+ *				pthreads { puts "Hello from ruby!" }
+ *				or
+ *				PThreads.pthreads { puts "Hello from ruby!" }
+ *
+ *	Again, these names will probably change to something more suitable once I've decided what I want this to evolve into
+ *
+ */
+
+
 // VALUE is the default type for the Ruby interpreter and can be any Ruby object (as far as I am aware)
 // Defining a space for information and references about the module to be stored internally
 VALUE PThreads = Qnil;
