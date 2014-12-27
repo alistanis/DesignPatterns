@@ -1,14 +1,4 @@
-#include "ruby.h"
-
-typedef struct {
-    int health;
-    int attack;
-    int attack_range;
-    char **resistances;
-    char **weaknesses;
-    char *name;
-    char *prototype_name;
-} monster_type;
+#include "monster_types.h"
 
 struct *monster_type return_monster_type(int health, int attack, int attack_range, char **resistances, char **weaknesses, char *name, char *prototype_name)
 {
