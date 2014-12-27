@@ -3,7 +3,7 @@
 #include <pthread.h>
 #include <stdio.h>
 #include <time.h>
-#define NUM_THREADS     5
+#include <unistd.h>
 
 // Defining a space for information and references about the module to be stored internally
 VALUE PThreads = Qnil;
@@ -14,6 +14,12 @@ void Init_PThreads();
 // Prototype for our method 'test1' - methods are prefixed by 'method_' here
 VALUE method_pthread_test(VALUE self);
 VALUE method_print_hello(VALUE self);
+
+int get_cpu_count()
+{
+ return sysconf(_SC_NPROCESSORS_ONLN);
+}
+
 
 void *print_hello(void *threadid)
 {
@@ -26,7 +32,7 @@ void *print_hello(void *threadid)
 VALUE pthread_test(VALUE self) {
     time_t rawtime;
     struct tm * timeinfo;
-
+	int num_threads = get_cpu_count();
     time ( &rawtime );
     timeinfo = localtime ( &rawtime );
     printf ( "Current local time and date: %s", asctime (timeinfo) );
@@ -36,10 +42,10 @@ VALUE pthread_test(VALUE self) {
 
     begin = clock();
 
-    pthread_t threads[NUM_THREADS];
+    pthread_t threads[num_threads];
     int rc;
     long t;
-    for(t=0; t<NUM_THREADS; t++){
+    for(t=0; t<num_threads; t++){
         printf("In main: creating thread %ld\n", t);
         rc = pthread_create(&threads[t], NULL, print_hello, (void *)t);
         if (rc){
