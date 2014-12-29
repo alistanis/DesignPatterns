@@ -67,9 +67,13 @@
             <strong><a style="text-decoration: none; color:black;" href="doc/Patterns/Observer.html">Observer</a></strong> - <span style="font-style: italic;">defines and maintains a dependency between objects.</span>
             <br/> The observer pattern is a software design pattern in which an object, called the subject, maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods.
             It is mainly used to implement distributed event handling systems. The Observer pattern is also a key part in the familiar model–view–controller (MVC) architectural pattern.
-
         </p>
-
+        <p>
+            <a id="chain_of_responsibility" class="anchor" href="#chain_of_responsibility" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+            <strong><a style="text-decoration: none; color:black;" href="#">Chain of Responsibility</a></strong> - <span style="font-style: italic;">delegates commands to a chain of processing objects.</span>
+            <br/> Each processing object contains logic that defines the types of command objects that it can handle; the rest are passed to the next processing object in the chain.
+            A mechanism also exists for adding new processing objects to the end of this chain.
+        </p>
         <p>
             <a id="singleton" class="anchor" href="#singleton" aria-hidden="true"><span class="octicon octicon-link"></span></a>
             <strong><a style="text-decoration: none; color:black;" href="doc/Patterns/Singleton.html">Singleton</a></strong> - <span style="font-style: italic;">restricts the instantiation of a class to one object.</span>
@@ -114,6 +118,7 @@
             <tr><th>Pattern</th><th>Type</th><th>Implemented</th><th>RDoc</th><th>Rspec</th></tr>
             <tr><td><a href="doc/Patterns/Command.html" aria-hidden="true">Command</a></td><td>Behavioral</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
             <tr><td><a href="doc/Patterns/Observer.html" aria-hidden="true">Observer</a></td><td>Behavioral</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+            <tr><td><a href="#" aria-hidden="true">Chain of Responsibility</a></td><td>Behavioral</td><td>Yes</td><td>No</td><td>Yes</td></tr>
             <tr><td><a href="doc/Patterns/Singleton.html" aria-hidden="true">Singleton</a></td><td>Creational</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
             <tr><td><a href="doc/Patterns/TypeObject.html" aria-hidden="true">Type Object</a></td><td>Creational/Behavioral</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
             <tr><td><a href="doc/Patterns/Composite.html" aria-hidden="true">Composite</a></td><td>Structural</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
@@ -130,7 +135,7 @@
             <tr><td><a href="#" aria-hidden="true">Flyweight</a></td><td>Structural</td><td>No</td><td>No</td><td>No</td></tr>
             <tr><td><a href="#" aria-hidden="true">Proxy</a></td><td>Structural</td><td>No</td><td>No</td><td>No</td></tr>
 
-            <tr><td><a href="#" aria-hidden="true">Chain of Responsibility</a></td><td>Behavioral</td><td>No</td><td>No</td><td>No</td></tr>
+
             <tr><td><a href="#" aria-hidden="true">Interpreter</a></td><td>Behavioral</td><td>No</td><td>No</td><td>No</td></tr>
             <tr><td><a href="#" aria-hidden="true">Iterator</a></td><td>Behavioral</td><td>No</td><td>No</td><td>No</td></tr>
             <tr><td><a href="#" aria-hidden="true">Mediator</a></td><td>Behavioral</td><td>No</td><td>No</td><td>No</td></tr>
