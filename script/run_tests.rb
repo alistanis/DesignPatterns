@@ -55,8 +55,5 @@ test_files.each do |file|
       puts e.backtrace
     end
   }
-
-  puts output_log.join('')
-
   Logger.instance.info output_log.join('').gsub('[32m', '').gsub('[0m', ''), out_file
 end

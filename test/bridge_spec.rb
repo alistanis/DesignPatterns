@@ -12,6 +12,7 @@ describe 'BridgeTests' do
 
     it 'Does not throw an InterfaceNotImplemented exception after the method has been defined for the child class' do
       running_back = Runningback.new
+
       # Example of decorator pattern, modifying instance variable at runtime
       class << running_back
         # Dynamically overrides the throw_ball function for this instance of the RunningBack class. Otherwise, it would raise an error.
@@ -19,6 +20,7 @@ describe 'BridgeTests' do
           'If the running back is Arian Foster, he throws a touchdown. Otherwise, this is probably a bad idea.'
         end
       end
+
       expect{puts running_back.throw_ball}.to output.to_stdout
     end
   end
