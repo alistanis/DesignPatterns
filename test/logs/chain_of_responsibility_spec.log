@@ -1,0 +1,74 @@
+2014-12-29 02:36:19 -0500 | INFO: /Users/Chris/src/Gems/DesignPatterns/test/chain_of_responsibility_spec.rb:4:in `<top (required)>': uninitialized constant Patterns::Illness (NameError)
+	from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/configuration.rb:1105:in `load'
+	from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/configuration.rb:1105:in `block in load_spec_files'
+	from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/configuration.rb:1105:in `each'
+	from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/configuration.rb:1105:in `load_spec_files'
+	from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/runner.rb:96:in `setup'
+	from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/runner.rb:84:in `run'
+	from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/runner.rb:69:in `run'
+	from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/runner.rb:37:in `invoke'
+	from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/exe/rspec:4:in `<top (required)>'
+	from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/bin/rspec:23:in `load'
+	from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/bin/rspec:23:in `<main>'
+	from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/bin/ruby_executable_hooks:15:in `eval'
+	from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/bin/ruby_executable_hooks:15:in `<main>'
+
+2014-12-29 02:38:08 -0500 | INFO: 
+ChainOfResponsibilityTests
+[31m  Can delegate a patient all the way up the chain (FAILED - 1)
+[31m  Will not continue to delegate if the patient is cured (FAILED - 2)
+[31m  Can cure all illnesses except zombie virus (FAILED - 3)
+
+Failures:
+
+  1) ChainOfResponsibilityTests Can delegate a patient all the way up the chain
+     [31mFailure/Error: patient = Patient.new(27, ZOMBIE_VIRUS)
+     [31mNameError:
+     [31m  uninitialized constant ZOMBIE_VIRUS
+     [36m# /Users/Chris/src/Gems/DesignPatterns/test/chain_of_responsibility_spec.rb:12:in `block (2 levels) in <top (required)>'
+
+  2) ChainOfResponsibilityTests Will not continue to delegate if the patient is cured
+     [31mFailure/Error: patient = Patient.new(12, SORE_THROAT)
+     [31mNameError:
+     [31m  uninitialized constant SORE_THROAT
+     [36m# /Users/Chris/src/Gems/DesignPatterns/test/chain_of_responsibility_spec.rb:25:in `block (2 levels) in <top (required)>'
+
+  3) ChainOfResponsibilityTests Can cure all illnesses except zombie virus
+     [31mFailure/Error: young_patient = Patient.new(12, SORE_THROAT)
+     [31mNameError:
+     [31m  uninitialized constant SORE_THROAT
+     [36m# /Users/Chris/src/Gems/DesignPatterns/test/chain_of_responsibility_spec.rb:41:in `block (2 levels) in <top (required)>'
+
+Finished in 0.00082 seconds (files took 0.12069 seconds to load)
+[31m3 examples, 3 failures
+
+Failed examples:
+
+[31mrspec /Users/Chris/src/Gems/DesignPatterns/test/chain_of_responsibility_spec.rb:10 [36m# ChainOfResponsibilityTests Can delegate a patient all the way up the chain
+[31mrspec /Users/Chris/src/Gems/DesignPatterns/test/chain_of_responsibility_spec.rb:23 [36m# ChainOfResponsibilityTests Will not continue to delegate if the patient is cured
+[31mrspec /Users/Chris/src/Gems/DesignPatterns/test/chain_of_responsibility_spec.rb:38 [36m# ChainOfResponsibilityTests Can cure all illnesses except zombie virus
+
+2014-12-29 02:39:37 -0500 | INFO: /Users/Chris/src/Gems/DesignPatterns/test/chain_of_responsibility_spec.rb:5:in `<top (required)>': uninitialized constant Patterns::Illness (NameError)
+	from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/configuration.rb:1105:in `load'
+	from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/configuration.rb:1105:in `block in load_spec_files'
+	from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/configuration.rb:1105:in `each'
+	from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/configuration.rb:1105:in `load_spec_files'
+	from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/runner.rb:96:in `setup'
+	from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/runner.rb:84:in `run'
+	from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/runner.rb:69:in `run'
+	from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/runner.rb:37:in `invoke'
+	from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/exe/rspec:4:in `<top (required)>'
+	from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/bin/rspec:23:in `load'
+	from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/bin/rspec:23:in `<main>'
+	from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/bin/ruby_executable_hooks:15:in `eval'
+	from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/bin/ruby_executable_hooks:15:in `<main>'
+
+2014-12-29 02:40:03 -0500 | INFO: 
+ChainOfResponsibilityTests
+  Can delegate a patient all the way up the chain
+  Will not continue to delegate if the patient is cured
+  Can cure all illnesses except zombie virus
+
+Finished in 0.00107 seconds (files took 0.1113 seconds to load)
+3 examples, 0 failures
+

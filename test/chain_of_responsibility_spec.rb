@@ -1,9 +1,11 @@
 require 'rspec'
 require 'Patterns/version'
+
+require File.expand_path('../../test', __FILE__) +'/test_env.rb'
+
 include Patterns
 include Patterns::Illness
 
-require File.expand_path('../../test', __FILE__) +'/test_env.rb'
 
 describe 'ChainOfResponsibilityTests' do
 

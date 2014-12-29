@@ -19,3 +19,31 @@ CompositeTests
 Finished in 0.0014 seconds (files took 0.1267 seconds to load)
 1 example, 0 failures
 
+2014-12-29 02:36:20 -0500 | INFO: 
+CompositeTests
+  Can instantiate a root composite, leaf nodes for the root, branch composites, and leaf nodes for those branches
+
+Finished in 0.0014 seconds (files took 0.10655 seconds to load)
+1 example, 0 failures
+
+2014-12-29 02:38:09 -0500 | INFO: 
+CompositeTests
+  Can instantiate a root composite, leaf nodes for the root, branch composites, and leaf nodes for those branches
+
+Finished in 0.00156 seconds (files took 0.11786 seconds to load)
+1 example, 0 failures
+
+2014-12-29 02:39:38 -0500 | INFO: 
+CompositeTests
+  Can instantiate a root composite, leaf nodes for the root, branch composites, and leaf nodes for those branches
+
+Finished in 0.00134 seconds (files took 0.11441 seconds to load)
+1 example, 0 failures
+
+2014-12-29 02:40:04 -0500 | INFO: 
+CompositeTests
+  Can instantiate a root composite, leaf nodes for the root, branch composites, and leaf nodes for those branches
+
+Finished in 0.00135 seconds (files took 0.11603 seconds to load)
+1 example, 0 failures
+

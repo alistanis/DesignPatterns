@@ -12,6 +12,7 @@ Dir["#{File.expand_path('../../test', __FILE__)}/**/*.rb"].each { |f|
 }
 
 include Patterns
+include Patterns::Illness
 
 # Extends the String class
 class String
