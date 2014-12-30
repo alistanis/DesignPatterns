@@ -27,4 +27,20 @@ describe 'CompositeTests' do
     expect{(root.display(1))}.to output.to_stdout
   end
 
+  it 'Raises an exception when there is an attempt to add a node to a leaf node' do
+    root = Composite.new('root')
+    leaf = Leaf.new('Leaf A')
+    root.add(leaf)
+
+    expect{leaf.add(Leaf.new('Leaf 1'))}.to raise_exception(AddChildToLeafError)
+  end
+
+  it 'Raises an exception when there is an attempt to remove a node from a leaf node' do
+    root = Composite.new('root')
+    leaf = Leaf.new('Leaf A')
+    root.add(leaf)
+
+    expect{leaf.remove(Leaf.new('Leaf 1'))}.to raise_exception(RemoveChildFromLeafError)
+  end
+
 end

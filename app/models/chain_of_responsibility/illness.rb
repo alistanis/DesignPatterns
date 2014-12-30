@@ -1,9 +1,9 @@
 module Patterns
   module Illness
-    NONE = nil
-    SORE_THROAT = 0
-    CANCER = 1
-    INTERNAL_BLEEDING = 2
-    ZOMBIE_VIRUS = 3
+    NONE = 0
+    SORE_THROAT = 1
+    CANCER = 2
+    INTERNAL_BLEEDING = 3
+    ZOMBIE_VIRUS = 4
   end
 end

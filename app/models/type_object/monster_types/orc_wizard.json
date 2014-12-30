@@ -1,8 +1,7 @@
 {
-  "name": "orc_wizard",
-  "attack" : 7,
-  "attack_range" : 10,
-  "prototype" : true,
-  "prototype_name" : "orc"
+"name": "orc_wizard",
+"attack" : 7,
+"attack_range" : 10,
+"prototype" : true,
+"prototype_name" : "orc"
 }
-

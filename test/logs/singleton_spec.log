@@ -102,3 +102,55 @@ SingletonTests
 Finished in 0.01289 seconds (files took 0.11605 seconds to load)
 7 examples, 0 failures
 
+2014-12-29 02:42:56 -0500 | INFO: 
+SingletonTests
+  Verifies that a game manager can not be instantiated
+  Verifies that a logger can not be instantiated
+  Able to get an instance of Patterns::Logger
+  Able to initialize a game world and print it
+  Able to print the game state to the game log and verify it logged correctly
+  Verifies that the logger is thread safe
+  Verifies that the game manager is NOT thread safe
+
+Finished in 0.01193 seconds (files took 0.1156 seconds to load)
+7 examples, 0 failures
+
+2014-12-29 02:44:18 -0500 | INFO: 
+SingletonTests
+  Verifies that a game manager can not be instantiated
+  Verifies that a logger can not be instantiated
+  Able to get an instance of Patterns::Logger
+  Able to initialize a game world and print it
+  Able to print the game state to the game log and verify it logged correctly
+  Verifies that the logger is thread safe
+  Verifies that the game manager is NOT thread safe
+
+Finished in 0.01235 seconds (files took 0.12353 seconds to load)
+7 examples, 0 failures
+
+2014-12-29 20:03:30 -0500 | INFO: 
+SingletonTests
+  Verifies that a game manager can not be instantiated
+  Verifies that a logger can not be instantiated
+  Able to get an instance of Patterns::Logger
+  Able to initialize a game world and print it
+  Able to print the game state to the game log and verify it logged correctly
+  Verifies that the logger is thread safe
+  Verifies that the game manager is NOT thread safe
+
+Finished in 0.01241 seconds (files took 0.11882 seconds to load)
+7 examples, 0 failures
+
+2014-12-29 20:12:50 -0500 | INFO: 
+SingletonTests
+  Verifies that a game manager can not be instantiated
+  Verifies that a logger can not be instantiated
+  Able to get an instance of Patterns::Logger
+  Able to initialize a game world and print it
+  Able to print the game state to the game log and verify it logged correctly
+  Verifies that the logger is thread safe
+  Verifies that the game manager is NOT thread safe
+
+Finished in 0.013 seconds (files took 0.12904 seconds to load)
+7 examples, 0 failures
+

@@ -1,6 +1,9 @@
 #!/usr/bin/env ruby
 require 'Patterns/version'
 require 'open3'
+
+start_time = Time.now
+
 test_files = []
 # Load test environment file
 require File.expand_path('../../test', __FILE__) + '/test_env.rb'
@@ -57,4 +60,6 @@ test_files.each do |file|
     end
   }
   Logger.instance.info output_log.join('').gsub('[32m', '').gsub('[0m', ''), out_file
+  total_run_time = Time.now - start_time
+  puts "\nTotal test run time: #{total_run_time} seconds"
 end
