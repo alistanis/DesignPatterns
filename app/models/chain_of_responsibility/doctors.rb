@@ -1,7 +1,7 @@
 module Patterns
   # Doctors -> Object
   #
-  # Acts as a single object containing multiple other objects that it manages.
+  # Acts as a single object containing multiple other objects that it manages. (This is an example of the Component pattern, or Object Composition)
   class Doctors
     # The surgeon object
     attr_accessor :surgeon
