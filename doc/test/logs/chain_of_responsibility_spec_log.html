@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>singleton_spec.log - RDoc Documentation</title>
+<title>chain_of_responsibility_spec.log - RDoc Documentation</title>
 
 <link href="../../fonts.css" rel="stylesheet">
 <link href="../../rdoc.css" rel="stylesheet">
@@ -211,127 +211,124 @@
   </div>
 </nav>
 
-<main role="main" aria-label="Page test/logs/singleton_spec.log">
+<main role="main" aria-label="Page test/logs/chain_of_responsibility_spec.log">
 
-<p>2014-12-24 20:44:43 -0500 | INFO:  SingletonTests   Verifies that a game
-manager can not be instantiated   Verifies that a logger can not be
-instantiated   Able to get an instance of Patterns::Logger   Able to
-initialize a game world and print it   Able to print the game state to
-the game log and verify it logged correctly   Verifies that the logger is
-thread safe   Verifies that the game manager is NOT thread safe</p>
+<p>2014-12-29 02:36:19 -0500 | INFO:
+/Users/Chris/src/Gems/DesignPatterns/test/chain_of_responsibility_spec.rb:4:in
+`&lt;top (required)&gt;&#39;: uninitialized constant <a
+href="../../Patterns/Illness.html">Patterns::Illness</a> (NameError)</p>
 
-<p>Finished in 0.01371 seconds (files took 0.11919 seconds to load) 7
+<pre>from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/configuration.rb:1105:in `load&#39;
+from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/configuration.rb:1105:in `block in load_spec_files&#39;
+from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/configuration.rb:1105:in `each&#39;
+from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/configuration.rb:1105:in `load_spec_files&#39;
+from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/runner.rb:96:in `setup&#39;
+from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/runner.rb:84:in `run&#39;
+from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/runner.rb:69:in `run&#39;
+from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/runner.rb:37:in `invoke&#39;
+from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/exe/rspec:4:in `&lt;top (required)&gt;&#39;
+from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/bin/rspec:23:in `load&#39;
+from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/bin/rspec:23:in `&lt;main&gt;&#39;
+from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/bin/ruby_executable_hooks:15:in `eval&#39;
+from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/bin/ruby_executable_hooks:15:in `&lt;main&gt;&#39;</pre>
+
+<p>2014-12-29 02:38:08 -0500 | INFO:  ChainOfResponsibilityTests [31m  Can
+delegate a patient all the way up the chain (FAILED - 1) [31m  Will not
+continue to delegate if the patient is cured (FAILED - 2) [31m  Can cure
+all illnesses except zombie virus (FAILED - 3)</p>
+
+<p>Failures:</p>
+
+<pre>1) ChainOfResponsibilityTests Can delegate a patient all the way up the chain
+   [31mFailure/Error: patient = Patient.new(27, ZOMBIE_VIRUS)
+   [31mNameError:
+   [31m  uninitialized constant ZOMBIE_VIRUS
+   [36m# /Users/Chris/src/Gems/DesignPatterns/test/chain_of_responsibility_spec.rb:12:in `block (2 levels) in &lt;top (required)&gt;&#39;
+2) ChainOfResponsibilityTests Will not continue to delegate if the patient is cured
+   [31mFailure/Error: patient = Patient.new(12, SORE_THROAT)
+   [31mNameError:
+   [31m  uninitialized constant SORE_THROAT
+   [36m# /Users/Chris/src/Gems/DesignPatterns/test/chain_of_responsibility_spec.rb:25:in `block (2 levels) in &lt;top (required)&gt;&#39;
+3) ChainOfResponsibilityTests Can cure all illnesses except zombie virus
+   [31mFailure/Error: young_patient = Patient.new(12, SORE_THROAT)
+   [31mNameError:
+   [31m  uninitialized constant SORE_THROAT
+   [36m# /Users/Chris/src/Gems/DesignPatterns/test/chain_of_responsibility_spec.rb:41:in `block (2 levels) in &lt;top (required)&gt;&#39;</pre>
+
+<p>Finished in 0.00082 seconds (files took 0.12069 seconds to load) [31m3
+examples, 3 failures</p>
+
+<p>Failed examples:</p>
+
+<p>[31mrspec
+/Users/Chris/src/Gems/DesignPatterns/test/chain_of_responsibility_spec.rb:10
+[36m# ChainOfResponsibilityTests Can delegate a patient all the way up the
+chain [31mrspec
+/Users/Chris/src/Gems/DesignPatterns/test/chain_of_responsibility_spec.rb:23
+[36m# ChainOfResponsibilityTests Will not continue to delegate if the
+patient is cured [31mrspec
+/Users/Chris/src/Gems/DesignPatterns/test/chain_of_responsibility_spec.rb:38
+[36m# ChainOfResponsibilityTests Can cure all illnesses except zombie
+virus</p>
+
+<p>2014-12-29 02:39:37 -0500 | INFO:
+/Users/Chris/src/Gems/DesignPatterns/test/chain_of_responsibility_spec.rb:5:in
+`&lt;top (required)&gt;&#39;: uninitialized constant <a
+href="../../Patterns/Illness.html">Patterns::Illness</a> (NameError)</p>
+
+<pre>from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/configuration.rb:1105:in `load&#39;
+from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/configuration.rb:1105:in `block in load_spec_files&#39;
+from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/configuration.rb:1105:in `each&#39;
+from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/configuration.rb:1105:in `load_spec_files&#39;
+from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/runner.rb:96:in `setup&#39;
+from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/runner.rb:84:in `run&#39;
+from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/runner.rb:69:in `run&#39;
+from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/lib/rspec/core/runner.rb:37:in `invoke&#39;
+from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/gems/rspec-core-3.1.7/exe/rspec:4:in `&lt;top (required)&gt;&#39;
+from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/bin/rspec:23:in `load&#39;
+from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/bin/rspec:23:in `&lt;main&gt;&#39;
+from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/bin/ruby_executable_hooks:15:in `eval&#39;
+from /Users/Chris/.rvm/gems/ruby-2.1.5@design-patterns/bin/ruby_executable_hooks:15:in `&lt;main&gt;&#39;</pre>
+
+<p>2014-12-29 02:40:03 -0500 | INFO:  ChainOfResponsibilityTests   Can
+delegate a patient all the way up the chain   Will not continue to
+delegate if the patient is cured   Can cure all illnesses except zombie
+virus</p>
+
+<p>Finished in 0.00107 seconds (files took 0.1113 seconds to load) 3
 examples, 0 failures</p>
 
-<p>2014-12-24 21:55:38 -0500 | INFO:  SingletonTests   Verifies that a game
-manager can not be instantiated   Verifies that a logger can not be
-instantiated   Able to get an instance of Patterns::Logger   Able to
-initialize a game world and print it   Able to print the game state to
-the game log and verify it logged correctly   Verifies that the logger is
-thread safe   Verifies that the game manager is NOT thread safe</p>
+<p>2014-12-29 02:42:55 -0500 | INFO:  ChainOfResponsibilityTests   Can
+delegate a patient all the way up the chain   Will not continue to
+delegate if the patient is cured   Can cure all illnesses except zombie
+virus</p>
 
-<p>Finished in 0.01265 seconds (files took 0.11215 seconds to load) 7
+<p>Finished in 0.00352 seconds (files took 0.11133 seconds to load) 3
 examples, 0 failures</p>
 
-<p>2014-12-27 06:02:47 -0500 | INFO:  SingletonTests   Verifies that a game
-manager can not be instantiated   Verifies that a logger can not be
-instantiated   Able to get an instance of Patterns::Logger   Able to
-initialize a game world and print it   Able to print the game state to
-the game log and verify it logged correctly   Verifies that the logger is
-thread safe   Verifies that the game manager is NOT thread safe</p>
+<p>2014-12-29 02:44:17 -0500 | INFO:  ChainOfResponsibilityTests   Can
+delegate a patient all the way up the chain   Will not continue to
+delegate if the patient is cured   Can cure all illnesses except zombie
+virus</p>
 
-<p>Finished in 0.02133 seconds (files took 0.12216 seconds to load) 7
+<p>Finished in 0.0011 seconds (files took 0.10858 seconds to load) 3
 examples, 0 failures</p>
 
-<p>2014-12-27 07:16:18 -0500 | INFO:  SingletonTests   Verifies that a game
-manager can not be instantiated   Verifies that a logger can not be
-instantiated   Able to get an instance of Patterns::Logger   Able to
-initialize a game world and print it   Able to print the game state to
-the game log and verify it logged correctly   Verifies that the logger is
-thread safe   Verifies that the game manager is NOT thread safe</p>
+<p>2014-12-29 20:03:28 -0500 | INFO:  ChainOfResponsibilityTests   Can
+delegate a patient all the way up the chain   Will not continue to
+delegate if the patient is cured   Can cure all illnesses except zombie
+virus</p>
 
-<p>Finished in 0.01295 seconds (files took 0.11675 seconds to load) 7
+<p>Finished in 0.00273 seconds (files took 0.11195 seconds to load) 3
 examples, 0 failures</p>
 
-<p>2014-12-29 02:36:20 -0500 | INFO:  SingletonTests   Verifies that a game
-manager can not be instantiated   Verifies that a logger can not be
-instantiated   Able to get an instance of Patterns::Logger   Able to
-initialize a game world and print it   Able to print the game state to
-the game log and verify it logged correctly   Verifies that the logger is
-thread safe   Verifies that the game manager is NOT thread safe</p>
+<p>2014-12-29 20:12:48 -0500 | INFO:  ChainOfResponsibilityTests   Can
+delegate a patient all the way up the chain   Will not continue to
+delegate if the patient is cured   Can cure all illnesses except zombie
+virus</p>
 
-<p>Finished in 0.01389 seconds (files took 0.11673 seconds to load) 7
+<p>Finished in 0.0015 seconds (files took 0.11677 seconds to load) 3
 examples, 0 failures</p>
-
-<p>2014-12-29 02:38:09 -0500 | INFO:  SingletonTests   Verifies that a game
-manager can not be instantiated   Verifies that a logger can not be
-instantiated   Able to get an instance of Patterns::Logger   Able to
-initialize a game world and print it   Able to print the game state to
-the game log and verify it logged correctly   Verifies that the logger is
-thread safe   Verifies that the game manager is NOT thread safe</p>
-
-<p>Finished in 0.01165 seconds (files took 0.12272 seconds to load) 7
-examples, 0 failures</p>
-
-<p>2014-12-29 02:39:38 -0500 | INFO:  SingletonTests   Verifies that a game
-manager can not be instantiated   Verifies that a logger can not be
-instantiated   Able to get an instance of Patterns::Logger   Able to
-initialize a game world and print it   Able to print the game state to
-the game log and verify it logged correctly   Verifies that the logger is
-thread safe   Verifies that the game manager is NOT thread safe</p>
-
-<p>Finished in 0.01527 seconds (files took 0.12266 seconds to load) 7
-examples, 0 failures</p>
-
-<p>2014-12-29 02:40:04 -0500 | INFO:  SingletonTests   Verifies that a game
-manager can not be instantiated   Verifies that a logger can not be
-instantiated   Able to get an instance of Patterns::Logger   Able to
-initialize a game world and print it   Able to print the game state to
-the game log and verify it logged correctly   Verifies that the logger is
-thread safe   Verifies that the game manager is NOT thread safe</p>
-
-<p>Finished in 0.01289 seconds (files took 0.11605 seconds to load) 7
-examples, 0 failures</p>
-
-<p>2014-12-29 02:42:56 -0500 | INFO:  SingletonTests   Verifies that a game
-manager can not be instantiated   Verifies that a logger can not be
-instantiated   Able to get an instance of Patterns::Logger   Able to
-initialize a game world and print it   Able to print the game state to
-the game log and verify it logged correctly   Verifies that the logger is
-thread safe   Verifies that the game manager is NOT thread safe</p>
-
-<p>Finished in 0.01193 seconds (files took 0.1156 seconds to load) 7
-examples, 0 failures</p>
-
-<p>2014-12-29 02:44:18 -0500 | INFO:  SingletonTests   Verifies that a game
-manager can not be instantiated   Verifies that a logger can not be
-instantiated   Able to get an instance of Patterns::Logger   Able to
-initialize a game world and print it   Able to print the game state to
-the game log and verify it logged correctly   Verifies that the logger is
-thread safe   Verifies that the game manager is NOT thread safe</p>
-
-<p>Finished in 0.01235 seconds (files took 0.12353 seconds to load) 7
-examples, 0 failures</p>
-
-<p>2014-12-29 20:03:30 -0500 | INFO:  SingletonTests   Verifies that a game
-manager can not be instantiated   Verifies that a logger can not be
-instantiated   Able to get an instance of Patterns::Logger   Able to
-initialize a game world and print it   Able to print the game state to
-the game log and verify it logged correctly   Verifies that the logger is
-thread safe   Verifies that the game manager is NOT thread safe</p>
-
-<p>Finished in 0.01241 seconds (files took 0.11882 seconds to load) 7
-examples, 0 failures</p>
-
-<p>2014-12-29 20:12:50 -0500 | INFO:  SingletonTests   Verifies that a game
-manager can not be instantiated   Verifies that a logger can not be
-instantiated   Able to get an instance of Patterns::Logger   Able to
-initialize a game world and print it   Able to print the game state to
-the game log and verify it logged correctly   Verifies that the logger is
-thread safe   Verifies that the game manager is NOT thread safe</p>
-
-<p>Finished in 0.013 seconds (files took 0.12904 seconds to load) 7 examples,
-0 failures</p>
 </main>
 
 
