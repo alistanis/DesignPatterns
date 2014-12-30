@@ -6,7 +6,6 @@ require File.expand_path('../../test', __FILE__) +'/test_env.rb'
 include Patterns
 include Patterns::Illness
 
-
 describe 'ChainOfResponsibilityTests' do
 
   it 'Can delegate a patient all the way up the chain' do
