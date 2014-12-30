@@ -39,6 +39,7 @@ int get_cpu_count()
 
 // Was going to run a block of ruby code in parallel until I learned about the GIL (Global Interpreter Lock).
 // Looks like most things I want to do will have to be data driven instead of interpreted, but I wasn't even sure what I wanted to do was possible in the first place.
+// Either way, this function is a pointer to a function that takes a struct pointer of arguments that are dereferenced in the function itself
 void *run_block(void *arguments)
 {
     long tid;
@@ -51,22 +52,40 @@ void *run_block(void *arguments)
 
 // The actual method that will be called and defined in our Ruby module
 VALUE pthread_test(VALUE self) {
+
+    clock_t begin, end;
+    double time_spent;
+    // starts clock timer
+    begin = clock();
+
+    // setup time information
     time_t rawtime;
     struct tm *timeinfo;
-    int num_threads = get_cpu_count();
+
     time ( &rawtime );
     timeinfo = localtime ( &rawtime );
     printf ( "Current local time and date: %s", asctime (timeinfo) );
 
-    clock_t begin, end;
-    double time_spent;
 
-    begin = clock();
 
+
+    // get number of available cores
+    int num_threads = get_cpu_count();
+    // set number of available cores
     pthread_t threads[num_threads];
+
+    // place to store thread attributes
+    pthread_attr_t attr;
+    // set actual attributes to joinable
+    pthread_attr_init(&attr);
+    pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
+
+    // setup thread ids
     int rc;
     long t;
+    void *status;
 
+    // ruby VALUE that becomes our Ruby block
     VALUE p;
 
     if(rb_block_given_p())
@@ -85,16 +104,31 @@ VALUE pthread_test(VALUE self) {
     for(t=0; t < num_threads; t++){
         printf("In main: creating thread %ld\n", t);
 
+        // assemble thread arguments
         struct arg_struct thread_args;
         thread_args.threadid = t;
 
-
-        rc = pthread_create(&threads[t], NULL, run_block, (void *)&thread_args);
+        // create threads and pass function pointer and pointer to arguments for the thread to execute
+        rc = pthread_create(&threads[t], &attr, run_block, (void *)&thread_args);
         if (rc){
             printf("ERROR; return code from pthread_create() is %d\n", rc);
             exit(-1);
         }
     }
+
+       // Free attribute and wait for the other threads to finish
+       pthread_attr_destroy(&attr);
+       for(t=0; t<num_threads; t++) {
+          rc = pthread_join(threads[t], &status);
+          if (rc) {
+             printf("ERROR; return code from pthread_join() is %d\n", rc);
+             exit(-1);
+             } else {
+
+              printf("Main: completed join with thread %ld having a status of %ld\n",t,(long)status);
+
+          }
+       }
 
     end = clock();
     time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
