@@ -26,7 +26,7 @@ module Patterns
       @doctors_list << @surgeon
       @doctors_list << @oncologist
       @doctors_list << @general_practitioner
-      @doctors_list << pediatrician
+      @doctors_list << @pediatrician
     end
 
     # Starts the chain of responsibility by having the pediatrician see the first patient
