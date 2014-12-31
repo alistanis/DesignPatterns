@@ -82,3 +82,31 @@ ObserverTests
 Finished in 0.00162 seconds (files took 0.1175 seconds to load)
 1 example, 0 failures
 
+2014-12-30 17:30:28 -0500 | INFO: 
+ObserverTests
+  Able to add an observer and notify it of an event
+
+Finished in 0.00177 seconds (files took 0.1312 seconds to load)
+1 example, 0 failures
+
+2014-12-30 18:12:50 -0500 | INFO: 
+ObserverTests
+  Able to add an observer and notify it of an event
+
+Finished in 0.00171 seconds (files took 0.1235 seconds to load)
+1 example, 0 failures
+
+2014-12-31 05:10:03 -0500 | INFO: 
+ObserverTests
+  Able to add an observer and notify it of an event
+
+Finished in 0.00164 seconds (files took 0.11827 seconds to load)
+1 example, 0 failures
+
+2014-12-31 05:22:05 -0500 | INFO: 
+ObserverTests
+  Able to add an observer and notify it of an event
+
+Finished in 0.00178 seconds (files took 0.11694 seconds to load)
+1 example, 0 failures
+

@@ -12,12 +12,16 @@ module Patterns
     end
 
     # Delegates the responsibility to the next node in the chain
-    def send_up_chain(patient)
+    def send_up_chain(argument)
       if @next_node != nil
-      @next_node.see_patient(patient)
+      @next_node.process(argument)
       else
         'We found patient zero! AHHHH ZOMBIES!!!'
       end
+    end
+
+    def process(argument)
+      puts "#{self} received argument: #{argument}, this should be overloaded in a subclass."
     end
 
   end

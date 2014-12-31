@@ -59,7 +59,10 @@ test_files.each do |file|
       puts e.backtrace
     end
   }
-  Logger.instance.info output_log.join('').gsub('[32m', '').gsub('[0m', ''), out_file
+  map = {'[32m' => '', '[0m' => '', '[31m' => '', '[36m#' => '' }
+  re = Regexp.union(map.keys)
+  output = output_log.join('').gsub(re, map)
+  Logger.instance.info output, out_file
   total_run_time = Time.now - start_time
   puts "\nTotal test run time: #{total_run_time} seconds"
 end

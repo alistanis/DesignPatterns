@@ -77,3 +77,59 @@ CompositeTests
 Finished in 0.00291 seconds (files took 0.12057 seconds to load)
 3 examples, 0 failures
 
+2014-12-30 17:30:28 -0500 | INFO: 
+CompositeTests
+  Can instantiate a root composite, leaf nodes for the root, branch composites, and leaf nodes for those branches
+  Raises an exception when there is an attempt to add a node to a leaf node
+  Raises an exception when there is an attempt to remove a node from a leaf node
+
+Finished in 0.00295 seconds (files took 0.11993 seconds to load)
+3 examples, 0 failures
+
+2014-12-30 18:12:49 -0500 | INFO: 
+CompositeTests
+-root
+---Leaf A
+---Leaf B
+---Branch 1
+-----Leaf Y
+-----Leaf Z
+-----Branch 2
+-------Leaf 1
+---Branch 3
+-----Leaf 1A
+  Can instantiate a root composite, leaf nodes for the root, branch composites, and leaf nodes for those branches
+  Raises an exception when there is an attempt to add a node to a leaf node
+  Raises an exception when there is an attempt to remove a node from a leaf node
+
+Finished in 0.00257 seconds (files took 0.11336 seconds to load)
+3 examples, 0 failures
+
+2014-12-31 05:10:03 -0500 | INFO: 
+CompositeTests
+-root
+---Leaf A
+---Leaf B
+---Branch 1
+-----Leaf Y
+-----Leaf Z
+-----Branch 2
+-------Leaf 1
+---Branch 3
+-----Leaf 1A
+  Can instantiate a root composite, leaf nodes for the root, branch composites, and leaf nodes for those branches
+  Raises an exception when there is an attempt to add a node to a leaf node
+  Raises an exception when there is an attempt to remove a node from a leaf node
+
+Finished in 0.00258 seconds (files took 0.11237 seconds to load)
+3 examples, 0 failures
+
+2014-12-31 05:22:04 -0500 | INFO: 
+CompositeTests
+  Can instantiate a root composite, leaf nodes for the root, branch composites, and leaf nodes for those branches
+  Raises an exception when there is an attempt to add a node to a leaf node
+  Raises an exception when there is an attempt to remove a node from a leaf node
+
+Finished in 0.00259 seconds (files took 0.12429 seconds to load)
+3 examples, 0 failures
+

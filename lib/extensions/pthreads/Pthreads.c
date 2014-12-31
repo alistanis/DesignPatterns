@@ -66,9 +66,6 @@ VALUE pthread_test(VALUE self) {
     timeinfo = localtime ( &rawtime );
     printf ( "Current local time and date: %s", asctime (timeinfo) );
 
-
-
-
     // get number of available cores
     int num_threads = get_cpu_count();
     // set number of available cores
@@ -101,7 +98,7 @@ VALUE pthread_test(VALUE self) {
 	// Acceptable to be outside if/else because we raise an error and return if there is no block given.
     rb_funcall(p, rb_intern("call"), 0);
 
-    for(t=0; t < num_threads; t++){
+    for(t = 0; t < num_threads; t++){
         printf("In main: creating thread %ld\n", t);
 
         // assemble thread arguments

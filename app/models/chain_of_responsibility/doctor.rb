@@ -20,6 +20,10 @@ module Patterns
       @patients_seen += 1
     end
 
+    def process(argument)
+      see_patient(argument)
+    end
+
     # Returns true or false if the doctor has seen a patient
     def saw_patient?
       if @saw_patient

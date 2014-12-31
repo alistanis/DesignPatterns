@@ -23,7 +23,6 @@ describe 'CompositeTests' do
     branch3 = Composite.new('Branch 3')
     root.add(branch3)
     branch3.add(Leaf.new('Leaf 1A'))
-
     expect{(root.display(1))}.to output.to_stdout
   end
 
