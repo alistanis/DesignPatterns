@@ -31,7 +31,7 @@ VALUE method_write_new_file(VALUE self);
 /*
     Checks if file exists
  */
-int doesFileExist(const char *filename)
+int does_file_exist(const char *filename)
 {
     struct stat st;
     int result = stat(filename, &st);
@@ -41,7 +41,7 @@ int doesFileExist(const char *filename)
 /*
     Gets the file size
 */
-size_t getFileSize(const char *filename)
+size_t get_file_size(const char *filename)
 {   off_t size;
     struct stat st;
     stat(filename, &st);
@@ -79,7 +79,7 @@ char *read_file_base(const char *filename, int read_size)
         exit(EXIT_FAILURE);
     }
 
-    size_t file_size = getFileSize(filename);
+    size_t file_size = get_file_size(filename);
     //printf("File size: %zu\n", file_size);
     /* Open file in read mode only */
     FILE *fp = fopen(filename, "r");
@@ -162,7 +162,7 @@ char *read_file_base(const char *filename, int read_size)
  Writes content of char *data to new file named filename.
  Returns number of bytes written or -1 on error
  */
-int writeToNewFile(const char *filename, char *data)
+int write_new_file(const char *filename, char *data)
 {
     FILE *fp;
     fp = fopen(filename, "w+");
@@ -206,7 +206,7 @@ VALUE rb_write_new_file(VALUE self, VALUE filename, VALUE data)
     char *file_path = RSTRING_PTR(r_string_filename);
     char *file_data = RSTRING_PTR(r_string_data);
 
-    return INT2FIX(writeToNewFile(file_path, file_data));
+    return INT2FIX(write_new_file(file_path, file_data));
 }
 
 // The initialization method for this module. Defines the module and its methods for us to use in Ruby.

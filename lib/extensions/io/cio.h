@@ -9,12 +9,9 @@
 #include <string.h>
 #include <getopt.h>
 
-int doesFileExist(const char *filename);
-size_t getFileSize(const char *filename);
-
-char *readFileNonBlock(const char *filename);
+int does_file_exist(const char *filename);
+size_t get_file_size(const char *filename);
 
 char *read_file_base(const char *filename, int size);
 
-
-int writeToNewFile(const char *filename, char *data);
+int write_new_file(const char *filename, char *data);
