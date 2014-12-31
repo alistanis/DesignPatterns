@@ -1,16 +1,35 @@
 #include "cio.h"
+/*
+ *	How to call this from Ruby:
+ *		run Ruby extconf.rb
+ *		run make
+ *		run make install
+ *	This will install the correct package for your operating system. Currently only tested on Mac OSX 10.10
+ *
+ *	From Ruby:
+ *		require 'CIO'
+ *		include CIO
+ *			sherlock_holmes_a_study_in_scarlet = read_file("/Users/Chris/Documents/study_in_scarlet.txt")
+ *          or
+ *          puts CIO.read_file("/Users/Chris/Documents/study_in_scarlet.txt")
+ *
+ *          sherlock_book = read_file("/path_to_book/book.txt", 32000)
+ *
+ *          write_new_file("/path_to_file.txt", file_data)
+ */
 
+// Defines a space for information and references about the module to be stored internally
 VALUE CIO = Qnil;
 
 // Prototype for the initialization method - Required by Ruby
 void Init_CIO();
 
-// Defines our method Prototype, all methods here must be prefaced with method_
+// Defines our method Prototypes, all methods here must be prefaced with method_
 VALUE method_read_file(VALUE self);
-VALUE method_write_file(VALUE self);
+VALUE method_write_new_file(VALUE self);
 
 /*
- Checks if file exists
+    Checks if file exists
  */
 int doesFileExist(const char *filename)
 {
@@ -19,6 +38,9 @@ int doesFileExist(const char *filename)
     return result == 0;
 }
 
+/*
+    Gets the file size
+*/
 size_t getFileSize(const char *filename)
 {   off_t size;
     struct stat st;
@@ -150,20 +172,52 @@ int writeToNewFile(const char *filename, char *data)
     return 0;
 }
 
+/*
+    The ruby shell method that gets called - The "VALUE filename" is coerced into a string value, and then we take its pointer and assign it to a char pointer.
+    After that we create a buffer and pass the buffer into the read_file macro function - named parameters are used in this case for legibility but as explained in the variadic macro
+    definition above, the read_file function can be called with named parameters, a single file name, or multiple parameters, and it will still function properly.
+*/
 VALUE rb_read_file(VALUE self, VALUE filename)
 {
     VALUE r_string_value = StringValue(filename);
-    char *file_path = RSTRING_PTR(filename);
+    char *file_path = RSTRING_PTR(r_string_value);
     const char *buffer = read_file(.file_name = file_path);
     VALUE r_string = rb_str_new2(buffer);
     free((void *)buffer);
     return r_string;
 }
 
+VALUE rb_read_file2(VALUE self, VALUE filename, VALUE read_size)
+{
+    VALUE r_string_value = StringValue(filename);
+    char *file_path = RSTRING_PTR(r_string_value);
+    int int_read_size = FIX2INT(read_size);
+    const char *buffer = read_file(.file_name = file_path, .read_size = int_read_size);
+    VALUE r_string = rb_str_new2(buffer);
+    free((void *)buffer);
+    return r_string;
+}
+
+VALUE rb_write_new_file(VALUE self, VALUE filename, VALUE data)
+{
+    VALUE r_string_filename = StringValue(filename);
+    VALUE r_string_data = StringValue(data);
+
+    char *file_path = RSTRING_PTR(r_string_filename);
+    char *file_data = RSTRING_PTR(r_string_data);
+
+    return INT2FIX(writeToNewFile(file_path, file_data));
+}
+
 // The initialization method for this module. Defines the module and its methods for us to use in Ruby.
 void Init_CIO() {
-    // Defines the PThreads module in ruby
+    // Defines the CIO module in ruby
     CIO = rb_define_module("CIO");
-    //Defines the pthreads method in ruby
+    //Defines the read_file method in ruby
+    // Params: module_name, method_name, actual method being called, number of arguments
     rb_define_method(CIO, "read_file", rb_read_file, 1);
+    //Defines second read file method, this one taking a block read_size integer for the number of bytes to read at a time. Can make file reading much faster.
+    rb_define_method(CIO, "read_file", rb_read_file2, 2);
+    //Defines the write_new_file method in ruby
+    rb_define_method(CIO, "write_new_file", rb_write_new_file, 2);
 }
