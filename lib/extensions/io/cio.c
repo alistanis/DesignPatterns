@@ -1,9 +1,9 @@
 #include "cio.h"
 /*
- *	How to call this from Ruby:
- *		run Ruby extconf.rb
- *		run make
- *		run make install
+ *	How to call this from Ruby: verbatim code inside ``
+ *		run Ruby extconf.rb # `./extconf.rb` or `ruby extconf.rb`
+ *		run `make`
+ *		run `make install`
  *	This will install the correct package for your operating system. Currently only tested on Mac OSX 10.10
  *
  *	From Ruby:
