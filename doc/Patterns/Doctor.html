@@ -75,6 +75,8 @@
     
     <li class="calls-super" ><a href="#method-c-new">::new</a>
     
+    <li ><a href="#method-i-process">#process</a>
+    
     <li ><a href="#method-i-saw_patient-3F">#saw_patient?</a>
     
     <li ><a href="#method-i-see_patient">#see_patient</a>
@@ -201,6 +203,39 @@ sets patients seen = 0</p>
        </header>
 
     
+      <div id="method-i-process" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">process</span><span
+            class="method-args">(argument)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="process-source">
+            <pre><span class="ruby-comment"># File app/models/chain_of_responsibility/doctor.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">process</span>(<span class="ruby-identifier">argument</span>)
+  <span class="ruby-identifier">see_patient</span>(<span class="ruby-identifier">argument</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
       <div id="method-i-saw_patient-3F" class="method-detail ">
         
         <div class="method-heading">
@@ -220,7 +255,7 @@ sets patients seen = 0</p>
 
           
           <div class="method-source-code" id="saw_patient-3F-source">
-            <pre><span class="ruby-comment"># File app/models/chain_of_responsibility/doctor.rb, line 24</span>
+            <pre><span class="ruby-comment"># File app/models/chain_of_responsibility/doctor.rb, line 28</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">saw_patient?</span>
   <span class="ruby-keyword">if</span> <span class="ruby-ivar">@saw_patient</span>
     <span class="ruby-keyword">true</span>

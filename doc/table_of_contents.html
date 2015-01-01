@@ -44,6 +44,8 @@
 
     <ul>
       <li><a href="README_md.html#label-Patterns">Patterns</a>
+      <li><a href="README_md.html#label-C+Extensions">C Extensions</a>
+      <li><a href="README_md.html#label-Official+Site">Official Site</a>
       <li><a href="README_md.html#label-Contributing">Contributing</a>
     </ul>
   </li>
@@ -225,6 +227,9 @@
     <a href="html/method/index_html.html">index.html</a>
   </li>
     <li class="file">
+    <a href="lib/extensions/io/Makefile.html">Makefile</a>
+  </li>
+    <li class="file">
     <a href="lib/extensions/pthreads/Makefile.html">Makefile</a>
   </li>
     <li class="file">
@@ -253,6 +258,9 @@
 
 <h2 id="classes">Classes and Modules</h2>
 <ul>
+  <li class="module">
+    <a href="CIO.html">CIO</a>
+  </li>
   <li class="class">
     <a href="Object.html">Object</a>
   </li>
@@ -408,34 +416,9 @@
     <span class="container">Patterns::AbstractInterface</span>
 
   <li class="method">
-    <a href="Patterns/Command.html#method-c-new">::new</a>
+    <a href="Patterns/Player.html#method-c-new">::new</a>
     &mdash;
-    <span class="container">Patterns::Command</span>
-
-  <li class="method">
-    <a href="Patterns/Composite.html#method-c-new">::new</a>
-    &mdash;
-    <span class="container">Patterns::Composite</span>
-
-  <li class="method">
-    <a href="Patterns/CopyFile.html#method-c-new">::new</a>
-    &mdash;
-    <span class="container">Patterns::CopyFile</span>
-
-  <li class="method">
-    <a href="Patterns/Leaf.html#method-c-new">::new</a>
-    &mdash;
-    <span class="container">Patterns::Leaf</span>
-
-  <li class="method">
-    <a href="Patterns/Observer.html#method-c-new">::new</a>
-    &mdash;
-    <span class="container">Patterns::Observer</span>
-
-  <li class="method">
-    <a href="Patterns/Kicker.html#method-c-new">::new</a>
-    &mdash;
-    <span class="container">Patterns::Kicker</span>
+    <span class="container">Patterns::Player</span>
 
   <li class="method">
     <a href="Patterns/FootballPlayer.html#method-c-new">::new</a>
@@ -443,19 +426,9 @@
     <span class="container">Patterns::FootballPlayer</span>
 
   <li class="method">
-    <a href="Patterns/Patient.html#method-c-new">::new</a>
+    <a href="Patterns/CreateFile.html#method-c-new">::new</a>
     &mdash;
-    <span class="container">Patterns::Patient</span>
-
-  <li class="method">
-    <a href="Patterns/Node.html#method-c-new">::new</a>
-    &mdash;
-    <span class="container">Patterns::Node</span>
-
-  <li class="method">
-    <a href="Patterns/Subject.html#method-c-new">::new</a>
-    &mdash;
-    <span class="container">Patterns::Subject</span>
+    <span class="container">Patterns::CreateFile</span>
 
   <li class="method">
     <a href="Patterns/MonsterType.html#method-c-new">::new</a>
@@ -463,14 +436,14 @@
     <span class="container">Patterns::MonsterType</span>
 
   <li class="method">
-    <a href="Patterns/Quarterback.html#method-c-new">::new</a>
+    <a href="Patterns/CommandList.html#method-c-new">::new</a>
     &mdash;
-    <span class="container">Patterns::Quarterback</span>
+    <span class="container">Patterns::CommandList</span>
 
   <li class="method">
-    <a href="Patterns/CreateFile.html#method-c-new">::new</a>
+    <a href="Patterns/Kicker.html#method-c-new">::new</a>
     &mdash;
-    <span class="container">Patterns::CreateFile</span>
+    <span class="container">Patterns::Kicker</span>
 
   <li class="method">
     <a href="Patterns/MonsterPrototypes.html#method-c-new">::new</a>
@@ -478,24 +451,14 @@
     <span class="container">Patterns::MonsterPrototypes</span>
 
   <li class="method">
-    <a href="Patterns/Admin.html#method-c-new">::new</a>
+    <a href="Patterns/Command.html#method-c-new">::new</a>
     &mdash;
-    <span class="container">Patterns::Admin</span>
+    <span class="container">Patterns::Command</span>
 
   <li class="method">
-    <a href="Patterns/User.html#method-c-new">::new</a>
+    <a href="Patterns/DeleteFile.html#method-c-new">::new</a>
     &mdash;
-    <span class="container">Patterns::User</span>
-
-  <li class="method">
-    <a href="Patterns/Doctors.html#method-c-new">::new</a>
-    &mdash;
-    <span class="container">Patterns::Doctors</span>
-
-  <li class="method">
-    <a href="Patterns/Logger.html#method-c-new">::new</a>
-    &mdash;
-    <span class="container">Patterns::Logger</span>
+    <span class="container">Patterns::DeleteFile</span>
 
   <li class="method">
     <a href="Patterns/Monster.html#method-c-new">::new</a>
@@ -508,14 +471,59 @@
     <span class="container">Patterns::Vector2D</span>
 
   <li class="method">
-    <a href="Patterns/Player.html#method-c-new">::new</a>
+    <a href="Patterns/Quarterback.html#method-c-new">::new</a>
     &mdash;
-    <span class="container">Patterns::Player</span>
+    <span class="container">Patterns::Quarterback</span>
 
   <li class="method">
-    <a href="Patterns/DeleteFile.html#method-c-new">::new</a>
+    <a href="Patterns/CopyFile.html#method-c-new">::new</a>
     &mdash;
-    <span class="container">Patterns::DeleteFile</span>
+    <span class="container">Patterns::CopyFile</span>
+
+  <li class="method">
+    <a href="Patterns/Composite.html#method-c-new">::new</a>
+    &mdash;
+    <span class="container">Patterns::Composite</span>
+
+  <li class="method">
+    <a href="Patterns/Logger.html#method-c-new">::new</a>
+    &mdash;
+    <span class="container">Patterns::Logger</span>
+
+  <li class="method">
+    <a href="Patterns/Patient.html#method-c-new">::new</a>
+    &mdash;
+    <span class="container">Patterns::Patient</span>
+
+  <li class="method">
+    <a href="Patterns/User.html#method-c-new">::new</a>
+    &mdash;
+    <span class="container">Patterns::User</span>
+
+  <li class="method">
+    <a href="Patterns/Runningback.html#method-c-new">::new</a>
+    &mdash;
+    <span class="container">Patterns::Runningback</span>
+
+  <li class="method">
+    <a href="Patterns/Leaf.html#method-c-new">::new</a>
+    &mdash;
+    <span class="container">Patterns::Leaf</span>
+
+  <li class="method">
+    <a href="Patterns/Subject.html#method-c-new">::new</a>
+    &mdash;
+    <span class="container">Patterns::Subject</span>
+
+  <li class="method">
+    <a href="Patterns/Observer.html#method-c-new">::new</a>
+    &mdash;
+    <span class="container">Patterns::Observer</span>
+
+  <li class="method">
+    <a href="Patterns/Admin.html#method-c-new">::new</a>
+    &mdash;
+    <span class="container">Patterns::Admin</span>
 
   <li class="method">
     <a href="Patterns/ChainNode.html#method-c-new">::new</a>
@@ -523,19 +531,19 @@
     <span class="container">Patterns::ChainNode</span>
 
   <li class="method">
-    <a href="Patterns/CommandList.html#method-c-new">::new</a>
+    <a href="Patterns/Doctors.html#method-c-new">::new</a>
     &mdash;
-    <span class="container">Patterns::CommandList</span>
+    <span class="container">Patterns::Doctors</span>
+
+  <li class="method">
+    <a href="Patterns/Node.html#method-c-new">::new</a>
+    &mdash;
+    <span class="container">Patterns::Node</span>
 
   <li class="method">
     <a href="Patterns/Doctor.html#method-c-new">::new</a>
     &mdash;
     <span class="container">Patterns::Doctor</span>
-
-  <li class="method">
-    <a href="Patterns/Runningback.html#method-c-new">::new</a>
-    &mdash;
-    <span class="container">Patterns::Runningback</span>
 
   <li class="method">
     <a href="Patterns/Node.html#method-i-3C-3C">#&lt;&lt;</a>
@@ -553,14 +561,14 @@
     <span class="container">Patterns::Node</span>
 
   <li class="method">
-    <a href="Patterns/Leaf.html#method-i-add">#add</a>
-    &mdash;
-    <span class="container">Patterns::Leaf</span>
-
-  <li class="method">
     <a href="Patterns/Node.html#method-i-add">#add</a>
     &mdash;
     <span class="container">Patterns::Node</span>
+
+  <li class="method">
+    <a href="Patterns/Leaf.html#method-i-add">#add</a>
+    &mdash;
+    <span class="container">Patterns::Leaf</span>
 
   <li class="method">
     <a href="Patterns/CommandList.html#method-i-add_command">#add_command</a>
@@ -608,11 +616,6 @@
     <span class="container">Patterns::Monster</span>
 
   <li class="method">
-    <a href="Patterns/GeneralPractitioner.html#method-i-description">#description</a>
-    &mdash;
-    <span class="container">Patterns::GeneralPractitioner</span>
-
-  <li class="method">
     <a href="Patterns/Pediatrician.html#method-i-description">#description</a>
     &mdash;
     <span class="container">Patterns::Pediatrician</span>
@@ -621,6 +624,11 @@
     <a href="Patterns/Surgeon.html#method-i-description">#description</a>
     &mdash;
     <span class="container">Patterns::Surgeon</span>
+
+  <li class="method">
+    <a href="Patterns/GeneralPractitioner.html#method-i-description">#description</a>
+    &mdash;
+    <span class="container">Patterns::GeneralPractitioner</span>
 
   <li class="method">
     <a href="Patterns/Oncologist.html#method-i-description">#description</a>
@@ -648,16 +656,6 @@
     <span class="container">Patterns::Logger</span>
 
   <li class="method">
-    <a href="Patterns/CreateFile.html#method-i-execute">#execute</a>
-    &mdash;
-    <span class="container">Patterns::CreateFile</span>
-
-  <li class="method">
-    <a href="Patterns/CommandList.html#method-i-execute">#execute</a>
-    &mdash;
-    <span class="container">Patterns::CommandList</span>
-
-  <li class="method">
     <a href="Patterns/Command.html#method-i-execute">#execute</a>
     &mdash;
     <span class="container">Patterns::Command</span>
@@ -668,9 +666,19 @@
     <span class="container">Patterns::CopyFile</span>
 
   <li class="method">
+    <a href="Patterns/CommandList.html#method-i-execute">#execute</a>
+    &mdash;
+    <span class="container">Patterns::CommandList</span>
+
+  <li class="method">
     <a href="Patterns/DeleteFile.html#method-i-execute">#execute</a>
     &mdash;
     <span class="container">Patterns::DeleteFile</span>
+
+  <li class="method">
+    <a href="Patterns/CreateFile.html#method-i-execute">#execute</a>
+    &mdash;
+    <span class="container">Patterns::CreateFile</span>
 
   <li class="method">
     <a href="Patterns/CommandList.html#method-i-execute_next">#execute_next</a>
@@ -728,6 +736,11 @@
     <span class="container">Patterns::GameManager</span>
 
   <li class="method">
+    <a href="Patterns/Kicker.html#method-i-kick_ball">#kick_ball</a>
+    &mdash;
+    <span class="container">Patterns::Kicker</span>
+
+  <li class="method">
     <a href="Patterns/Quarterback.html#method-i-kick_ball">#kick_ball</a>
     &mdash;
     <span class="container">Patterns::Quarterback</span>
@@ -741,11 +754,6 @@
     <a href="Patterns/Runningback.html#method-i-kick_ball">#kick_ball</a>
     &mdash;
     <span class="container">Patterns::Runningback</span>
-
-  <li class="method">
-    <a href="Patterns/Kicker.html#method-i-kick_ball">#kick_ball</a>
-    &mdash;
-    <span class="container">Patterns::Kicker</span>
 
   <li class="method">
     <a href="Patterns/CommandList.html#method-i-last_description">#last_description</a>
@@ -808,19 +816,14 @@
     <span class="container">Patterns::MonsterType</span>
 
   <li class="method">
-    <a href="Patterns/Runningback.html#method-i-position">#position</a>
-    &mdash;
-    <span class="container">Patterns::Runningback</span>
-
-  <li class="method">
     <a href="Patterns/FootballPlayer.html#method-i-position">#position</a>
     &mdash;
     <span class="container">Patterns::FootballPlayer</span>
 
   <li class="method">
-    <a href="Patterns/Quarterback.html#method-i-position">#position</a>
+    <a href="Patterns/Runningback.html#method-i-position">#position</a>
     &mdash;
-    <span class="container">Patterns::Quarterback</span>
+    <span class="container">Patterns::Runningback</span>
 
   <li class="method">
     <a href="Patterns/Kicker.html#method-i-position">#position</a>
@@ -828,9 +831,24 @@
     <span class="container">Patterns::Kicker</span>
 
   <li class="method">
+    <a href="Patterns/Quarterback.html#method-i-position">#position</a>
+    &mdash;
+    <span class="container">Patterns::Quarterback</span>
+
+  <li class="method">
     <a href="Patterns/GameManager.html#method-i-print_world">#print_world</a>
     &mdash;
     <span class="container">Patterns::GameManager</span>
+
+  <li class="method">
+    <a href="Patterns/ChainNode.html#method-i-process">#process</a>
+    &mdash;
+    <span class="container">Patterns::ChainNode</span>
+
+  <li class="method">
+    <a href="Patterns/Doctor.html#method-i-process">#process</a>
+    &mdash;
+    <span class="container">Patterns::Doctor</span>
 
   <li class="method">
     <a href="Patterns/Monster.html#method-i-prototype_name">#prototype_name</a>
@@ -848,19 +866,24 @@
     <span class="container">Patterns::Monster</span>
 
   <li class="method">
+    <a href="CIO.html#method-i-read_file">#read_file</a>
+    &mdash;
+    <span class="container">CIO</span>
+
+  <li class="method">
     <a href="String.html#method-i-red">#red</a>
     &mdash;
     <span class="container">String</span>
 
   <li class="method">
-    <a href="Patterns/Leaf.html#method-i-remove">#remove</a>
-    &mdash;
-    <span class="container">Patterns::Leaf</span>
-
-  <li class="method">
     <a href="Patterns/Node.html#method-i-remove">#remove</a>
     &mdash;
     <span class="container">Patterns::Node</span>
+
+  <li class="method">
+    <a href="Patterns/Leaf.html#method-i-remove">#remove</a>
+    &mdash;
+    <span class="container">Patterns::Leaf</span>
 
   <li class="method">
     <a href="Patterns/Subject.html#method-i-remove_observer">#remove_observer</a>
@@ -883,29 +906,14 @@
     <span class="container">Patterns::Quarterback</span>
 
   <li class="method">
-    <a href="Patterns/Runningback.html#method-i-run_ball">#run_ball</a>
-    &mdash;
-    <span class="container">Patterns::Runningback</span>
-
-  <li class="method">
     <a href="Patterns/Kicker.html#method-i-run_ball">#run_ball</a>
     &mdash;
     <span class="container">Patterns::Kicker</span>
 
   <li class="method">
-    <a href="Patterns/Kicker.html#method-i-salary">#salary</a>
-    &mdash;
-    <span class="container">Patterns::Kicker</span>
-
-  <li class="method">
-    <a href="Patterns/Runningback.html#method-i-salary">#salary</a>
+    <a href="Patterns/Runningback.html#method-i-run_ball">#run_ball</a>
     &mdash;
     <span class="container">Patterns::Runningback</span>
-
-  <li class="method">
-    <a href="Patterns/Quarterback.html#method-i-salary">#salary</a>
-    &mdash;
-    <span class="container">Patterns::Quarterback</span>
 
   <li class="method">
     <a href="Patterns/FootballPlayer.html#method-i-salary">#salary</a>
@@ -913,7 +921,32 @@
     <span class="container">Patterns::FootballPlayer</span>
 
   <li class="method">
+    <a href="Patterns/Kicker.html#method-i-salary">#salary</a>
+    &mdash;
+    <span class="container">Patterns::Kicker</span>
+
+  <li class="method">
+    <a href="Patterns/Quarterback.html#method-i-salary">#salary</a>
+    &mdash;
+    <span class="container">Patterns::Quarterback</span>
+
+  <li class="method">
+    <a href="Patterns/Runningback.html#method-i-salary">#salary</a>
+    &mdash;
+    <span class="container">Patterns::Runningback</span>
+
+  <li class="method">
     <a href="Patterns/Doctor.html#method-i-saw_patient-3F">#saw_patient?</a>
+    &mdash;
+    <span class="container">Patterns::Doctor</span>
+
+  <li class="method">
+    <a href="Patterns/Pediatrician.html#method-i-see_patient">#see_patient</a>
+    &mdash;
+    <span class="container">Patterns::Pediatrician</span>
+
+  <li class="method">
+    <a href="Patterns/Doctor.html#method-i-see_patient">#see_patient</a>
     &mdash;
     <span class="container">Patterns::Doctor</span>
 
@@ -921,16 +954,6 @@
     <a href="Patterns/GeneralPractitioner.html#method-i-see_patient">#see_patient</a>
     &mdash;
     <span class="container">Patterns::GeneralPractitioner</span>
-
-  <li class="method">
-    <a href="Patterns/Oncologist.html#method-i-see_patient">#see_patient</a>
-    &mdash;
-    <span class="container">Patterns::Oncologist</span>
-
-  <li class="method">
-    <a href="Patterns/Doctor.html#method-i-see_patient">#see_patient</a>
-    &mdash;
-    <span class="container">Patterns::Doctor</span>
 
   <li class="method">
     <a href="Patterns/Surgeon.html#method-i-see_patient">#see_patient</a>
@@ -943,9 +966,9 @@
     <span class="container">Patterns::Doctors</span>
 
   <li class="method">
-    <a href="Patterns/Pediatrician.html#method-i-see_patient">#see_patient</a>
+    <a href="Patterns/Oncologist.html#method-i-see_patient">#see_patient</a>
     &mdash;
-    <span class="container">Patterns::Pediatrician</span>
+    <span class="container">Patterns::Oncologist</span>
 
   <li class="method">
     <a href="Patterns/ChainNode.html#method-i-send_up_chain">#send_up_chain</a>
@@ -963,11 +986,6 @@
     <span class="container">Patterns::CommandList</span>
 
   <li class="method">
-    <a href="Patterns/Quarterback.html#method-i-throw_ball">#throw_ball</a>
-    &mdash;
-    <span class="container">Patterns::Quarterback</span>
-
-  <li class="method">
     <a href="Patterns/Kicker.html#method-i-throw_ball">#throw_ball</a>
     &mdash;
     <span class="container">Patterns::Kicker</span>
@@ -978,14 +996,14 @@
     <span class="container">Patterns::FootballPlayer</span>
 
   <li class="method">
+    <a href="Patterns/Quarterback.html#method-i-throw_ball">#throw_ball</a>
+    &mdash;
+    <span class="container">Patterns::Quarterback</span>
+
+  <li class="method">
     <a href="Patterns.html#method-i-to_h">#to_h</a>
     &mdash;
     <span class="container">Patterns</span>
-
-  <li class="method">
-    <a href="Patterns/CreateFile.html#method-i-undo">#undo</a>
-    &mdash;
-    <span class="container">Patterns::CreateFile</span>
 
   <li class="method">
     <a href="Patterns/Command.html#method-i-undo">#undo</a>
@@ -1003,6 +1021,11 @@
     <span class="container">Patterns::DeleteFile</span>
 
   <li class="method">
+    <a href="Patterns/CreateFile.html#method-i-undo">#undo</a>
+    &mdash;
+    <span class="container">Patterns::CreateFile</span>
+
+  <li class="method">
     <a href="Patterns/CommandList.html#method-i-undo">#undo</a>
     &mdash;
     <span class="container">Patterns::CommandList</span>
@@ -1016,6 +1039,11 @@
     <a href="Patterns/Monster.html#method-i-weaknesses">#weaknesses</a>
     &mdash;
     <span class="container">Patterns::Monster</span>
+
+  <li class="method">
+    <a href="CIO.html#method-i-write_new_file">#write_new_file</a>
+    &mdash;
+    <span class="container">CIO</span>
 </ul>
 </main>
 

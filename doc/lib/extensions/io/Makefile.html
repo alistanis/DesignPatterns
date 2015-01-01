@@ -213,7 +213,7 @@
   </div>
 </nav>
 
-<main role="main" aria-label="Page lib/extensions/pthreads/Makefile">
+<main role="main" aria-label="Page lib/extensions/io/Makefile">
 
 <p>SHELL = /bin/sh</p>
 
@@ -222,11 +222,11 @@ Q = $(Q1:0=@) ECHO1 = $(V:1=@:) ECHO = $(ECHO1:0=@echo)</p>
 
 <p>#### Start of system configuration section. ####</p>
 
-<p>srcdir = . topdir = /Users/Chris/.rvm/rubies/ruby-2.1.5/include/ruby-2.1.0
+<p>srcdir = . topdir = /Users/Chris/.rvm/rubies/ruby-2.1.3/include/ruby-2.1.0
 hdrdir = $(topdir) arch_hdrdir =
-/Users/Chris/.rvm/rubies/ruby-2.1.5/include/ruby-2.1.0/x86_64-darwin14.0
+/Users/Chris/.rvm/rubies/ruby-2.1.3/include/ruby-2.1.0/x86_64-darwin14.0
 PATH_SEPARATOR = : VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
-prefix = $(DESTDIR)/Users/Chris/.rvm/rubies/ruby-2.1.5 rubysitearchprefix =
+prefix = $(DESTDIR)/Users/Chris/.rvm/rubies/ruby-2.1.3 rubysitearchprefix =
 $(rubylibprefix)/$(sitearch) rubyarchprefix = $(rubylibprefix)/$(arch)
 rubylibprefix = $(libdir)/$(RUBY_BASE_NAME) exec_prefix = $(prefix)
 vendorarchhdrdir = $(vendorhdrdir)/$(sitearch) sitearchhdrdir =
@@ -296,10 +296,9 @@ INSTALL_DATA = $(INSTALL) -m 644 COPY = cp TOUCH = exit &gt;</p>
 <p>CLEANFILES = mkmf.log DISTCLEANFILES =  DISTCLEANDIRS =</p>
 
 <p>extout =  extout_prefix =  target_prefix =  LOCAL_LIBS =  LIBS =  
--lpthread -ldl -lobjc  ORIG_SRCS = Pthreads.c SRCS = $(ORIG_SRCS)  OBJS =
-Pthreads.o HDRS = $(srcdir)/Pthreads.h TARGET = pthreads TARGET_NAME =
-pthreads TARGET_ENTRY = Init_$(TARGET_NAME) DLLIB = $(TARGET).bundle
-EXTSTATIC =  STATIC_LIB =</p>
+-lpthread -ldl -lobjc  ORIG_SRCS = cio.c SRCS = $(ORIG_SRCS)  OBJS = cio.o
+HDRS = $(srcdir)/cio.h TARGET = cio TARGET_NAME = cio TARGET_ENTRY =
+Init_$(TARGET_NAME) DLLIB = $(TARGET).bundle EXTSTATIC =  STATIC_LIB =</p>
 
 <p>TIMESTAMP_DIR = . BINDIR        = $(bindir) RUBYCOMMONDIR =
 $(sitedir)$(target_prefix) RUBYLIBDIR    = $(sitelibdir)$(target_prefix)
@@ -343,11 +342,11 @@ distclean-rb</p>
 </dd></dl>
 
 <p>install-rb: pre-install-rb install-rb-default install-rb-default:
-pre-install-rb-default pre-install-rb: <a
-href="../io/Makefile.html">Makefile</a> pre-install-rb-default: <a
-href="../io/Makefile.html">Makefile</a> pre-install-rb-default:</p>
+pre-install-rb-default pre-install-rb: <a href="Makefile.html">Makefile</a>
+pre-install-rb-default: <a href="Makefile.html">Makefile</a>
+pre-install-rb-default:</p>
 
-<pre>$(ECHO) installing default pthreads libraries</pre>
+<pre>$(ECHO) installing default cio libraries</pre>
 
 <p>$(TIMESTAMP_DIR)/.RUBYARCHDIR.time:</p>
 
@@ -394,7 +393,7 @@ $(Q) $(CC) $(INCFLAGS) $(CPPFLAGS) $(CFLAGS) $(COUTFLAG)$@ -c $&lt;</pre>
 <pre>$(ECHO) compiling $(&lt;)
 $(Q) $(CC) $(INCFLAGS) $(CPPFLAGS) $(CFLAGS) $(COUTFLAG)$@ -c $&lt;</pre>
 
-<p>$(DLLIB): $(OBJS) <a href="../io/Makefile.html">Makefile</a></p>
+<p>$(DLLIB): $(OBJS) <a href="Makefile.html">Makefile</a></p>
 
 <pre>$(ECHO) linking shared-object $(DLLIB)
 -$(Q)$(RM) $(@)
