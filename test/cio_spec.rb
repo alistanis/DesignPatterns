@@ -7,7 +7,9 @@ include CIO
 
 describe 'CIO C Extension Tests' do
 
+  # The path of a test file that can be reused throughout these tests
   READ_FILE_PATH = File.expand_path('../../static', __FILE__) + '/cio_test_readfile.txt'
+  # The data contained within the test file
   TEST_DATA = 'TESTING!!'
 
   context 'ReadFile Testing' do

@@ -28,7 +28,9 @@ VALUE PThreads = Qnil;
 void Init_PThreads();
 
 // Defines our method Prototype, all methods here must be prefaced with method_
+// Prototype for pthread_test
 VALUE method_pthread_test(VALUE self);
+// Prototype for print_hello
 VALUE method_print_hello(VALUE self);
 
 // Gets the total available CPU count for spawning threads

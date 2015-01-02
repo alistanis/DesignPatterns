@@ -25,9 +25,13 @@ VALUE CIO = Qnil;
 void Init_CIO();
 
 // Defines our method Prototypes, all methods here must be prefaced with method_
+// Prototype for read_file_base
 VALUE method_read_file_base(VALUE self);
+// Prototype for write_new_file
 VALUE method_write_new_file(VALUE self);
+// Prototype for copy_file_base
 VALUE method_copy_file_base(VALUE self);
+// Prototype for list_dirs
 VALUE method_list_dirs(VALUE self);
 
 /*
@@ -234,6 +238,9 @@ VALUE rb_write_new_file(VALUE self, VALUE filename, VALUE data)
     return INT2FIX(write_new_file(file_path, file_data));
 }
 
+/*
+    Exposes read_file_base to ruby
+*/
 VALUE rb_read_file_base(int argc, VALUE *argv, VALUE self)
 {
     if (argc > 2 || argc < 1) {  // There should only be 1..2 arguments
@@ -259,6 +266,9 @@ VALUE rb_read_file_base(int argc, VALUE *argv, VALUE self)
         return r_string;
 }
 
+/*
+    Exposes copy_file_base to ruby
+*/
 VALUE rb_copy_file_base(int argc, VALUE *argv, VALUE self)
 {
     if (argc > 3 || argc < 2) {  // There should only be 2..3 arguments

@@ -19,6 +19,9 @@ typedef struct {
     int read_size;
 } file_info;
 
+/*
+    Another simple struct for passing multiple arguments to the copy_file functions
+*/
 typedef struct {
     const char *file_name;
     const char *destination;
