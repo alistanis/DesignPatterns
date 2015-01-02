@@ -25,11 +25,25 @@ VALUE CIO = Qnil;
 void Init_CIO();
 
 // Defines our method Prototypes, all methods here must be prefaced with method_
-VALUE method_read_file(VALUE self);
+VALUE method_read_file_base(VALUE self);
 VALUE method_write_new_file(VALUE self);
+VALUE method_copy_file_base(VALUE self);
+VALUE method_list_dirs(VALUE self);
 
 /*
-    Checks if file exists
+    Variable argument definition for being able to call read_file with 1 parameter (char *filename) or 2 parameters (char *filename, int read_size)
+    Technically this could be called with 0 parameters, but we haven't defined it that way with rb_define_method, so it would raise an argument error.
+    Also, even if we were able to call it with 0 parameters, it would exit(EXIT_FAILURE) because we obviously need a file name in order to read a file.
+ */
+#define read_file(...) var_read_file((file_info){__VA_ARGS__});
+/*
+    Variable argument definition for being able to call copy_file with 2 parameters (char *filename, char *destination) or 3 parameters (char *filename, char *destination, int read_size)
+*/
+#define copy_file(...) var_copy_file((copy_file_struct){__VA_ARGS__});
+
+
+/*
+    Checks if file exists. Returns 1 if it does and 0 if it does not.
  */
 int does_file_exist(const char *filename)
 {
@@ -50,22 +64,42 @@ size_t get_file_size(const char *filename)
 }
 
 /*
-    Simple file_info struct for passing a file path and a read_size to a function
- */
-typedef struct {
-    char *file_name;
-    int read_size;
-} file_info;
-
-
-/*
     Read file function that takes a file_info struct (declared above) as an argument instead of separate parameters.
  */
 char *var_read_file(file_info in)
 {
-    char *file_name = in.file_name ? in.file_name : "";
+    const char *file_name = in.file_name ? in.file_name : "";
     int i_out = in.read_size ? in.read_size : 0;
     return read_file_base(file_name, i_out);
+}
+
+/*
+    Lists directories up to the level passed in
+*/
+void list_dirs(const char *name, int level)
+{
+    DIR *dir;
+    struct dirent *entry;
+
+    if (!(dir = opendir(name)))
+        return;
+    if (!(entry = readdir(dir)))
+        return;
+
+    do {
+        if (entry->d_type == DT_DIR) {
+            char path[1024];
+            int len = snprintf(path, sizeof(path)-1, "%s/%s", name, entry->d_name);
+            path[len] = 0;
+            if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0)
+                continue;
+            printf("%*s[%s]\n", level*2, "", entry->d_name);
+            list_dirs(path, level + 1);
+        }
+        else
+            printf("%*s- %s\n", level*2, "", entry->d_name);
+    } while ((entry = readdir(dir)));
+    closedir(dir);
 }
 
 /*
@@ -154,13 +188,6 @@ char *read_file_base(const char *filename, int read_size)
 }
 
 /*
-    Variable argument definition for being able to call read_file with 1 parameter (filename) or 2 parameters (filename, read_size)
-    Technically this could be called with 0 parameters, but we haven't defined it that way with rb_define_method, so it would raise an argument error.
-    Also, even if we were able to call it with 0 parameters, it would exit(EXIT_FAILURE) because we obviously need a file name in order to read a file.
- */
-#define read_file(...) var_read_file((file_info){__VA_ARGS__});
-
-/*
  Writes content of char *data to new file named filename.
  Returns number of bytes written or -1 on error
  */
@@ -175,31 +202,28 @@ int write_new_file(const char *filename, char *data)
 }
 
 /*
-    The ruby shell method that gets called - The "VALUE filename" is coerced into a string value, and then we take its pointer and assign it to a char pointer.
-    After that we create a buffer and pass the buffer into the read_file macro function - named parameters are used in this case for legibility but as explained in the variadic macro
-    definition above, the read_file function can be called with named parameters, a single file name, or multiple parameters, and it will still function properly.
+    Base copy file function, reads a file at filename with a block read size and writes it out to destination.
 */
-VALUE rb_read_file(VALUE self, VALUE filename)
+int copy_file_base(const char *filename, const char *destination, int read_size)
 {
-    VALUE r_string_value = StringValue(filename);
-    char *file_path = RSTRING_PTR(r_string_value);
-    const char *buffer = read_file(.file_name = file_path);
-    VALUE r_string = rb_str_new2(buffer);
-    free((void *)buffer);
-    return r_string;
+    char *data = read_file(filename, read_size);
+    return write_new_file(destination, data);
 }
 
-VALUE rb_read_file2(VALUE self, VALUE filename, VALUE read_size)
+/*
+    Takes a filename and a file_info struct and calls copy_file_base.
+*/
+int var_copy_file(copy_file_struct in)
 {
-    VALUE r_string_value = StringValue(filename);
-    char *file_path = RSTRING_PTR(r_string_value);
-    int int_read_size = FIX2INT(read_size);
-    const char *buffer = read_file(.file_name = file_path, .read_size = int_read_size);
-    VALUE r_string = rb_str_new2(buffer);
-    free((void *)buffer);
-    return r_string;
+    const char *filename = in.file_name ? in.file_name : "";
+    const char *destination = in.destination ? in.destination: "";
+    int i_out = in.read_size ? in.read_size : 0;
+    return copy_file_base(filename, destination, i_out);
 }
 
+/*
+    Exposes the write_new_file function to ruby
+*/
 VALUE rb_write_new_file(VALUE self, VALUE filename, VALUE data)
 {
     VALUE r_string_filename = StringValue(filename);
@@ -211,15 +235,78 @@ VALUE rb_write_new_file(VALUE self, VALUE filename, VALUE data)
     return INT2FIX(write_new_file(file_path, file_data));
 }
 
+VALUE rb_read_file_base(int argc, VALUE *argv, VALUE self)
+{
+    if (argc > 2 || argc < 1) {  // There should only be 1..2 arguments
+                rb_raise(rb_eArgError, "wrong number of arguments");
+            }
+            VALUE r_string_filename = StringValue(argv[0]);
+            char *file_path = RSTRING_PTR(r_string_filename);
+            const char *buffer;
+            VALUE r_read_size;
+            if (argc == 2)
+            {
+                r_read_size = argv[1];
+                int read_size = FIX2INT(r_read_size);
+                buffer = read_file(.file_name = file_path, .read_size = read_size);
+            }
+            else
+            {
+                buffer = read_file(.file_name = file_path);
+            }
+
+        VALUE r_string = rb_str_new2(buffer);
+        free((void *)buffer);
+        return r_string;
+}
+
+VALUE rb_copy_file_base(int argc, VALUE *argv, VALUE self)
+{
+    if (argc > 3 || argc < 2) {  // There should only be 2..3 arguments
+            rb_raise(rb_eArgError, "wrong number of arguments");
+        }
+        VALUE r_string_filename = StringValue(argv[0]);
+        char *file_name = RSTRING_PTR(r_string_filename);
+        VALUE r_string_destination = StringValue(argv[1]);
+        char *destination = RSTRING_PTR(r_string_destination);
+        VALUE r_read_size;
+        if (argc == 3)
+        {
+            r_read_size = argv[2];
+            copy_file(.file_name = file_name, .destination = destination, .read_size = FIX2INT(r_read_size));
+        }
+        else
+        {
+            copy_file(.file_name = file_name, .destination = destination);
+        }
+        return INT2FIX(does_file_exist(destination));
+}
+
+
+/*
+    Exposes the list_dirs method to ruby
+*/
+VALUE rb_list_dirs(VALUE self, VALUE directory, VALUE level)
+{
+    VALUE r_string_directory = StringValue(directory);
+
+    char *dir = RSTRING_PTR(r_string_directory);
+    int lev = FIX2INT(level);
+    list_dirs(dir, lev);
+    return Qnil;
+}
+
 // The initialization method for this module. Defines the module and its methods for us to use in Ruby.
 void Init_CIO() {
     // Defines the CIO module in ruby
     CIO = rb_define_module("CIO");
-    //Defines the read_file method in ruby
     // Params: module_name, method_name, actual method being called, number of arguments
-    rb_define_method(CIO, "read_file", rb_read_file, 1);
-    //Defines second read file method, this one taking a block read_size integer for the number of bytes to read at a time. Can make file reading much faster.
-    rb_define_method(CIO, "read_file", rb_read_file2, 2);
+    //Defines the read_file method in ruby
+    rb_define_method(CIO, "read_file", rb_read_file_base, -1);
     //Defines the write_new_file method in ruby
     rb_define_method(CIO, "write_new_file", rb_write_new_file, 2);
+    //Defines copy_file method in ruby
+    rb_define_method(CIO, "copy_file", rb_copy_file_base, -1);
+    //Defines list_dirs in ruby
+    rb_define_method(CIO, "list_dirs", rb_list_dirs, 2);
 }
