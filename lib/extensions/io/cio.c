@@ -155,6 +155,8 @@ char *read_file_base(const char *filename, int read_size)
 
 /*
     Variable argument definition for being able to call read_file with 1 parameter (filename) or 2 parameters (filename, read_size)
+    Technically this could be called with 0 parameters, but we haven't defined it that way with rb_define_method, so it would raise an argument error.
+    Also, even if we were able to call it with 0 parameters, it would exit(EXIT_FAILURE) because we obviously need a file name in order to read a file.
  */
 #define read_file(...) var_read_file((file_info){__VA_ARGS__});
 
