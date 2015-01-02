@@ -5,4 +5,6 @@ gemspec
 
 gem 'rspec'
 gem 'json'
+gem 'rake'
+gem 'rdoc'
 

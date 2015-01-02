@@ -1,10 +1,17 @@
-require "bundler/gem_tasks"
+require 'bundler/gem_tasks'
 
-gem 'rdoc'
-require 'rdoc/task'
-RDoc::Task.new do |rdoc|
-  # this only works with RDoc 3.1 or greater
-  #rdoc.generator = 'bootstrap'
-  # this is what you use pre RDoc 3.1:
-  #rdoc.options.push '-f', 'bootstrap'
+
+def compile_extensions
+  extensions = Dir.glob('ext/**/extconf.rb')
+
+  extensions.each do |ext|
+    extension_name = ext.gsub('ext/', '').gsub('/extconf.rb', '')
+    extension_path = File.expand_path('../../', __FILE__) + "/DesignPatterns/ext/#{extension_name}/"
+    Dir.chdir(extension_path)
+    puts `./extconf.rb; make; make install; cp #{extension_name}.bundle ../../lib;`
+  end
+end
+
+task :default do
+  compile_extensions
 end

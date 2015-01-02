@@ -34,7 +34,7 @@ VALUE method_print_hello(VALUE self);
 // Gets the total available CPU count for spawning threads
 int get_cpu_count()
 {
-    return sysconf(_SC_NPROCESSORS_ONLN);
+    return (int)sysconf(_SC_NPROCESSORS_ONLN);
 }
 
 // Was going to run a block of ruby code in parallel until I learned about the GIL (Global Interpreter Lock).

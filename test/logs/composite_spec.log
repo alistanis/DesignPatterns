@@ -133,3 +133,12 @@ CompositeTests
 Finished in 0.00259 seconds (files took 0.12429 seconds to load)
 3 examples, 0 failures
 
+2015-01-02 09:16:02 -0500 | INFO: 
+CompositeTests
+  Can instantiate a root composite, leaf nodes for the root, branch composites, and leaf nodes for those branches
+  Raises an exception when there is an attempt to add a node to a leaf node
+  Raises an exception when there is an attempt to remove a node from a leaf node
+
+Finished in 0.0024 seconds (files took 0.11683 seconds to load)
+3 examples, 0 failures
+

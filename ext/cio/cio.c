@@ -41,7 +41,6 @@ VALUE method_list_dirs(VALUE self);
 */
 #define copy_file(...) var_copy_file((copy_file_struct){__VA_ARGS__});
 
-
 /*
     Checks if file exists. Returns 1 if it does and 0 if it does not.
  */

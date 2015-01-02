@@ -144,3 +144,12 @@ ChainOfResponsibilityTests
 Finished in 0.00186 seconds (files took 0.11202 seconds to load)
 3 examples, 0 failures
 
+2015-01-02 09:16:01 -0500 | INFO: 
+ChainOfResponsibilityTests
+  Can delegate a patient all the way up the chain
+  Will not continue to delegate if the patient is cured
+  Can cure all illnesses except zombie virus
+
+Finished in 0.00109 seconds (files took 0.11858 seconds to load)
+3 examples, 0 failures
+
