@@ -8,7 +8,7 @@ def compile_extensions
     extension_name = ext.gsub('ext/', '').gsub('/extconf.rb', '')
     extension_path = File.expand_path('../../', __FILE__) + "/DesignPatterns/ext/#{extension_name}/"
     Dir.chdir(extension_path)
-    puts `./extconf.rb; make; make install; cp #{extension_name}.bundle ../../lib;`
+    puts `./extconf.rb; make; make install; cp #{extension_name}.bundle ../../lib; cp #{extension_name}.o ../../lib;`
   end
 end
 
