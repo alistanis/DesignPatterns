@@ -66,6 +66,10 @@
 
   <ul class="link-list" role="directory">
     
+    <li ><a href="#method-i-copy_file">#copy_file</a>
+    
+    <li ><a href="#method-i-list_dirs">#list_dirs</a>
+    
     <li ><a href="#method-i-read_file">#read_file</a>
     
     <li ><a href="#method-i-write_new_file">#write_new_file</a>
@@ -108,11 +112,11 @@ the ruby standard functions</p>
        </header>
 
     
-      <div id="method-i-read_file" class="method-detail ">
+      <div id="method-i-copy_file" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">read_file</span><span
-            class="method-args">(p1)</span>
+          <span class="method-name">copy_file</span><span
+            class="method-args">(*args)</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -121,28 +125,124 @@ the ruby standard functions</p>
 
         <div class="method-description">
           
-          <p>The ruby shell method that gets called - The “VALUE filename” is coerced
-into a string value, and then we take its pointer and assign it to a char
-pointer. After that we create a buffer and pass the buffer into the <a
-href="CIO.html#method-i-read_file">#read_file</a> macro function - named
-parameters are used in this case for legibility but as explained in the
-variadic macro definition above, the <a
-href="CIO.html#method-i-read_file">#read_file</a> function can be called
-with named parameters, a single file name, or multiple parameters, and it
-will still function properly.</p>
+          <p>Exposes copy_file_base to ruby</p>
+          
+          
+
+          
+          <div class="method-source-code" id="copy_file-source">
+            <pre>VALUE rb_copy_file_base(int argc, VALUE *argv, VALUE self)
+{
+    if (argc &gt; 3 || argc &lt; 2) {  // There should only be 2..3 arguments
+            rb_raise(rb_eArgError, &quot;wrong number of arguments&quot;);
+        }
+        VALUE r_string_filename = StringValue(argv[0]);
+        char *file_name = RSTRING_PTR(r_string_filename);
+        VALUE r_string_destination = StringValue(argv[1]);
+        char *destination = RSTRING_PTR(r_string_destination);
+        VALUE r_read_size;
+        if (argc == 3)
+        {
+            r_read_size = argv[2];
+            copy_file(.file_name = file_name, .destination = destination, .read_size = FIX2INT(r_read_size));
+        }
+        else
+        {
+            copy_file(.file_name = file_name, .destination = destination);
+        }
+        return INT2FIX(does_file_exist(destination));
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-list_dirs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">list_dirs</span><span
+            class="method-args">(p1, p2)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Exposes the <a href="CIO.html#method-i-list_dirs">#list_dirs</a> method to
+ruby</p>
+          
+          
+
+          
+          <div class="method-source-code" id="list_dirs-source">
+            <pre>VALUE rb_list_dirs(VALUE self, VALUE directory, VALUE level)
+{
+    VALUE r_string_directory = StringValue(directory);
+
+    char *dir = RSTRING_PTR(r_string_directory);
+    int lev = FIX2INT(level);
+    list_dirs(dir, lev);
+    return Qnil;
+}</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-read_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">read_file</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Exposes read_file_base to ruby</p>
           
           
 
           
           <div class="method-source-code" id="read_file-source">
-            <pre>VALUE rb_read_file(VALUE self, VALUE filename)
+            <pre>VALUE rb_read_file_base(int argc, VALUE *argv, VALUE self)
 {
-    VALUE r_string_value = StringValue(filename);
-    char *file_path = RSTRING_PTR(r_string_value);
-    const char *buffer = read_file(.file_name = file_path);
-    VALUE r_string = rb_str_new2(buffer);
-    free((void *)buffer);
-    return r_string;
+    if (argc &gt; 2 || argc &lt; 1) {  // There should only be 1..2 arguments
+                rb_raise(rb_eArgError, &quot;wrong number of arguments&quot;);
+            }
+            VALUE r_string_filename = StringValue(argv[0]);
+            char *file_path = RSTRING_PTR(r_string_filename);
+            const char *buffer;
+            VALUE r_read_size;
+            if (argc == 2)
+            {
+                r_read_size = argv[1];
+                int read_size = FIX2INT(r_read_size);
+                buffer = read_file(.file_name = file_path, .read_size = read_size);
+            }
+            else
+            {
+                buffer = read_file(.file_name = file_path);
+            }
+
+        VALUE r_string = rb_str_new2(buffer);
+        free((void *)buffer);
+        return r_string;
 }</pre>
           </div>
           
@@ -167,7 +267,8 @@ will still function properly.</p>
 
         <div class="method-description">
           
-          
+          <p>Exposes the <a href="CIO.html#method-i-write_new_file">#write_new_file</a>
+function to ruby</p>
           
           
 

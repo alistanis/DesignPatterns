@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Makefile - RDoc Documentation</title>
+
+<link href="../../fonts.css" rel="stylesheet">
+<link href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/navigation.js"></script>
+<script src="../../js/search_index.js"></script>
+<script src="../../js/search.js"></script>
+<script src="../../js/searcher.js"></script>
+<script src="../../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../../LICENSE_txt.html">LICENSE</a>
+  
+    <li><a href="../../Patterns_gemspec.html">Patterns.gemspec</a>
+  
+    <li><a href="../../README_md.html">README</a>
+  
+    <li><a href="../../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../../app/models/singleton/log/game_log_log.html">game_log.log</a>
+  
+    <li><a href="../../app/models/type_object/monster_types/dragon_json.html">dragon.json</a>
+  
+    <li><a href="../../app/models/type_object/monster_types/high_dragon_json.html">high_dragon.json</a>
+  
+    <li><a href="../../app/models/type_object/monster_types/orc_json.html">orc.json</a>
+  
+    <li><a href="../../app/models/type_object/monster_types/orc_wizard_json.html">orc_wizard.json</a>
+  
+    <li><a href="../../ext/cio/Makefile.html">Makefile</a>
+  
+    <li><a href="../../ext/pthreads/Makefile.html">Makefile</a>
+  
+    <li><a href="../../static/cio_test_readfile_txt.html">cio_test_readfile</a>
+  
+    <li><a href="../../test/logs/bridge_spec_log.html">bridge_spec.log</a>
+  
+    <li><a href="../../test/logs/chain_of_responsibility_spec_log.html">chain_of_responsibility_spec.log</a>
+  
+    <li><a href="../../test/logs/cio_spec_log.html">cio_spec.log</a>
+  
+    <li><a href="../../test/logs/command_spec_log.html">command_spec.log</a>
+  
+    <li><a href="../../test/logs/composite_spec_log.html">composite_spec.log</a>
+  
+    <li><a href="../../test/logs/observer_spec_log.html">observer_spec.log</a>
+  
+    <li><a href="../../test/logs/singleton_spec_log.html">singleton_spec.log</a>
+  
+    <li><a href="../../test/logs/type_object_spec_log.html">type_object_spec.log</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page ext/pthreads/Makefile">
+
+<p>SHELL = /bin/sh</p>
+
+<p># V=0 quiet, V=1 verbose.  other values don&#39;t work. V = 0 Q1 = $(V:1=)
+Q = $(Q1:0=@) ECHO1 = $(V:1=@:) ECHO = $(ECHO1:0=@echo) NULLCMD = :</p>
+
+<p>#### Start of system configuration section. ####</p>
+
+<p>srcdir = . topdir = /Users/Chris/.rvm/rubies/ruby-2.2.0/include/ruby-2.2.0
+hdrdir = $(topdir) arch_hdrdir =
+/Users/Chris/.rvm/rubies/ruby-2.2.0/include/ruby-2.2.0/x86_64-darwin14
+PATH_SEPARATOR = : VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
+prefix = $(DESTDIR)/Users/Chris/.rvm/rubies/ruby-2.2.0 rubysitearchprefix =
+$(rubylibprefix)/$(sitearch) rubyarchprefix = $(rubylibprefix)/$(arch)
+rubylibprefix = $(libdir)/$(RUBY_BASE_NAME) exec_prefix = $(prefix)
+vendorarchhdrdir = $(vendorhdrdir)/$(sitearch) sitearchhdrdir =
+$(sitehdrdir)/$(sitearch) rubyarchhdrdir = $(rubyhdrdir)/$(arch)
+vendorhdrdir = $(rubyhdrdir)/vendor_ruby sitehdrdir =
+$(rubyhdrdir)/site_ruby rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
+vendorarchdir = $(vendorlibdir)/$(sitearch) vendorlibdir =
+$(vendordir)/$(ruby_version) vendordir = $(rubylibprefix)/vendor_ruby
+sitearchdir = $(sitelibdir)/$(sitearch) sitelibdir =
+$(sitedir)/$(ruby_version) sitedir = $(rubylibprefix)/site_ruby rubyarchdir
+= $(rubylibdir)/$(arch) rubylibdir = $(rubylibprefix)/$(ruby_version)
+sitearchincludedir = $(includedir)/$(sitearch) archincludedir =
+$(includedir)/$(arch) sitearchlibdir = $(libdir)/$(sitearch) archlibdir =
+$(libdir)/$(arch) ridir = $(datarootdir)/$(RI_BASE_NAME) mandir =
+$(datarootdir)/man localedir = $(datarootdir)/locale libdir =
+$(exec_prefix)/lib psdir = $(docdir) pdfdir = $(docdir) dvidir = $(docdir)
+htmldir = $(docdir) infodir = $(datarootdir)/info docdir =
+$(datarootdir)/doc/$(PACKAGE) oldincludedir = $(DESTDIR)/usr/include
+includedir = $(prefix)/include localstatedir = $(prefix)/var sharedstatedir
+= $(prefix)/com sysconfdir = $(prefix)/etc datadir = $(datarootdir)
+datarootdir = $(prefix)/share libexecdir = $(exec_prefix)/libexec sbindir =
+$(exec_prefix)/sbin bindir = $(exec_prefix)/bin archdir = $(rubyarchdir)</p>
+
+<p>CC = gcc CXX = g++ LIBRUBY = $(LIBRUBY_SO) LIBRUBY_A =
+lib$(RUBY_SO_NAME)-static.a LIBRUBYARG_SHARED = -l$(RUBY_SO_NAME)
+LIBRUBYARG_STATIC = -l$(RUBY_SO_NAME)-static -framework CoreFoundation
+empty = OUTFLAG = -o $(empty) COUTFLAG = -o $(empty)</p>
+
+<p>RUBY_EXTCONF_H =  cflags   =  $(optflags) $(debugflags) $(warnflags)
+optflags = -O3 -fno-fast-math debugflags = -ggdb3 warnflags = -Wall -Wextra
+-Wno-unused-parameter -Wno-parentheses -Wno-long-long
+-Wno-missing-field-initializers -Wunused-variable -Wpointer-arith
+-Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32
+-Wimplicit-function-declaration -Wdivision-by-zero
+-Wdeprecated-declarations -Wextra-tokens CCDLFLAGS = -fno-common CFLAGS   =
+$(CCDLFLAGS) $(cflags)  -fno-common -pipe $(ARCH_FLAG) INCFLAGS = -I.
+-I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir) DEFS    
+=  CPPFLAGS =   -I/usr/local/opt/libyaml/include
+-I/usr/local/opt/readline/include -I/usr/local/opt/libksba/include
+-I/usr/local/opt/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE
+-D_DARWIN_UNLIMITED_SELECT -D_REENTRANT $(DEFS) $(cppflags) CXXFLAGS =
+$(CCDLFLAGS) $(cxxflags) $(ARCH_FLAG) ldflags  = -L. -fstack-protector
+-L/usr/local/lib -L/usr/local/opt/libyaml/lib -L/usr/local/opt/readline/lib
+-L/usr/local/opt/libksba/lib -L/usr/local/opt/openssl/lib  dldflags =
+-Wl,-undefined,dynamic_lookup -Wl,-multiply_defined,suppress
+-L/usr/local/opt/libyaml/lib -L/usr/local/opt/readline/lib
+-L/usr/local/opt/libksba/lib -L/usr/local/opt/openssl/lib</p>
+
+<p>ARCH_FLAG =  DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG) LDSHARED =
+$(CC) -dynamic -bundle LDSHAREDXX = $(CXX) -dynamic -bundle AR = ar EXEEXT
+=</p>
+
+<p>RUBY_INSTALL_NAME = $(RUBY_BASE_NAME) RUBY_SO_NAME = ruby.2.2.0
+RUBYW_INSTALL_NAME =  RUBY_VERSION_NAME = $(RUBY_BASE_NAME)-$(ruby_version)
+RUBYW_BASE_NAME = rubyw RUBY_BASE_NAME = ruby</p>
+
+<p>arch = x86_64-darwin14 sitearch = $(arch) ruby_version = 2.2.0 ruby =
+$(bindir)/$(RUBY_BASE_NAME) RUBY = $(ruby) ruby_headers = $(hdrdir)/ruby.h
+$(hdrdir)/ruby/ruby.h $(hdrdir)/ruby/defines.h $(hdrdir)/ruby/missing.h
+$(hdrdir)/ruby/intern.h $(hdrdir)/ruby/st.h $(hdrdir)/ruby/subst.h
+$(arch_hdrdir)/ruby/config.h</p>
+
+<p>RM = rm -f RM_RF = $(RUBY) -run -e rm – -rf RMDIRS = rmdir -p MAKEDIRS =
+/usr/local/bin/gmkdir -p INSTALL = /usr/local/bin/ginstall -c INSTALL_PROG
+= $(INSTALL) -m 0755 INSTALL_DATA = $(INSTALL) -m 644 COPY = cp TOUCH =
+exit &gt;</p>
+
+<p>#### End of system configuration section. ####</p>
+
+<p>preload =</p>
+
+<p>libpath = /usr/local/opt/libyaml/lib /usr/local/opt/readline/lib
+/usr/local/opt/libksba/lib /usr/local/opt/openssl/lib . $(libdir) LIBPATH =
+-L/usr/local/opt/libyaml/lib -L/usr/local/opt/readline/lib
+-L/usr/local/opt/libksba/lib -L/usr/local/opt/openssl/lib -L. -L$(libdir)
+DEFFILE =</p>
+
+<p>CLEANFILES = mkmf.log DISTCLEANFILES =  DISTCLEANDIRS =</p>
+
+<p>extout =  extout_prefix =  target_prefix =  LOCAL_LIBS =  LIBS =
+$(LIBRUBYARG_SHARED)  -lpthread -lgmp -ldl -lobjc  ORIG_SRCS = Pthreads.c
+SRCS = $(ORIG_SRCS)  OBJS = Pthreads.o HDRS = $(srcdir)/Pthreads.h TARGET =
+pthreads TARGET_NAME = pthreads TARGET_ENTRY = Init_$(TARGET_NAME) DLLIB =
+$(TARGET).bundle EXTSTATIC =  STATIC_LIB =</p>
+
+<p>TIMESTAMP_DIR = . BINDIR        = $(bindir) RUBYCOMMONDIR =
+$(sitedir)$(target_prefix) RUBYLIBDIR    = $(sitelibdir)$(target_prefix)
+RUBYARCHDIR   = $(sitearchdir)$(target_prefix) HDRDIR        =
+$(rubyhdrdir)/ruby$(target_prefix) ARCHHDRDIR    =
+$(rubyhdrdir)/$(arch)/ruby$(target_prefix)</p>
+
+<p>TARGET_SO     = $(DLLIB) CLEANLIBS     = $(TARGET).bundle  CLEANOBJS     =
+*.o  *.bak</p>
+
+<p>all:    $(DLLIB) static: $(STATIC_LIB) .PHONY: all install static
+install-so install-rb .PHONY: clean clean-so clean-static clean-rb</p>
+<dl class="rdoc-list note-list"><dt>clean-static
+<dt>clean-rb-default
+<dt>clean-rb
+<dt>clean-so
+<dd>
+<p>clean: clean-so clean-static clean-rb-default clean-rb</p>
+
+<pre>-$(Q)$(RM) $(CLEANLIBS) $(CLEANOBJS) $(CLEANFILES) .*.time</pre>
+<dl class="rdoc-list note-list"><dt>distclean-rb-default
+<dt>distclean-rb
+<dt>distclean-so
+<dt>distclean-static
+<dd>
+<p>distclean: clean distclean-so distclean-static distclean-rb-default
+distclean-rb</p>
+
+<pre>-$(Q)$(RM) Makefile $(RUBY_EXTCONF_H) conftest.* mkmf.log
+-$(Q)$(RM) core ruby$(EXEEXT) *~ $(DISTCLEANFILES)
+-$(Q)$(RMDIRS) $(DISTCLEANDIRS) 2&gt; /dev/null || true</pre>
+
+<p>realclean: distclean install: install-so install-rb</p>
+
+<p>install-so: $(DLLIB) $(TIMESTAMP_DIR)/.RUBYARCHDIR.time</p>
+
+<pre>$(INSTALL_PROG) $(DLLIB) $(RUBYARCHDIR)</pre>
+<dl class="rdoc-list note-list"><dt>clean-static
+<dd>
+<p>-$(Q)$(RM) $(STATIC_LIB)</p>
+</dd></dl>
+
+<p>install-rb: pre-install-rb install-rb-default install-rb-default:
+pre-install-rb-default pre-install-rb: <a
+href="../cio/Makefile.html">Makefile</a> pre-install-rb-default: <a
+href="../cio/Makefile.html">Makefile</a> pre-install-rb-default:</p>
+
+<pre>@$(NULLCMD)</pre>
+
+<p>$(TIMESTAMP_DIR)/.RUBYARCHDIR.time:</p>
+
+<pre>$(Q) $(MAKEDIRS) $(@D) $(RUBYARCHDIR)
+$(Q) $(TOUCH) $@</pre>
+
+<p>site-install: site-install-so site-install-rb site-install-so: install-so
+site-install-rb: install-rb</p>
+
+<p>.SUFFIXES: .c .m .cc .mm .cxx .cpp .o .S</p>
+
+<p>.cc.o:</p>
+
+<pre>$(ECHO) compiling $(&lt;)
+$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -c $&lt;</pre>
+
+<p>.cc.S:</p>
+
+<pre>$(ECHO) translating $(&lt;)
+$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -S $&lt;</pre>
+
+<p>.mm.o:</p>
+
+<pre>$(ECHO) compiling $(&lt;)
+$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -c $&lt;</pre>
+
+<p>.mm.S:</p>
+
+<pre>$(ECHO) translating $(&lt;)
+$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -S $&lt;</pre>
+
+<p>.cxx.o:</p>
+
+<pre>$(ECHO) compiling $(&lt;)
+$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -c $&lt;</pre>
+
+<p>.cxx.S:</p>
+
+<pre>$(ECHO) translating $(&lt;)
+$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -S $&lt;</pre>
+
+<p>.cpp.o:</p>
+
+<pre>$(ECHO) compiling $(&lt;)
+$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -c $&lt;</pre>
+
+<p>.cpp.S:</p>
+
+<pre>$(ECHO) translating $(&lt;)
+$(Q) $(CXX) $(INCFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(COUTFLAG)$@ -S $&lt;</pre>
+
+<p>.c.o:</p>
+
+<pre>$(ECHO) compiling $(&lt;)
+$(Q) $(CC) $(INCFLAGS) $(CPPFLAGS) $(CFLAGS) $(COUTFLAG)$@ -c $&lt;</pre>
+
+<p>.c.S:</p>
+
+<pre>$(ECHO) translating $(&lt;)
+$(Q) $(CC) $(INCFLAGS) $(CPPFLAGS) $(CFLAGS) $(COUTFLAG)$@ -S $&lt;</pre>
+
+<p>.m.o:</p>
+
+<pre>$(ECHO) compiling $(&lt;)
+$(Q) $(CC) $(INCFLAGS) $(CPPFLAGS) $(CFLAGS) $(COUTFLAG)$@ -c $&lt;</pre>
+
+<p>.m.S:</p>
+
+<pre>$(ECHO) translating $(&lt;)
+$(Q) $(CC) $(INCFLAGS) $(CPPFLAGS) $(CFLAGS) $(COUTFLAG)$@ -S $&lt;</pre>
+
+<p>$(DLLIB): $(OBJS) <a href="../cio/Makefile.html">Makefile</a></p>
+
+<pre>$(ECHO) linking shared-object $(DLLIB)
+-$(Q)$(RM) $(@)
+$(Q) $(LDSHARED) -o $@ $(OBJS) $(LIBPATH) $(DLDFLAGS) $(LOCAL_LIBS) $(LIBS)
+$(Q) $(POSTLINK)</pre>
+
+<p>$(OBJS): $(HDRS) $(ruby_headers)</p>
+</dd></dl>
+</dd></dl>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
