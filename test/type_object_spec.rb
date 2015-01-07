@@ -114,7 +114,7 @@ describe 'TypeObjectTests' do
         orcs[i] = Monster.new('orc')
       end
 
-      count = 0
+      count = 100000
       orcs.each do |orc|
         orc_clones[count] = monsters.clone_type('orc')
         count += 1

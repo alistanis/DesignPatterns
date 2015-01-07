@@ -364,3 +364,58 @@ TypeObjectTests
 Finished in 25.45 seconds (files took 0.12165 seconds to load)
 13 examples, 0 failures
 
+2015-01-06 11:31:08 -0500 | INFO: 
+TypeObjectTests
+  TypeObject assignment
+    Loads prototype and base type data if it exists for all monster types, or just base type if it does not have a prototype
+    Raises an exception if the monster type does not exist
+    Gets a prototype name if it exists, and returns "none" if it does not
+    Gives detailed exception information for MonsterNotFound
+  TypeObject Marshal and Deep Clone Tests
+    Loads all monster prototypes into memory, clones them, and verifies that their object_id's are different
+    Loads all monster prototypes into memory, deep clones them(marshal/unmarshal), and verifies that their prototype object_id's are different
+    Demonstrates that a shallow clone is not sufficient for prototyping by showing that the object id's for clones are different, but the underlying prototype id's are the same
+    Demonstrates a better clone method (on the monster class) by showing that all object id's are different
+    Raises an UnsupportedType exception if something other than a String or MonsterType is passed to Monster.new
+    Create n number of orcs using threads and demonstrates the ruby threadwall
+    Take longer than n / (n * 0.1) seconds to marshal and then unmarshal objects (FAILED - 1)
+    Completes n number of efficient clones in less time than the total marshalling time(previous test)
+  TypeObject Thread Pool Cloning
+    Clones objects much faster using threads (total_marshal_time / (num_cpus / 2))
+
+Failures:
+
+  1) TypeObjectTests TypeObject Marshal and Deep Clone Tests Take longer than n / (n * 0.1) seconds to marshal and then unmarshal objects
+     Failure/Error: expect($total_marshal_run_time).not_to be_between(0, num / (num * 0.1))
+       expected 9.687073 not to be between 0 and 10.0 (inclusive)
+      /Users/Chris/src/Gems/DesignPatterns/test/type_object_spec.rb:124:in `block (3 levels) in <top (required)>'
+
+Finished in 22.88 seconds (files took 0.11641 seconds to load)
+13 examples, 1 failure
+
+Failed examples:
+
+rspec /Users/Chris/src/Gems/DesignPatterns/test/type_object_spec.rb:107  TypeObjectTests TypeObject Marshal and Deep Clone Tests Take longer than n / (n * 0.1) seconds to marshal and then unmarshal objects
+
+2015-01-06 12:07:15 -0500 | INFO: 
+TypeObjectTests
+  TypeObject assignment
+    Loads prototype and base type data if it exists for all monster types, or just base type if it does not have a prototype
+    Raises an exception if the monster type does not exist
+    Gets a prototype name if it exists, and returns "none" if it does not
+    Gives detailed exception information for MonsterNotFound
+  TypeObject Marshal and Deep Clone Tests
+    Loads all monster prototypes into memory, clones them, and verifies that their object_id's are different
+    Loads all monster prototypes into memory, deep clones them(marshal/unmarshal), and verifies that their prototype object_id's are different
+    Demonstrates that a shallow clone is not sufficient for prototyping by showing that the object id's for clones are different, but the underlying prototype id's are the same
+    Demonstrates a better clone method (on the monster class) by showing that all object id's are different
+    Raises an UnsupportedType exception if something other than a String or MonsterType is passed to Monster.new
+    Create n number of orcs using threads and demonstrates the ruby threadwall
+    Take longer than n / (n * 0.1) seconds to marshal and then unmarshal objects
+    Completes n number of efficient clones in less time than the total marshalling time(previous test)
+  TypeObject Thread Pool Cloning
+    Clones objects much faster using threads (total_marshal_time / (num_cpus / 2))
+
+Finished in 21.85 seconds (files took 0.11521 seconds to load)
+13 examples, 0 failures
+

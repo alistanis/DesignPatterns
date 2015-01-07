@@ -260,8 +260,7 @@ VALUE rb_read_file_base(int argc, VALUE *argv, VALUE self)
             {
                 buffer = read_file(.file_name = file_path);
             }
-
-        VALUE r_string = rb_str_new2(buffer);
+        VALUE r_string = rb_str_new(buffer, strlen(buffer));
         free((void *)buffer);
         return r_string;
 }
