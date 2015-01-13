@@ -24,7 +24,7 @@ module Patterns
     attr_accessor :current_states, :warranty, :current_condition
 
     def initialize
-      @current_states = []
+      @current_states = [OFF]
       @warranty = false
       @current_condition = FAIR
     end
