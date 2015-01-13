@@ -114,3 +114,43 @@ TemplateTests
 Finished in 0.0008 seconds (files took 0.1061 seconds to load)
 1 example, 0 failures
 
+2015-01-13 16:37:01 -0500 | INFO: 
+TemplateTests
+  RunInspections
+    Can run an inspection successfully for both an automatic and manual transmission
+
+Finished in 0.00079 seconds (files took 0.11387 seconds to load)
+1 example, 0 failures
+
+2015-01-13 16:37:54 -0500 | INFO: 
+TemplateTests
+  RunInspections
+    Can run an inspection successfully for both an automatic and manual transmission
+
+Finished in 0.00079 seconds (files took 0.10785 seconds to load)
+1 example, 0 failures
+
+2015-01-13 16:38:30 -0500 | INFO: 
+TemplateTests
+  RunInspections
+    Can run an inspection successfully for both an automatic and manual transmission
+
+Finished in 0.00078 seconds (files took 0.12099 seconds to load)
+1 example, 0 failures
+
+2015-01-13 16:38:56 -0500 | INFO: 
+TemplateTests
+  RunInspections
+    Can run an inspection successfully for both an automatic and manual transmission
+
+Finished in 0.00081 seconds (files took 0.10847 seconds to load)
+1 example, 0 failures
+
+2015-01-13 16:39:21 -0500 | INFO: 
+TemplateTests
+  RunInspections
+    Can run an inspection successfully for both an automatic and manual transmission
+
+Finished in 0.00078 seconds (files took 0.11181 seconds to load)
+1 example, 0 failures
+

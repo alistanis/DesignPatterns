@@ -411,3 +411,58 @@ CIO C Extension Tests
 Finished in 0.00372 seconds (files took 0.10546 seconds to load)
 3 examples, 0 failures
 
+2015-01-13 16:36:58 -0500 | INFO: 
+CIO C Extension Tests
+  ReadFile Testing
+    Can read a file calling the C API and return that file to ruby
+    Can read a file with a read_size parameter
+  WriteFile Testing
+    Can write data to a new file and verify that data is correct
+
+Finished in 0.00319 seconds (files took 0.11399 seconds to load)
+3 examples, 0 failures
+
+2015-01-13 16:37:52 -0500 | INFO: 
+CIO C Extension Tests
+  ReadFile Testing
+    Can read a file calling the C API and return that file to ruby
+    Can read a file with a read_size parameter
+  WriteFile Testing
+    Can write data to a new file and verify that data is correct
+
+Finished in 0.00292 seconds (files took 0.11663 seconds to load)
+3 examples, 0 failures
+
+2015-01-13 16:38:28 -0500 | INFO: 
+CIO C Extension Tests
+  ReadFile Testing
+    Can read a file calling the C API and return that file to ruby
+    Can read a file with a read_size parameter
+  WriteFile Testing
+    Can write data to a new file and verify that data is correct
+
+Finished in 0.00412 seconds (files took 0.12103 seconds to load)
+3 examples, 0 failures
+
+2015-01-13 16:38:53 -0500 | INFO: 
+CIO C Extension Tests
+  ReadFile Testing
+    Can read a file calling the C API and return that file to ruby
+    Can read a file with a read_size parameter
+  WriteFile Testing
+    Can write data to a new file and verify that data is correct
+
+Finished in 0.00328 seconds (files took 0.1154 seconds to load)
+3 examples, 0 failures
+
+2015-01-13 16:39:19 -0500 | INFO: 
+CIO C Extension Tests
+  ReadFile Testing
+    Can read a file calling the C API and return that file to ruby
+    Can read a file with a read_size parameter
+  WriteFile Testing
+    Can write data to a new file and verify that data is correct
+
+Finished in 0.00167 seconds (files took 0.11135 seconds to load)
+3 examples, 0 failures
+

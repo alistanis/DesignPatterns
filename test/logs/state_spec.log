@@ -1,0 +1,81 @@
+2015-01-13 16:37:00 -0500 | INFO: 
+StateTests
+  HeroState
+    Shows that the hero can switch and contain multiple states (FAILED - 1)
+
+Failures:
+
+  1) StateTests HeroState Shows that the hero can switch and contain multiple states
+     Failure/Error: hero.add_state(MOVING)
+     NameError:
+       uninitialized constant MOVING
+      /Users/ccooper/src/DesignPatterns/test/state_spec.rb:13:in `block (3 levels) in <top (required)>'
+
+Finished in 0.00049 seconds (files took 0.1183 seconds to load)
+1 example, 1 failure
+
+Failed examples:
+
+rspec /Users/ccooper/src/DesignPatterns/test/state_spec.rb:10  StateTests HeroState Shows that the hero can switch and contain multiple states
+
+2015-01-13 16:37:54 -0500 | INFO: 
+StateTests
+  HeroState
+    Shows that the hero can switch and contain multiple states (FAILED - 1)
+
+Failures:
+
+  1) StateTests HeroState Shows that the hero can switch and contain multiple states
+     Failure/Error: hero.add_state(MOVING)
+     NameError:
+       uninitialized constant MOVING
+      /Users/ccooper/src/DesignPatterns/test/state_spec.rb:13:in `block (3 levels) in <top (required)>'
+
+Finished in 0.00056 seconds (files took 0.11743 seconds to load)
+1 example, 1 failure
+
+Failed examples:
+
+rspec /Users/ccooper/src/DesignPatterns/test/state_spec.rb:10  StateTests HeroState Shows that the hero can switch and contain multiple states
+
+2015-01-13 16:38:30 -0500 | INFO: /Users/ccooper/src/DesignPatterns/test/state_spec.rb:4:in `<top (required)>': uninitialized constant Patterns::HeroStates (NameError)
+	from /Users/ccooper/.rvm/gems/ruby-2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/configuration.rb:1105:in `load'
+	from /Users/ccooper/.rvm/gems/ruby-2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/configuration.rb:1105:in `block in load_spec_files'
+	from /Users/ccooper/.rvm/gems/ruby-2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/configuration.rb:1105:in `each'
+	from /Users/ccooper/.rvm/gems/ruby-2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/configuration.rb:1105:in `load_spec_files'
+	from /Users/ccooper/.rvm/gems/ruby-2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/runner.rb:96:in `setup'
+	from /Users/ccooper/.rvm/gems/ruby-2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/runner.rb:84:in `run'
+	from /Users/ccooper/.rvm/gems/ruby-2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/runner.rb:69:in `run'
+	from /Users/ccooper/.rvm/gems/ruby-2.2.0/gems/rspec-core-3.1.7/lib/rspec/core/runner.rb:37:in `invoke'
+	from /Users/ccooper/.rvm/gems/ruby-2.2.0/gems/rspec-core-3.1.7/exe/rspec:4:in `<top (required)>'
+	from /Users/ccooper/.rvm/gems/ruby-2.2.0/bin/rspec:23:in `load'
+	from /Users/ccooper/.rvm/gems/ruby-2.2.0/bin/rspec:23:in `<main>'
+
+2015-01-13 16:38:55 -0500 | INFO: 
+StateTests
+  HeroState
+    Shows that the hero can switch and contain multiple states (FAILED - 1)
+
+Failures:
+
+  1) StateTests HeroState Shows that the hero can switch and contain multiple states
+     Failure/Error: expect(hero.current_states.include?(MOVING).to eql(true))
+     NoMethodError:
+       undefined method `to' for true:TrueClass
+      /Users/ccooper/src/DesignPatterns/test/state_spec.rb:18:in `block (3 levels) in <top (required)>'
+
+Finished in 0.00094 seconds (files took 0.11582 seconds to load)
+1 example, 1 failure
+
+Failed examples:
+
+rspec /Users/ccooper/src/DesignPatterns/test/state_spec.rb:12  StateTests HeroState Shows that the hero can switch and contain multiple states
+
+2015-01-13 16:39:21 -0500 | INFO: 
+StateTests
+  HeroState
+    Shows that the hero can switch and contain multiple states
+
+Finished in 0.00084 seconds (files took 0.10863 seconds to load)
+1 example, 0 failures
+

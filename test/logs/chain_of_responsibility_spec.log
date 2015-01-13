@@ -279,3 +279,48 @@ ChainOfResponsibilityTests
 Finished in 0.00109 seconds (files took 0.10996 seconds to load)
 3 examples, 0 failures
 
+2015-01-13 16:36:58 -0500 | INFO: 
+ChainOfResponsibilityTests
+  Can delegate a patient all the way up the chain
+  Will not continue to delegate if the patient is cured
+  Can cure all illnesses except zombie virus
+
+Finished in 0.00111 seconds (files took 0.11539 seconds to load)
+3 examples, 0 failures
+
+2015-01-13 16:37:52 -0500 | INFO: 
+ChainOfResponsibilityTests
+  Can delegate a patient all the way up the chain
+  Will not continue to delegate if the patient is cured
+  Can cure all illnesses except zombie virus
+
+Finished in 0.00099 seconds (files took 0.10962 seconds to load)
+3 examples, 0 failures
+
+2015-01-13 16:38:27 -0500 | INFO: 
+ChainOfResponsibilityTests
+  Can delegate a patient all the way up the chain
+  Will not continue to delegate if the patient is cured
+  Can cure all illnesses except zombie virus
+
+Finished in 0.00146 seconds (files took 0.11035 seconds to load)
+3 examples, 0 failures
+
+2015-01-13 16:38:53 -0500 | INFO: 
+ChainOfResponsibilityTests
+  Can delegate a patient all the way up the chain
+  Will not continue to delegate if the patient is cured
+  Can cure all illnesses except zombie virus
+
+Finished in 0.00104 seconds (files took 0.11894 seconds to load)
+3 examples, 0 failures
+
+2015-01-13 16:39:19 -0500 | INFO: 
+ChainOfResponsibilityTests
+  Can delegate a patient all the way up the chain
+  Will not continue to delegate if the patient is cured
+  Can cure all illnesses except zombie virus
+
+Finished in 0.00102 seconds (files took 0.11872 seconds to load)
+3 examples, 0 failures
+

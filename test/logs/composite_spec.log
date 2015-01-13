@@ -268,3 +268,48 @@ CompositeTests
 Finished in 0.00233 seconds (files took 0.10906 seconds to load)
 3 examples, 0 failures
 
+2015-01-13 16:36:59 -0500 | INFO: 
+CompositeTests
+  Can instantiate a root composite, leaf nodes for the root, branch composites, and leaf nodes for those branches
+  Raises an exception when there is an attempt to add a node to a leaf node
+  Raises an exception when there is an attempt to remove a node from a leaf node
+
+Finished in 0.00432 seconds (files took 0.11329 seconds to load)
+3 examples, 0 failures
+
+2015-01-13 16:37:53 -0500 | INFO: 
+CompositeTests
+  Can instantiate a root composite, leaf nodes for the root, branch composites, and leaf nodes for those branches
+  Raises an exception when there is an attempt to add a node to a leaf node
+  Raises an exception when there is an attempt to remove a node from a leaf node
+
+Finished in 0.00233 seconds (files took 0.10935 seconds to load)
+3 examples, 0 failures
+
+2015-01-13 16:38:28 -0500 | INFO: 
+CompositeTests
+  Can instantiate a root composite, leaf nodes for the root, branch composites, and leaf nodes for those branches
+  Raises an exception when there is an attempt to add a node to a leaf node
+  Raises an exception when there is an attempt to remove a node from a leaf node
+
+Finished in 0.00232 seconds (files took 0.11483 seconds to load)
+3 examples, 0 failures
+
+2015-01-13 16:38:54 -0500 | INFO: 
+CompositeTests
+  Can instantiate a root composite, leaf nodes for the root, branch composites, and leaf nodes for those branches
+  Raises an exception when there is an attempt to add a node to a leaf node
+  Raises an exception when there is an attempt to remove a node from a leaf node
+
+Finished in 0.00232 seconds (files took 0.10852 seconds to load)
+3 examples, 0 failures
+
+2015-01-13 16:39:20 -0500 | INFO: 
+CompositeTests
+  Can instantiate a root composite, leaf nodes for the root, branch composites, and leaf nodes for those branches
+  Raises an exception when there is an attempt to add a node to a leaf node
+  Raises an exception when there is an attempt to remove a node from a leaf node
+
+Finished in 0.00245 seconds (files took 0.11206 seconds to load)
+3 examples, 0 failures
+

@@ -259,3 +259,48 @@ BridgeTests
 Finished in 0.00241 seconds (files took 0.12356 seconds to load)
 2 examples, 0 failures
 
+2015-01-13 16:36:58 -0500 | INFO: 
+BridgeTests
+  AbstractInterfaceTesting
+    Throws an InterfaceNotImplemented exception when a method that has not been implemented is called in a child class
+    Does not throw an InterfaceNotImplemented exception after the method has been defined for the child class
+
+Finished in 0.0024 seconds (files took 0.12595 seconds to load)
+2 examples, 0 failures
+
+2015-01-13 16:37:51 -0500 | INFO: 
+BridgeTests
+  AbstractInterfaceTesting
+    Throws an InterfaceNotImplemented exception when a method that has not been implemented is called in a child class
+    Does not throw an InterfaceNotImplemented exception after the method has been defined for the child class
+
+Finished in 0.00287 seconds (files took 0.12545 seconds to load)
+2 examples, 0 failures
+
+2015-01-13 16:38:27 -0500 | INFO: 
+BridgeTests
+  AbstractInterfaceTesting
+    Throws an InterfaceNotImplemented exception when a method that has not been implemented is called in a child class
+    Does not throw an InterfaceNotImplemented exception after the method has been defined for the child class
+
+Finished in 0.00246 seconds (files took 0.11947 seconds to load)
+2 examples, 0 failures
+
+2015-01-13 16:38:53 -0500 | INFO: 
+BridgeTests
+  AbstractInterfaceTesting
+    Throws an InterfaceNotImplemented exception when a method that has not been implemented is called in a child class
+    Does not throw an InterfaceNotImplemented exception after the method has been defined for the child class
+
+Finished in 0.00226 seconds (files took 0.10468 seconds to load)
+2 examples, 0 failures
+
+2015-01-13 16:39:18 -0500 | INFO: 
+BridgeTests
+  AbstractInterfaceTesting
+    Throws an InterfaceNotImplemented exception when a method that has not been implemented is called in a child class
+    Does not throw an InterfaceNotImplemented exception after the method has been defined for the child class
+
+Finished in 0.00227 seconds (files took 0.10597 seconds to load)
+2 examples, 0 failures
+
