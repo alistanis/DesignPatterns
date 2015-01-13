@@ -1,7 +1,7 @@
 module Patterns
   class CarInspection
 
-    attr_accessor :horn_test, :headlights_test, :all_tests
+    attr_accessor :horn_test, :headlights_test, :all_tests, :test_status
 
     def initialize
       @horn_test = false
@@ -71,7 +71,7 @@ module Patterns
     end
 
     def apply_sticker
-      puts 'Yay!'
+      @test_status = 'pass'
     end
 
     def fail_inspection
@@ -79,7 +79,7 @@ module Patterns
     end
 
     def give_rejection_sticker
-      puts 'Your name must be Kevin'
+      @test_status = 'fail'
     end
 
   end

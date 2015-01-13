@@ -160,3 +160,111 @@ CompositeTests
 Finished in 0.00238 seconds (files took 0.11192 seconds to load)
 3 examples, 0 failures
 
+2015-01-13 15:03:57 -0500 | INFO: 
+CompositeTests
+  Can instantiate a root composite, leaf nodes for the root, branch composites, and leaf nodes for those branches
+  Raises an exception when there is an attempt to add a node to a leaf node
+  Raises an exception when there is an attempt to remove a node from a leaf node
+
+Finished in 0.00231 seconds (files took 0.11107 seconds to load)
+3 examples, 0 failures
+
+2015-01-13 15:28:53 -0500 | INFO: 
+CompositeTests
+  Can instantiate a root composite, leaf nodes for the root, branch composites, and leaf nodes for those branches
+  Raises an exception when there is an attempt to add a node to a leaf node
+  Raises an exception when there is an attempt to remove a node from a leaf node
+
+Finished in 0.0024 seconds (files took 0.11538 seconds to load)
+3 examples, 0 failures
+
+2015-01-13 15:30:22 -0500 | INFO: 
+CompositeTests
+  Can instantiate a root composite, leaf nodes for the root, branch composites, and leaf nodes for those branches
+  Raises an exception when there is an attempt to add a node to a leaf node
+  Raises an exception when there is an attempt to remove a node from a leaf node
+
+Finished in 0.0023 seconds (files took 0.10641 seconds to load)
+3 examples, 0 failures
+
+2015-01-13 15:31:58 -0500 | INFO: 
+CompositeTests
+  Can instantiate a root composite, leaf nodes for the root, branch composites, and leaf nodes for those branches
+  Raises an exception when there is an attempt to add a node to a leaf node
+  Raises an exception when there is an attempt to remove a node from a leaf node
+
+Finished in 0.00226 seconds (files took 0.11425 seconds to load)
+3 examples, 0 failures
+
+2015-01-13 15:33:31 -0500 | INFO: 
+CompositeTests
+  Can instantiate a root composite, leaf nodes for the root, branch composites, and leaf nodes for those branches
+  Raises an exception when there is an attempt to add a node to a leaf node
+  Raises an exception when there is an attempt to remove a node from a leaf node
+
+Finished in 0.00225 seconds (files took 0.10868 seconds to load)
+3 examples, 0 failures
+
+2015-01-13 15:35:03 -0500 | INFO: 
+CompositeTests
+  Can instantiate a root composite, leaf nodes for the root, branch composites, and leaf nodes for those branches
+  Raises an exception when there is an attempt to add a node to a leaf node
+  Raises an exception when there is an attempt to remove a node from a leaf node
+
+Finished in 0.00233 seconds (files took 0.11609 seconds to load)
+3 examples, 0 failures
+
+2015-01-13 15:36:04 -0500 | INFO: 
+CompositeTests
+  Can instantiate a root composite, leaf nodes for the root, branch composites, and leaf nodes for those branches
+  Raises an exception when there is an attempt to add a node to a leaf node
+  Raises an exception when there is an attempt to remove a node from a leaf node
+
+Finished in 0.0025 seconds (files took 0.11099 seconds to load)
+3 examples, 0 failures
+
+2015-01-13 15:37:27 -0500 | INFO: 
+CompositeTests
+  Can instantiate a root composite, leaf nodes for the root, branch composites, and leaf nodes for those branches
+  Raises an exception when there is an attempt to add a node to a leaf node
+  Raises an exception when there is an attempt to remove a node from a leaf node
+
+Finished in 0.00225 seconds (files took 0.1176 seconds to load)
+3 examples, 0 failures
+
+2015-01-13 15:40:07 -0500 | INFO: 
+CompositeTests
+  Can instantiate a root composite, leaf nodes for the root, branch composites, and leaf nodes for those branches
+  Raises an exception when there is an attempt to add a node to a leaf node
+  Raises an exception when there is an attempt to remove a node from a leaf node
+
+Finished in 0.00226 seconds (files took 0.11299 seconds to load)
+3 examples, 0 failures
+
+2015-01-13 15:42:25 -0500 | INFO: 
+CompositeTests
+  Can instantiate a root composite, leaf nodes for the root, branch composites, and leaf nodes for those branches
+  Raises an exception when there is an attempt to add a node to a leaf node
+  Raises an exception when there is an attempt to remove a node from a leaf node
+
+Finished in 0.00231 seconds (files took 0.10758 seconds to load)
+3 examples, 0 failures
+
+2015-01-13 15:45:00 -0500 | INFO: 
+CompositeTests
+  Can instantiate a root composite, leaf nodes for the root, branch composites, and leaf nodes for those branches
+  Raises an exception when there is an attempt to add a node to a leaf node
+  Raises an exception when there is an attempt to remove a node from a leaf node
+
+Finished in 0.00228 seconds (files took 0.10811 seconds to load)
+3 examples, 0 failures
+
+2015-01-13 15:46:12 -0500 | INFO: 
+CompositeTests
+  Can instantiate a root composite, leaf nodes for the root, branch composites, and leaf nodes for those branches
+  Raises an exception when there is an attempt to add a node to a leaf node
+  Raises an exception when there is an attempt to remove a node from a leaf node
+
+Finished in 0.00233 seconds (files took 0.10906 seconds to load)
+3 examples, 0 failures
+

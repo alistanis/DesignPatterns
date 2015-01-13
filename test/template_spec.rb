@@ -16,6 +16,8 @@ describe 'TemplateTests' do
 
       manual_inspection.run_inspection
 
+      expect(automatic_inspection.test_status).to eql('pass')
+      expect(manual_inspection.test_status).to eql('fail')
     end
   end
 end

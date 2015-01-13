@@ -245,3 +245,159 @@ SingletonTests
 Finished in 0.01241 seconds (files took 0.11545 seconds to load)
 7 examples, 0 failures
 
+2015-01-13 15:03:58 -0500 | INFO: 
+SingletonTests
+  Verifies that a game manager can not be instantiated
+  Verifies that a logger can not be instantiated
+  Able to get an instance of Patterns::Logger
+  Able to initialize a game world and print it
+  Able to print the game state to the game log and verify it logged correctly
+  Verifies that the logger is thread safe
+  Verifies that the game manager is NOT thread safe
+
+Finished in 0.01288 seconds (files took 0.11355 seconds to load)
+7 examples, 0 failures
+
+2015-01-13 15:28:54 -0500 | INFO: 
+SingletonTests
+  Verifies that a game manager can not be instantiated
+  Verifies that a logger can not be instantiated
+  Able to get an instance of Patterns::Logger
+  Able to initialize a game world and print it
+  Able to print the game state to the game log and verify it logged correctly
+  Verifies that the logger is thread safe
+  Verifies that the game manager is NOT thread safe
+
+Finished in 0.01129 seconds (files took 0.11078 seconds to load)
+7 examples, 0 failures
+
+2015-01-13 15:30:22 -0500 | INFO: 
+SingletonTests
+  Verifies that a game manager can not be instantiated
+  Verifies that a logger can not be instantiated
+  Able to get an instance of Patterns::Logger
+  Able to initialize a game world and print it
+  Able to print the game state to the game log and verify it logged correctly
+  Verifies that the logger is thread safe
+  Verifies that the game manager is NOT thread safe
+
+Finished in 0.01449 seconds (files took 0.10676 seconds to load)
+7 examples, 0 failures
+
+2015-01-13 15:31:59 -0500 | INFO: 
+SingletonTests
+  Verifies that a game manager can not be instantiated
+  Verifies that a logger can not be instantiated
+  Able to get an instance of Patterns::Logger
+  Able to initialize a game world and print it
+  Able to print the game state to the game log and verify it logged correctly
+  Verifies that the logger is thread safe
+  Verifies that the game manager is NOT thread safe
+
+Finished in 0.01161 seconds (files took 0.10902 seconds to load)
+7 examples, 0 failures
+
+2015-01-13 15:33:32 -0500 | INFO: 
+SingletonTests
+  Verifies that a game manager can not be instantiated
+  Verifies that a logger can not be instantiated
+  Able to get an instance of Patterns::Logger
+  Able to initialize a game world and print it
+  Able to print the game state to the game log and verify it logged correctly
+  Verifies that the logger is thread safe
+  Verifies that the game manager is NOT thread safe
+
+Finished in 0.01206 seconds (files took 0.11975 seconds to load)
+7 examples, 0 failures
+
+2015-01-13 15:35:04 -0500 | INFO: 
+SingletonTests
+  Verifies that a game manager can not be instantiated
+  Verifies that a logger can not be instantiated
+  Able to get an instance of Patterns::Logger
+  Able to initialize a game world and print it
+  Able to print the game state to the game log and verify it logged correctly
+  Verifies that the logger is thread safe
+  Verifies that the game manager is NOT thread safe
+
+Finished in 0.01166 seconds (files took 0.11052 seconds to load)
+7 examples, 0 failures
+
+2015-01-13 15:36:05 -0500 | INFO: 
+SingletonTests
+  Verifies that a game manager can not be instantiated
+  Verifies that a logger can not be instantiated
+  Able to get an instance of Patterns::Logger
+  Able to initialize a game world and print it
+  Able to print the game state to the game log and verify it logged correctly
+  Verifies that the logger is thread safe
+  Verifies that the game manager is NOT thread safe
+
+Finished in 0.01185 seconds (files took 0.10379 seconds to load)
+7 examples, 0 failures
+
+2015-01-13 15:37:27 -0500 | INFO: 
+SingletonTests
+  Verifies that a game manager can not be instantiated
+  Verifies that a logger can not be instantiated
+  Able to get an instance of Patterns::Logger
+  Able to initialize a game world and print it
+  Able to print the game state to the game log and verify it logged correctly
+  Verifies that the logger is thread safe
+  Verifies that the game manager is NOT thread safe
+
+Finished in 0.01114 seconds (files took 0.11253 seconds to load)
+7 examples, 0 failures
+
+2015-01-13 15:40:07 -0500 | INFO: 
+SingletonTests
+  Verifies that a game manager can not be instantiated
+  Verifies that a logger can not be instantiated
+  Able to get an instance of Patterns::Logger
+  Able to initialize a game world and print it
+  Able to print the game state to the game log and verify it logged correctly
+  Verifies that the logger is thread safe
+  Verifies that the game manager is NOT thread safe
+
+Finished in 0.01153 seconds (files took 0.10339 seconds to load)
+7 examples, 0 failures
+
+2015-01-13 15:42:26 -0500 | INFO: 
+SingletonTests
+  Verifies that a game manager can not be instantiated
+  Verifies that a logger can not be instantiated
+  Able to get an instance of Patterns::Logger
+  Able to initialize a game world and print it
+  Able to print the game state to the game log and verify it logged correctly
+  Verifies that the logger is thread safe
+  Verifies that the game manager is NOT thread safe
+
+Finished in 0.01142 seconds (files took 0.10928 seconds to load)
+7 examples, 0 failures
+
+2015-01-13 15:45:01 -0500 | INFO: 
+SingletonTests
+  Verifies that a game manager can not be instantiated
+  Verifies that a logger can not be instantiated
+  Able to get an instance of Patterns::Logger
+  Able to initialize a game world and print it
+  Able to print the game state to the game log and verify it logged correctly
+  Verifies that the logger is thread safe
+  Verifies that the game manager is NOT thread safe
+
+Finished in 0.01166 seconds (files took 0.11598 seconds to load)
+7 examples, 0 failures
+
+2015-01-13 15:46:12 -0500 | INFO: 
+SingletonTests
+  Verifies that a game manager can not be instantiated
+  Verifies that a logger can not be instantiated
+  Able to get an instance of Patterns::Logger
+  Able to initialize a game world and print it
+  Able to print the game state to the game log and verify it logged correctly
+  Verifies that the logger is thread safe
+  Verifies that the game manager is NOT thread safe
+
+Finished in 0.01362 seconds (files took 0.11052 seconds to load)
+7 examples, 0 failures
+

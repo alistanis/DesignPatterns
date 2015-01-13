@@ -226,3 +226,147 @@ CommandTests
 Finished in 0.01004 seconds (files took 0.11792 seconds to load)
 6 examples, 0 failures
 
+2015-01-13 15:03:57 -0500 | INFO: 
+CommandTests
+  Creates a file, verifies it exists, and then deletes a file
+  Deletes a file, stores its data, and then undoes the operation
+  Copies a file from a source path to a target path
+  Able to take a list of commands, and execute the next command in the list and undo the last command in the list, in any order
+  Takes a list of commands and executes all of them, reports their descriptions and statuses, then undoes them
+  Prints the descriptions and statuses of the command list test
+
+Finished in 0.01009 seconds (files took 0.11295 seconds to load)
+6 examples, 0 failures
+
+2015-01-13 15:28:53 -0500 | INFO: 
+CommandTests
+  Creates a file, verifies it exists, and then deletes a file
+  Deletes a file, stores its data, and then undoes the operation
+  Copies a file from a source path to a target path
+  Able to take a list of commands, and execute the next command in the list and undo the last command in the list, in any order
+  Takes a list of commands and executes all of them, reports their descriptions and statuses, then undoes them
+  Prints the descriptions and statuses of the command list test
+
+Finished in 0.00936 seconds (files took 0.1164 seconds to load)
+6 examples, 0 failures
+
+2015-01-13 15:30:21 -0500 | INFO: 
+CommandTests
+  Creates a file, verifies it exists, and then deletes a file
+  Deletes a file, stores its data, and then undoes the operation
+  Copies a file from a source path to a target path
+  Able to take a list of commands, and execute the next command in the list and undo the last command in the list, in any order
+  Takes a list of commands and executes all of them, reports their descriptions and statuses, then undoes them
+  Prints the descriptions and statuses of the command list test
+
+Finished in 0.00945 seconds (files took 0.1094 seconds to load)
+6 examples, 0 failures
+
+2015-01-13 15:31:58 -0500 | INFO: 
+CommandTests
+  Creates a file, verifies it exists, and then deletes a file
+  Deletes a file, stores its data, and then undoes the operation
+  Copies a file from a source path to a target path
+  Able to take a list of commands, and execute the next command in the list and undo the last command in the list, in any order
+  Takes a list of commands and executes all of them, reports their descriptions and statuses, then undoes them
+  Prints the descriptions and statuses of the command list test
+
+Finished in 0.00872 seconds (files took 0.11033 seconds to load)
+6 examples, 0 failures
+
+2015-01-13 15:33:31 -0500 | INFO: 
+CommandTests
+  Creates a file, verifies it exists, and then deletes a file
+  Deletes a file, stores its data, and then undoes the operation
+  Copies a file from a source path to a target path
+  Able to take a list of commands, and execute the next command in the list and undo the last command in the list, in any order
+  Takes a list of commands and executes all of them, reports their descriptions and statuses, then undoes them
+  Prints the descriptions and statuses of the command list test
+
+Finished in 0.00822 seconds (files took 0.10902 seconds to load)
+6 examples, 0 failures
+
+2015-01-13 15:35:02 -0500 | INFO: 
+CommandTests
+  Creates a file, verifies it exists, and then deletes a file
+  Deletes a file, stores its data, and then undoes the operation
+  Copies a file from a source path to a target path
+  Able to take a list of commands, and execute the next command in the list and undo the last command in the list, in any order
+  Takes a list of commands and executes all of them, reports their descriptions and statuses, then undoes them
+  Prints the descriptions and statuses of the command list test
+
+Finished in 0.01004 seconds (files took 0.11823 seconds to load)
+6 examples, 0 failures
+
+2015-01-13 15:36:04 -0500 | INFO: 
+CommandTests
+  Creates a file, verifies it exists, and then deletes a file
+  Deletes a file, stores its data, and then undoes the operation
+  Copies a file from a source path to a target path
+  Able to take a list of commands, and execute the next command in the list and undo the last command in the list, in any order
+  Takes a list of commands and executes all of them, reports their descriptions and statuses, then undoes them
+  Prints the descriptions and statuses of the command list test
+
+Finished in 0.01281 seconds (files took 0.10874 seconds to load)
+6 examples, 0 failures
+
+2015-01-13 15:37:26 -0500 | INFO: 
+CommandTests
+  Creates a file, verifies it exists, and then deletes a file
+  Deletes a file, stores its data, and then undoes the operation
+  Copies a file from a source path to a target path
+  Able to take a list of commands, and execute the next command in the list and undo the last command in the list, in any order
+  Takes a list of commands and executes all of them, reports their descriptions and statuses, then undoes them
+  Prints the descriptions and statuses of the command list test
+
+Finished in 0.00925 seconds (files took 0.11725 seconds to load)
+6 examples, 0 failures
+
+2015-01-13 15:40:06 -0500 | INFO: 
+CommandTests
+  Creates a file, verifies it exists, and then deletes a file
+  Deletes a file, stores its data, and then undoes the operation
+  Copies a file from a source path to a target path
+  Able to take a list of commands, and execute the next command in the list and undo the last command in the list, in any order
+  Takes a list of commands and executes all of them, reports their descriptions and statuses, then undoes them
+  Prints the descriptions and statuses of the command list test
+
+Finished in 0.01566 seconds (files took 0.11098 seconds to load)
+6 examples, 0 failures
+
+2015-01-13 15:42:25 -0500 | INFO: 
+CommandTests
+  Creates a file, verifies it exists, and then deletes a file
+  Deletes a file, stores its data, and then undoes the operation
+  Copies a file from a source path to a target path
+  Able to take a list of commands, and execute the next command in the list and undo the last command in the list, in any order
+  Takes a list of commands and executes all of them, reports their descriptions and statuses, then undoes them
+  Prints the descriptions and statuses of the command list test
+
+Finished in 0.01211 seconds (files took 0.11002 seconds to load)
+6 examples, 0 failures
+
+2015-01-13 15:44:59 -0500 | INFO: 
+CommandTests
+  Creates a file, verifies it exists, and then deletes a file
+  Deletes a file, stores its data, and then undoes the operation
+  Copies a file from a source path to a target path
+  Able to take a list of commands, and execute the next command in the list and undo the last command in the list, in any order
+  Takes a list of commands and executes all of them, reports their descriptions and statuses, then undoes them
+  Prints the descriptions and statuses of the command list test
+
+Finished in 0.01405 seconds (files took 0.10981 seconds to load)
+6 examples, 0 failures
+
+2015-01-13 15:46:11 -0500 | INFO: 
+CommandTests
+  Creates a file, verifies it exists, and then deletes a file
+  Deletes a file, stores its data, and then undoes the operation
+  Copies a file from a source path to a target path
+  Able to take a list of commands, and execute the next command in the list and undo the last command in the list, in any order
+  Takes a list of commands and executes all of them, reports their descriptions and statuses, then undoes them
+  Prints the descriptions and statuses of the command list test
+
+Finished in 0.01466 seconds (files took 0.10896 seconds to load)
+6 examples, 0 failures
+
