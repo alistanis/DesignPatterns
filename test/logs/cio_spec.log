@@ -466,3 +466,14 @@ CIO C Extension Tests
 Finished in 0.00167 seconds (files took 0.11135 seconds to load)
 3 examples, 0 failures
 
+2015-01-13 17:16:06 -0500 | INFO: 
+CIO C Extension Tests
+  ReadFile Testing
+    Can read a file calling the C API and return that file to ruby
+    Can read a file with a read_size parameter
+  WriteFile Testing
+    Can write data to a new file and verify that data is correct
+
+Finished in 0.00391 seconds (files took 0.12456 seconds to load)
+3 examples, 0 failures
+

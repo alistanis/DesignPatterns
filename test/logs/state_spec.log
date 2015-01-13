@@ -79,3 +79,11 @@ StateTests
 Finished in 0.00084 seconds (files took 0.10863 seconds to load)
 1 example, 0 failures
 
+2015-01-13 17:16:08 -0500 | INFO: 
+StateTests
+  HeroState
+    Shows that the hero can switch and contain multiple states
+
+Finished in 0.00081 seconds (files took 0.12348 seconds to load)
+1 example, 0 failures
+

@@ -154,3 +154,11 @@ TemplateTests
 Finished in 0.00078 seconds (files took 0.11181 seconds to load)
 1 example, 0 failures
 
+2015-01-13 17:16:09 -0500 | INFO: 
+TemplateTests
+  RunInspections
+    Can run an inspection successfully for both an automatic and manual transmission
+
+Finished in 0.00086 seconds (files took 0.1199 seconds to load)
+1 example, 0 failures
+

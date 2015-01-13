@@ -304,3 +304,12 @@ BridgeTests
 Finished in 0.00227 seconds (files took 0.10597 seconds to load)
 2 examples, 0 failures
 
+2015-01-13 17:16:05 -0500 | INFO: 
+BridgeTests
+  AbstractInterfaceTesting
+    Throws an InterfaceNotImplemented exception when a method that has not been implemented is called in a child class
+    Does not throw an InterfaceNotImplemented exception after the method has been defined for the child class
+
+Finished in 0.00481 seconds (files took 0.1136 seconds to load)
+2 examples, 0 failures
+

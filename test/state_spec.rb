@@ -20,4 +20,12 @@ describe 'StateTests' do
 
   end
 
+  context 'MarkosLaptopState' do
+
+    it '' do
+      
+    end
+
+  end
+
 end

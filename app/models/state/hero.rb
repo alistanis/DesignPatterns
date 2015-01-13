@@ -12,7 +12,7 @@ module Patterns
 
   class Hero
     attr_accessor :current_states, :hp
-    
+
     def initialize
       @current_states = []
       @hp = 100
